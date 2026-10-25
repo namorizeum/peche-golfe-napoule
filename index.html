@@ -1,0 +1,1998 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Guide de pêche en mer de Théoule à Cannes, aux îles de Lérins et au large : espèces, techniques, nœuds, zones, règles 2026, carnet de prises, quiz et checklist.">
+<meta name="theme-color" content="#F1F5F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#06161F" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Ccircle cx='17' cy='17' r='15.5' fill='%23F1F5F5' stroke='%230F2A3A' stroke-width='2'/%3E%3Cpath d='M17 4.5l3 12.5-3 12.5-3-12.5z' fill='%23B23C25'/%3E%3Cpath d='M4.5 17l12.5-2.2 12.5 2.2-12.5 2.2z' fill='%230F2A3A' opacity='.6'/%3E%3C/svg%3E">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}</style>
+<title>Pêche Golfe de la Napoule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Concept : une carte marine de poche. Onglets en bas sur téléphone, rail à gauche sur ordinateur,
+   titres façon signalétique de port, données (mailles, profondeurs, coordonnées) en mono comme sur une carte SHOM. */
+:root{
+  --paper:#F1F5F5; --surface:#FFFFFF; --surface-2:#E8EFF1; --surface-3:#DAE6E9;
+  --ink:#0F2A3A; --ink-2:#3D5866; --ink-3:#647E8C; --line:#D1DDE1; --line-2:#B3C6CC;
+  --lvl-0:#EDF3F4; --lvl-1:#CDE3EC; --lvl-2:#8DBFD4; --lvl-3:#2E7899; --lvl-ink:#FFFFFF;
+  --map-sea:#D8EAF1; --map-land:#E9DFC4; --map-land-line:#8F7D57; --map-band:#F0C9D9; --map-grid:#A7C2CD;
+  --accent:#B23C25; --accent-soft:#F6E2DC; --on-accent:#FFFFFF;
+  --restrict:#A01E5C; --restrict-soft:#F5DFE9; --on-restrict:#FFFFFF;
+  --ok:#2A6A4E; --ok-soft:#DCEEE4; --on-ok:#FFFFFF;
+  --warn:#835C00; --warn-soft:#F5EACB;
+  --shadow:0 1px 2px rgba(15,42,58,.06),0 10px 28px rgba(15,42,58,.08);
+  --f-display:"Barlow Condensed","Arial Narrow","Roboto Condensed",sans-serif;
+  --f-body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --nav-h:62px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#06161F; --surface:#0C2230; --surface-2:#112C3C; --surface-3:#173648;
+    --ink:#E2EDF1; --ink-2:#A8BEC8; --ink-3:#8299A5; --line:#1E3B4C; --line-2:#2C4F62;
+    --lvl-0:#0F2A38; --lvl-1:#174A60; --lvl-2:#226C8A; --lvl-3:#4BA6C9; --lvl-ink:#04131B;
+    --map-sea:#0B2737; --map-land:#2C2A21; --map-land-line:#766C52; --map-band:#3B2738; --map-grid:#24485A;
+    --accent:#EB7056; --accent-soft:#3A201B; --on-accent:#1A0A06;
+    --restrict:#EA67A2; --restrict-soft:#3A1729; --on-restrict:#1F0612;
+    --ok:#63BF94; --ok-soft:#12342A; --on-ok:#03170F;
+    --warn:#E3B44E; --warn-soft:#382D12;
+    --shadow:0 1px 2px rgba(0,0,0,.35),0 10px 28px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#06161F; --surface:#0C2230; --surface-2:#112C3C; --surface-3:#173648;
+  --ink:#E2EDF1; --ink-2:#A8BEC8; --ink-3:#8299A5; --line:#1E3B4C; --line-2:#2C4F62;
+  --lvl-0:#0F2A38; --lvl-1:#174A60; --lvl-2:#226C8A; --lvl-3:#4BA6C9; --lvl-ink:#04131B;
+  --map-sea:#0B2737; --map-land:#2C2A21; --map-land-line:#766C52; --map-band:#3B2738; --map-grid:#24485A;
+  --accent:#EB7056; --accent-soft:#3A201B; --on-accent:#1A0A06;
+  --restrict:#EA67A2; --restrict-soft:#3A1729; --on-restrict:#1F0612;
+  --ok:#63BF94; --ok-soft:#12342A; --on-ok:#03170F;
+  --warn:#E3B44E; --warn-soft:#382D12;
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 10px 28px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--paper)}
+a{color:inherit;text-underline-offset:3px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.05;text-wrap:balance;margin:0}
+p{margin:0}
+.mono{font-family:var(--f-mono)}
+.muted{color:var(--ink-2)}
+.small{font-size:.88rem}
+.ico{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Barre du haut ---------- */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--paper);border-bottom:1px solid var(--line)}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1240px;margin:0 auto;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand-mark{width:34px;height:34px;flex:none}
+.brand-txt{display:flex;flex-direction:column;min-width:0}
+.brand-name{font-family:var(--f-display);font-weight:700;font-size:1.28rem;text-transform:uppercase;letter-spacing:.05em;line-height:1}
+.brand-sub{font-family:var(--f-mono);font-size:.68rem;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:3px}
+.menu-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-2);background:var(--surface);border-radius:8px;padding:8px 11px;font-weight:700;font-size:.9rem;cursor:pointer}
+
+/* ---------- Structure ---------- */
+.shell{max-width:1240px;margin:0 auto}
+main{min-width:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 32px)}
+.view{max-width:820px;display:flex;flex-direction:column;gap:26px}
+.sidenav{display:none}
+.navlink{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--ink-2);font-weight:700;font-size:.95rem}
+.navlink:hover{background:var(--surface-2);color:var(--ink)}
+.navlink[aria-current="page"]{background:var(--ink);color:var(--paper)}
+.nav-sep{height:1px;background:var(--line);margin:8px 12px}
+
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.tabbar-in{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));height:var(--nav-h);max-width:640px;margin:0 auto}
+.tab{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-decoration:none;color:var(--ink-3);font-weight:700;font-size:.66rem;letter-spacing:.01em;min-width:0}
+.tab span{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tab[aria-current="page"]{color:var(--accent)}
+.tab[aria-current="page"]::before{content:"";position:absolute;top:0;left:22%;right:22%;height:3px;border-radius:0 0 3px 3px;background:var(--accent)}
+
+.sheet{position:fixed;inset:0;z-index:50;background:rgba(4,16,24,.48);display:flex;align-items:flex-end}
+.sheet-panel{width:100%;max-height:85vh;overflow:auto;background:var(--paper);border-radius:16px 16px 0 0;padding-block:14px calc(18px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sheet-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.sheet-head h2{font-size:1.4rem;text-transform:uppercase;letter-spacing:.04em}
+.sheet-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.sheet-grid a{display:flex;align-items:center;gap:10px;padding:12px;border-radius:10px;background:var(--surface);border:1px solid var(--line);text-decoration:none;font-weight:700}
+.icon-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;border:1px solid var(--line-2);background:var(--surface);cursor:pointer}
+
+@media (min-width:960px){
+  .shell{display:grid;grid-template-columns:236px minmax(0,1fr);gap:12px}
+  .sidenav{display:flex;flex-direction:column;gap:2px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 66px);align-self:start;max-height:calc(100vh - 76px);overflow:auto;padding-block:20px 28px;padding-left:max(16px,env(safe-area-inset-left,0px))}
+  .tabbar,.menu-btn{display:none}
+  main{padding-block:28px 56px}
+}
+
+/* ---------- En-têtes de vue ---------- */
+.vh{display:flex;flex-direction:column;gap:8px}
+.eyebrow{font-family:var(--f-mono);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.vh h1{font-size:clamp(2.1rem,7vw,3rem);text-transform:uppercase;letter-spacing:.02em}
+.vh p{color:var(--ink-2);max-width:64ch}
+.block{display:flex;flex-direction:column;gap:12px}
+.block>h2{font-size:1.55rem;text-transform:uppercase;letter-spacing:.03em}
+.block>h2 .count{font-family:var(--f-mono);font-size:.8rem;color:var(--ink-3);letter-spacing:0;margin-left:6px;font-weight:500}
+.block>p{max-width:64ch;color:var(--ink-2)}
+h3{font-size:1.25rem;letter-spacing:.01em}
+
+/* ---------- Composants ---------- */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.pad{padding:16px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);font:700 .86rem/1 var(--f-body);padding:9px 13px;border-radius:999px;cursor:pointer;text-decoration:none}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip.sm{padding:6px 10px;font-size:.8rem}
+.tag{display:inline-flex;align-items:center;gap:4px;font:700 .74rem/1 var(--f-body);padding:5px 8px;border-radius:5px;background:var(--surface-2);color:var(--ink-2);white-space:nowrap;text-decoration:none}
+a.tag:hover{background:var(--surface-3);color:var(--ink)}
+.tag.mark{background:var(--warn-soft);color:var(--warn)}
+.tag.decl{background:var(--restrict-soft);color:var(--restrict)}
+.tag.no{background:var(--restrict);color:var(--on-restrict)}
+.tag.okk{background:var(--ok-soft);color:var(--ok)}
+.tag.bord{background:var(--accent-soft);color:var(--accent)}
+.maille{display:inline-flex;align-items:center;gap:5px;font:600 .8rem/1 var(--f-mono);padding:5px 8px;border-radius:5px;border:1px solid var(--line-2);color:var(--ink);white-space:nowrap}
+.maille svg{width:16px;height:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 .95rem/1 var(--f-body);padding:12px 16px;border-radius:9px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;text-decoration:none;min-height:44px}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
+.btn.accent{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.danger{background:var(--restrict);border-color:var(--restrict);color:var(--on-restrict)}
+.btn[disabled]{opacity:.55;cursor:default}
+.btn-row{display:flex;flex-wrap:wrap;gap:8px}
+.note{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:10px;background:var(--surface-2)}
+.note .ico{margin-top:1px}
+.note.restrict{background:var(--restrict-soft)}
+.note.restrict .ico,.note.restrict strong{color:var(--restrict)}
+.note.ok{background:var(--ok-soft)}
+.note.ok .ico,.note.ok strong{color:var(--ok)}
+.note.warn{background:var(--warn-soft)}
+.note.warn .ico,.note.warn strong{color:var(--warn)}
+.note p+p{margin-top:6px}
+.ext{display:inline-flex;align-items:center;gap:6px;font-weight:700;text-decoration:none;color:var(--accent)}
+.ext .ico{width:16px;height:16px}
+.ext:hover{text-decoration:underline}
+.flash{animation:flash 1.6s ease-out}
+@keyframes flash{0%{box-shadow:0 0 0 3px var(--accent)}100%{box-shadow:0 0 0 0 transparent}}
+details>summary{cursor:pointer;list-style:none}
+details>summary::-webkit-details-marker{display:none}
+dl.facts{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0}
+dl.facts dt{font:600 .72rem/1.6 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
+dl.facts dd{margin:0;min-width:0}
+@media (max-width:420px){dl.facts{grid-template-columns:1fr;gap:0}dl.facts dd{margin-bottom:8px}}
+ol.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start}
+ol.steps li::before{content:counter(s);font:600 .8rem/26px var(--f-mono);text-align:center;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--paper)}
+ul.dots{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:5px}
+
+/* ---------- Accueil ---------- */
+.hero{display:flex;flex-direction:column;gap:14px}
+.hero h1{font-size:clamp(2.6rem,11vw,4.4rem);text-transform:uppercase;letter-spacing:.015em;line-height:.92}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lede{font-size:1.06rem;color:var(--ink-2);max-width:56ch}
+.today{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.today>div{background:var(--surface);padding:12px 14px;display:flex;flex-direction:column;gap:3px;min-width:0}
+.today .k{font:600 .68rem/1.2 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.today .v{font:600 1.05rem/1.25 var(--f-mono);font-variant-numeric:tabular-nums}
+.today .s{font-size:.82rem;color:var(--ink-2)}
+.moon{width:26px;height:26px;vertical-align:-7px;margin-right:6px}
+.moon .m-dark{fill:var(--surface-3)}
+.moon .m-lit{fill:var(--ink)}
+.now-grid{display:grid;gap:8px}
+.now-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.now-row .lab{font:600 .72rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);width:100%}
+.idee{font-size:1.02rem;max-width:64ch}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.tile{display:flex;flex-direction:column;gap:8px;padding:14px;border-radius:12px;background:var(--surface);border:1px solid var(--line);text-decoration:none;min-height:96px}
+.tile .ico{color:var(--accent);width:24px;height:24px}
+.tile b{font-family:var(--f-display);font-size:1.15rem;text-transform:uppercase;letter-spacing:.03em}
+.tile span{font-size:.82rem;color:var(--ink-2);line-height:1.35}
+.tile:hover{border-color:var(--ink-3)}
+.golden{counter-reset:g;display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.golden li{display:flex;gap:10px;align-items:baseline}
+.golden li::before{counter-increment:g;content:counter(g,decimal-leading-zero);font:600 .78rem var(--f-mono);color:var(--accent)}
+
+/* ---------- Espèces ---------- */
+.toolbar{display:flex;flex-direction:column;gap:10px}
+.search{display:flex;align-items:center;gap:8px;border:1px solid var(--line-2);background:var(--surface);border-radius:10px;padding:0 12px}
+.search input{border:0;background:transparent;font:inherit;font-size:16px;padding:11px 0;width:100%;color:var(--ink);min-width:0}
+.search input:focus{outline:none}
+.search:focus-within{outline:3px solid var(--accent);outline-offset:1px}
+.segs{display:inline-flex;border:1px solid var(--line-2);border-radius:10px;overflow:hidden;background:var(--surface);align-self:flex-start}
+.segs button{border:0;background:transparent;padding:10px 14px;font-weight:700;font-size:.9rem;cursor:pointer;color:var(--ink-2)}
+.segs button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.sp-list{display:grid;gap:10px}
+.sp{background:var(--surface);border:1px solid var(--line);border-radius:12px;scroll-margin-top:84px}
+.sp>summary{padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.sp-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.sp-name{font-family:var(--f-display);font-weight:700;font-size:1.45rem;text-transform:uppercase;letter-spacing:.02em;line-height:1}
+.sp-sub{font-size:.84rem;color:var(--ink-2);margin-top:4px}
+.sp-sub i{font-family:var(--f-body)}
+.sp-badges{display:flex;flex-wrap:wrap;gap:5px;justify-content:flex-end}
+.sp-now{font:600 .74rem var(--f-mono);letter-spacing:.04em}
+.sp-now.l3{color:var(--lvl-3)} .sp-now.l2{color:var(--ink)} .sp-now.l1,.sp-now.l0{color:var(--ink-3)}
+.chev{width:18px;height:18px;transition:transform .2s;color:var(--ink-3)}
+.sp[open] .chev{transform:rotate(180deg)}
+.strip{display:grid;grid-template-columns:repeat(12,1fr);gap:3px}
+.strip i{height:9px;border-radius:2px;background:var(--lvl-0)}
+.strip i.l1{background:var(--lvl-1)} .strip i.l2{background:var(--lvl-2)} .strip i.l3{background:var(--lvl-3)}
+.strip i.now{box-shadow:0 0 0 2px var(--paper),0 0 0 4px var(--accent)}
+.strip-m{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;font:500 .6rem var(--f-mono);color:var(--ink-3);text-align:center;margin-top:3px}
+.sp-body{padding:0 16px 16px;display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--line);padding-top:14px}
+.sp-body h4{margin:0 0 3px;font:600 .72rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.sp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.cal-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table.cal{border-collapse:separate;border-spacing:3px;min-width:640px;width:100%}
+.cal th{font:600 .7rem var(--f-mono);color:var(--ink-3);padding:6px 0;text-align:center}
+.cal th.sp-h{text-align:left;font:700 .86rem var(--f-body);color:var(--ink);padding:4px 8px;white-space:nowrap;position:sticky;left:0;background:var(--surface);z-index:1}
+.cal td{height:26px;border-radius:4px;background:var(--lvl-0);text-align:center;font:600 .62rem var(--f-mono);color:var(--ink-3)}
+.cal td.l1{background:var(--lvl-1);color:var(--ink-2)} .cal td.l2{background:var(--lvl-2);color:var(--ink)} .cal td.l3{background:var(--lvl-3);color:var(--lvl-ink)}
+.cal .now{box-shadow:inset 0 0 0 2px var(--accent)}
+.cal th.now{color:var(--accent);box-shadow:none}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.82rem;color:var(--ink-2);align-items:center}
+.legend i{display:inline-block;width:16px;height:12px;border-radius:3px;vertical-align:-2px;margin-right:5px}
+.ban-list{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.ban{padding:14px;border-radius:12px;background:var(--restrict-soft);display:flex;flex-direction:column;gap:5px}
+.ban b{font-family:var(--f-display);font-size:1.2rem;text-transform:uppercase;letter-spacing:.02em;color:var(--restrict)}
+
+/* ---------- Techniques ---------- */
+.tech{padding:16px;display:flex;flex-direction:column;gap:12px;scroll-margin-top:84px}
+.tech-head{display:flex;flex-direction:column;gap:6px}
+.tech-head h3{font-size:1.5rem;text-transform:uppercase;letter-spacing:.02em}
+.tech details{border-top:1px solid var(--line);padding-top:10px}
+.tech details>summary{display:flex;align-items:center;justify-content:space-between;font-weight:700;padding:2px 0}
+.tech details[open]>summary .chev{transform:rotate(180deg)}
+.tech details>div{padding-top:10px;display:flex;flex-direction:column;gap:10px}
+.flyer{background:var(--surface-2);border-radius:10px;padding:12px 14px}
+.flyer b{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:4px}
+
+/* ---------- Schémas de montage ---------- */
+.rig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px}
+.rig{padding:14px;display:flex;flex-direction:column;gap:8px;scroll-margin-top:84px}
+.rig svg{width:100%;max-width:400px;height:auto;display:block}
+.rg-line{stroke:var(--ink-2);stroke-width:2;fill:none}
+.rg-leader{stroke:var(--accent);stroke-width:2.2;fill:none}
+.rg-metal{fill:none;stroke:var(--ink);stroke-width:1.8}
+.rg-gear{fill:var(--surface-2);stroke:var(--ink);stroke-width:1.6}
+.rg-knot{fill:var(--accent);stroke:var(--surface);stroke-width:1.5}
+.rg-bead{fill:var(--accent)}
+.rg-stop{stroke:var(--accent);stroke-width:2.4;fill:none}
+.rg-sink{fill:var(--ink-3);stroke:var(--ink);stroke-width:1.2}
+.rg-hook{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.rg-lure{fill:var(--lvl-2);stroke:var(--ink);stroke-width:1.4}
+.rg-soft{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.4}
+.rg-head{fill:var(--ink-3);stroke:var(--ink);stroke-width:1.2}
+.rg-eye{fill:var(--ink)}
+.rg-float-top{fill:var(--accent);stroke:var(--ink);stroke-width:1.2}
+.rg-float-bot{fill:var(--surface);stroke:var(--ink);stroke-width:1.2}
+.rg-water{stroke:var(--lvl-2);stroke-width:2;fill:none}
+.rg-lbl{font-family:var(--f-body);font-size:12.5px;fill:var(--ink)}
+.rg-lead{stroke:var(--line-2);stroke-width:1;stroke-dasharray:2 3;fill:none}
+.rg-sea{fill:var(--map-sea)}
+.rg-bed{fill:var(--map-land);stroke:var(--map-land-line);stroke-width:1}
+.rg-buoy{fill:var(--accent);stroke:var(--ink);stroke-width:1.4}
+.rg-small{font-family:var(--f-mono);font-size:11px;fill:var(--ink-2)}
+
+/* ---------- Nœuds ---------- */
+.which{width:100%;border-collapse:collapse;font-size:.92rem}
+.which td{padding:9px 10px;border-top:1px solid var(--line);vertical-align:top}
+.which tr:first-child td{border-top:0}
+.which td:first-child{color:var(--ink-2)}
+.which a{font-weight:700;color:var(--accent);text-decoration:none;white-space:nowrap}
+.knot{padding:16px;display:flex;flex-direction:column;gap:12px;scroll-margin-top:84px}
+.knot-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.knot-head h3{font-size:1.45rem;text-transform:uppercase;letter-spacing:.02em}
+.lvl{display:inline-flex;gap:3px;align-items:center;font:600 .72rem var(--f-mono);color:var(--ink-3)}
+.lvl i{width:8px;height:8px;border-radius:50%;background:var(--line-2)}
+.lvl i.on{background:var(--accent)}
+.anat{width:100%;max-width:560px;height:auto;display:block}
+.an-ring{fill:none;stroke:var(--ink-3);stroke-width:5}
+.an-main{fill:none;stroke:var(--ink);stroke-width:4;stroke-linecap:round}
+.an-tag{fill:none;stroke:var(--accent);stroke-width:4;stroke-linecap:round}
+.an-back{fill:none;stroke:var(--accent);stroke-width:4;stroke-linecap:round;opacity:.35}
+.an-txt{font-family:var(--f-body);font-size:12.5px;fill:var(--ink-2)}
+.an-txt.b{font-weight:700;fill:var(--ink)}
+
+/* ---------- Carte des zones ---------- */
+.map-tools{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.map-wrap{border:1px solid var(--line);border-radius:12px;overflow:auto;background:var(--map-sea);-webkit-overflow-scrolling:touch}
+.map-wrap svg{display:block;width:100%;height:auto}
+.map-wrap.zoom svg{width:230%;max-width:none}
+.m-land{fill:var(--map-land);stroke:var(--map-land-line);stroke-width:1.4}
+.m-band{fill:none;stroke:var(--map-band);stroke-width:34;stroke-linejoin:round;stroke-linecap:round}
+.m-grid{stroke:var(--map-grid);stroke-width:1;stroke-dasharray:3 7;fill:none}
+.m-frame{fill:none;stroke:var(--ink-3);stroke-width:2}
+.m-tick{font-family:var(--f-mono);font-size:15px;fill:var(--ink-3)}
+.m-town{font-family:var(--f-display);font-weight:700;font-size:25px;letter-spacing:.06em;text-transform:uppercase;fill:var(--ink)}
+.m-isle{font-family:var(--f-display);font-weight:700;font-size:19px;letter-spacing:.04em;text-transform:uppercase;fill:var(--ink)}
+.m-water{font-family:var(--f-body);font-style:italic;font-size:26px;fill:var(--ink-2)}
+.m-water.s{font-size:17px}
+.m-ban{fill:url(#hatch);stroke:var(--restrict);stroke-width:2.2}
+.m-hatch{stroke:var(--restrict);stroke-width:3;opacity:.6}
+.m-zmp{fill:none;stroke:var(--restrict);stroke-width:2.4;stroke-dasharray:6 5}
+.m-bantxt{font-family:var(--f-body);font-weight:700;font-size:17px;fill:var(--restrict)}
+.m-beacon{fill:var(--ink)}
+.m-beacon2{fill:var(--accent)}
+.mk{cursor:pointer}
+.mk circle{stroke:var(--paper);stroke-width:3}
+.mk text{font-family:var(--f-mono);font-weight:600;font-size:21px;fill:var(--paper);text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.mk.bord circle{fill:var(--accent)} .mk.bateau circle{fill:var(--ink)} .mk.deux circle{fill:var(--ok)}
+.mk.dim{opacity:.22}
+.mk.sel circle{stroke:var(--accent);stroke-width:5}
+.mk:focus-visible circle{stroke:var(--accent);stroke-width:6}
+.m-scale{stroke:var(--ink);stroke-width:3}
+.m-scaletxt{font-family:var(--f-mono);font-size:15px;fill:var(--ink)}
+.m-north{fill:var(--ink)}
+.dotk{display:inline-block;width:14px;height:14px;border-radius:50%;vertical-align:-2px;margin-right:6px}
+.zone-list{display:grid;gap:10px}
+.zone{padding:16px;display:flex;flex-direction:column;gap:10px;scroll-margin-top:84px}
+.zone-head{display:flex;gap:12px;align-items:flex-start}
+.znum{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:600 .95rem var(--f-mono)}
+.znum.bord{background:var(--accent);color:var(--on-accent)} .znum.bateau{background:var(--ink);color:var(--paper)} .znum.deux{background:var(--ok);color:var(--on-ok)}
+.zone-head h3{font-size:1.35rem;text-transform:uppercase;letter-spacing:.02em}
+.zone-head p{font-size:.86rem;color:var(--ink-2)}
+.zone.sel{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.zone[hidden]{display:none!important}
+
+/* ---------- Règles ---------- */
+.rules{display:grid;gap:10px}
+.rule{padding:16px;display:flex;flex-direction:column;gap:8px}
+.rule h3{font-size:1.3rem;text-transform:uppercase;letter-spacing:.02em}
+.ruler-box{padding:14px;display:flex;flex-direction:column;gap:10px}
+.ruler-box svg{width:100%;height:auto;display:block}
+.ru-body{fill:var(--warn-soft);stroke:var(--warn);stroke-width:1.2}
+.ru-tick{stroke:var(--ink);stroke-width:1}
+.ru-num{font:600 17px var(--f-mono);fill:var(--ink)}
+.ru-out{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.ru-out strong{font-family:var(--f-display);font-size:1.5rem;text-transform:uppercase;letter-spacing:.02em}
+.ru-out span{font:600 .85rem var(--f-mono);color:var(--accent)}
+.ru-fish{fill:var(--lvl-2);stroke:var(--ink);stroke-width:1.2}
+.ru-fishg{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.ru-end{stroke:var(--accent);stroke-width:2.5}
+.ru-lbl{font:700 15px var(--f-body);fill:var(--ink)}
+.ru-lbl2{font:600 13px var(--f-mono);fill:var(--accent)}
+.ru-notch{fill:var(--ink-3)}
+.size-table{width:100%;border-collapse:collapse;font-size:.92rem}
+.size-table td{padding:7px 8px;border-top:1px solid var(--line)}
+.size-table td:last-child{text-align:right;font:600 .9rem var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.size-table tr.sel td{background:var(--surface-2)}
+.size-table button{all:unset;cursor:pointer;font-weight:700}
+.size-table button:focus-visible{outline:3px solid var(--accent)}
+.cols2{columns:2 260px;column-gap:24px}
+.src{display:flex;flex-direction:column;gap:6px;font-size:.88rem}
+
+/* ---------- Carnet ---------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.stat{padding:12px 14px;display:flex;flex-direction:column;gap:3px;min-width:0}
+.stat .k{font:600 .68rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.stat .v{font-family:var(--f-display);font-weight:700;font-size:1.9rem;line-height:1;font-variant-numeric:tabular-nums;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.stat .v.t{font-size:1.25rem}
+.form{padding:16px;display:flex;flex-direction:column;gap:14px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}
+.field{display:flex;flex-direction:column;gap:5px;min-width:0}
+.field>label,.field>.lab{font-weight:700;font-size:.85rem}
+.field input,.field select,.field textarea{font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--line-2);border-radius:9px;background:var(--surface);color:var(--ink);width:100%;min-width:0}
+.field textarea{min-height:76px;resize:vertical}
+.radio-seg{display:flex;border:1px solid var(--line-2);border-radius:9px;overflow:hidden}
+.radio-seg label{flex:1;text-align:center;padding:10px 6px;font-weight:700;font-size:.9rem;cursor:pointer;color:var(--ink-2)}
+.radio-seg input{position:absolute;opacity:0;pointer-events:none}
+.radio-seg input:checked+span{color:var(--paper)}
+.radio-seg label:has(input:checked){background:var(--ink);color:var(--paper)}
+.radio-seg label:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:-3px}
+.alerts{display:flex;flex-direction:column;gap:6px}
+.entries{display:flex;flex-direction:column;gap:14px}
+.day{display:flex;flex-direction:column;gap:6px}
+.day-h{font:600 .74rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.entry{padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.entry-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.entry-t{font-family:var(--f-display);font-weight:700;font-size:1.25rem;text-transform:uppercase;letter-spacing:.02em}
+.entry-m{font:500 .82rem var(--f-mono);color:var(--ink-2);font-variant-numeric:tabular-nums}
+.entry-actions{display:flex;gap:6px;flex-wrap:wrap}
+.linkbtn{border:0;background:transparent;color:var(--accent);font-weight:700;cursor:pointer;padding:6px 4px;font-size:.88rem}
+.empty{padding:18px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.preview{opacity:.75;border-style:dashed;width:100%}
+.status{font-size:.9rem}
+
+/* ---------- Quiz ---------- */
+.quiz{padding:18px;display:flex;flex-direction:column;gap:14px}
+.q-top{display:flex;justify-content:space-between;font:600 .78rem var(--f-mono);color:var(--ink-3);letter-spacing:.04em}
+.q-bar{height:6px;border-radius:3px;background:var(--surface-2);overflow:hidden}
+.q-bar i{display:block;height:100%;background:var(--accent);transition:width .3s}
+.q-q{font-family:var(--f-body);font-size:1.2rem;font-weight:700;line-height:1.35;text-transform:none}
+.q-opts{display:grid;gap:8px}
+.q-opt{text-align:left;padding:13px 14px;border-radius:10px;border:1px solid var(--line-2);background:var(--surface);font-weight:700;cursor:pointer;min-height:48px}
+.q-opt:hover:not([disabled]){border-color:var(--ink)}
+.q-opt.good{background:var(--ok-soft);border-color:var(--ok);color:var(--ink)}
+.q-opt.bad{background:var(--restrict-soft);border-color:var(--restrict)}
+.q-opt[disabled]{cursor:default}
+.q-exp{display:flex;flex-direction:column;gap:10px}
+.q-end{text-align:left;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.q-score{font-family:var(--f-display);font-weight:700;font-size:4rem;line-height:.9}
+
+/* ---------- Checklist ---------- */
+.ck-prog{display:flex;align-items:center;gap:12px}
+.ck-prog .bar{flex:1;height:8px;border-radius:4px;background:var(--surface-2);overflow:hidden}
+.ck-prog .bar i{display:block;height:100%;background:var(--ok);transition:width .25s}
+.ck-group{padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.ck-group h3{font-size:1.15rem;text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px}
+.ck-item{display:flex;gap:12px;align-items:flex-start;padding:8px 0;cursor:pointer;border-top:1px solid var(--line)}
+.ck-item:first-of-type{border-top:0}
+.ck-item input{width:22px;height:22px;margin:1px 0 0;accent-color:var(--ok);flex:none}
+.ck-item.done span{color:var(--ink-3);text-decoration:line-through}
+
+/* ---------- Glossaire / matériel / sécurité ---------- */
+dl.glos{margin:0;display:grid;gap:0}
+dl.glos div{padding:11px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:12px}
+dl.glos dt{font-weight:700}
+dl.glos dd{margin:0;color:var(--ink-2)}
+@media (max-width:520px){dl.glos div{grid-template-columns:1fr;gap:2px}}
+.kit{padding:16px;display:flex;flex-direction:column;gap:10px}
+.kit-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.kit-head h3{font-size:1.35rem;text-transform:uppercase;letter-spacing:.02em}
+.kit table{width:100%;border-collapse:collapse;font-size:.92rem}
+.kit td{padding:7px 0;border-top:1px solid var(--line);vertical-align:top}
+.kit td:last-child{text-align:right;font:600 .86rem var(--f-mono);white-space:nowrap;padding-left:12px;font-variant-numeric:tabular-nums}
+.kit .tot td{font-weight:700;border-top:2px solid var(--ink)}
+.budget{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.budget .card{padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.budget .v{font-family:var(--f-display);font-weight:700;font-size:1.9rem;line-height:1}
+.sos{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px}
+.sos .card{padding:14px 16px;display:flex;flex-direction:column;gap:2px}
+.sos .n{font-family:var(--f-display);font-weight:700;font-size:2.3rem;line-height:1;color:var(--restrict)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 14px);z-index:60;background:var(--ink);color:var(--paper);padding:11px 16px;border-radius:10px;font-weight:700;box-shadow:var(--shadow);max-width:calc(100% - 32px)}
+@media (min-width:960px){.toast{bottom:24px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="#accueil" data-nav="accueil" aria-label="Accueil">
+      <svg class="brand-mark" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M17 4.5l3 12.5-3 12.5-3-12.5z" fill="var(--accent)"/><path d="M4.5 17l12.5-2.2 12.5 2.2-12.5 2.2z" fill="currentColor" opacity=".55"/></svg>
+      <span class="brand-txt"><span class="brand-name">Golfe de la Napoule</span><span class="brand-sub">Pêche · Théoule · Cannes · Lérins · large</span></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sheet"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Menu</button>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="sidenav" id="sidenav" aria-label="Sections"></nav>
+  <main id="main">
+    <section class="view" data-view="accueil" id="v-accueil"></section>
+    <section class="view" data-view="especes" id="v-especes" hidden></section>
+    <section class="view" data-view="techniques" id="v-techniques" hidden></section>
+    <section class="view" data-view="noeuds" id="v-noeuds" hidden></section>
+    <section class="view" data-view="zones" id="v-zones" hidden></section>
+    <section class="view" data-view="carnet" id="v-carnet" hidden></section>
+    <section class="view" data-view="regles" id="v-regles" hidden></section>
+    <section class="view" data-view="checklist" id="v-checklist" hidden></section>
+    <section class="view" data-view="quiz" id="v-quiz" hidden></section>
+    <section class="view" data-view="materiel" id="v-materiel" hidden></section>
+    <section class="view" data-view="securite" id="v-securite" hidden></section>
+    <section class="view" data-view="glossaire" id="v-glossaire" hidden></section>
+  </main>
+</div>
+
+<nav class="tabbar" aria-label="Navigation principale"><div class="tabbar-in" id="tabbar"></div></nav>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <div class="sheet-head"><h2 id="sheetTitle">Toutes les sections</h2><button class="icon-btn" id="sheetClose" aria-label="Fermer le menu"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <div class="sheet-grid" id="sheetGrid"></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+(function(){
+"use strict";
+
+/* =====================================================================
+   Outils
+   ===================================================================== */
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const MOIS=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+const M1=["J","F","M","A","M","J","J","A","S","O","N","D"];
+const NOW=new Date();
+const MON=NOW.getMonth();
+const REDUCE=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const pad2=n=>String(n).padStart(2,"0");
+const isoDate=d=>d.getFullYear()+"-"+pad2(d.getMonth()+1)+"-"+pad2(d.getDate());
+const hhmm=d=>pad2(d.getHours())+":"+pad2(d.getMinutes());
+let toastTimer=null;
+function toast(msg){const t=$("#toast");t.textContent=msg;t.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>{t.hidden=true},2600)}
+
+const ICON={
+ compass:'<circle cx="12" cy="12" r="9"/><path d="M15.6 8.4l-2.1 5.1-5.1 2.1 2.1-5.1z"/>',
+ fish:'<path d="M2.5 12c2.6-4.3 8.6-6 13.2-2.6L20.5 6v12l-4.8-3.4C11.1 18 5.1 16.3 2.5 12z"/><circle cx="7.3" cy="11.2" r=".9" fill="currentColor"/>',
+ rod:'<path d="M4 20L18 4"/><path d="M18 4c1.5 3 1.8 6.5.6 9.5"/><path d="M18.6 13.5v3.2a2.3 2.3 0 0 1-4.6 0v-.7"/><circle cx="6.8" cy="17.2" r="1.7"/>',
+ knot:'<path d="M3 15c4 0 5-7 9-7a3.5 3.5 0 0 1 0 7c-4 0-5-7-9-7"/><path d="M15.5 11.5H21"/>',
+ pin:'<path d="M12 21s6.5-6 6.5-11.2a6.5 6.5 0 1 0-13 0C5.5 15 12 21 12 21z"/><circle cx="12" cy="9.6" r="2.4"/>',
+ book:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7.5h6M9 11h6M9 14.5h3.5"/>',
+ scale:'<path d="M12 4v16M6 20h12M5 8h14"/><path d="M5 8l-2.5 5.5h5zM19 8l-2.5 5.5h5z"/>',
+ check:'<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12.3l2.7 2.7L16 9.6"/>',
+ quiz:'<circle cx="12" cy="12" r="9"/><path d="M9.7 9.5a2.4 2.4 0 1 1 3.4 2.2c-.7.4-1.1.9-1.1 1.7v.4"/><circle cx="12" cy="16.8" r=".8" fill="currentColor"/>',
+ bag:'<path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/>',
+ buoy:'<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/><path d="M6 6l3.5 3.5M18 6l-3.5 3.5M6 18l3.5-3.5M18 18l-3.5-3.5"/>',
+ abc:'<path d="M3.5 17l3.5-10 3.5 10M4.8 13.5h4.4"/><path d="M14 7h3.2a2.4 2.4 0 0 1 0 4.8H14zM14 11.8h3.8a2.6 2.6 0 0 1 0 5.2H14z"/>',
+ ext:'<path d="M14 5h5v5M19 5l-8 8"/><path d="M18 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4"/>',
+ warn:'<path d="M12 3.5l9 16H3z"/><path d="M12 10v4.5"/><circle cx="12" cy="17" r=".8" fill="currentColor"/>',
+ info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v5.5"/><circle cx="12" cy="7.8" r=".9" fill="currentColor"/>',
+ ok:'<circle cx="12" cy="12" r="9"/><path d="M8 12.4l2.8 2.8L16.2 9.6"/>',
+ plus:'<path d="M12 5v14M5 12h14"/>',
+ search:'<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>',
+ chev:'<path d="M6 9l6 6 6-6"/>',
+ zoom:'<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5M8.5 11h5M11 8.5v5"/>',
+ dl:'<path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 19.5h14"/>'
+};
+const ico=(n,c)=>'<svg class="ico'+(c?" "+c:"")+'" viewBox="0 0 24 24" aria-hidden="true">'+(ICON[n]||"")+"</svg>";
+const extLink=(href,txt)=>'<a class="ext" href="'+esc(href)+'" target="_blank" rel="noopener">'+esc(txt)+ico("ext")+"</a>";
+const gmaps=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
+
+/* =====================================================================
+   Navigation
+   ===================================================================== */
+const NAV=[
+ {id:"accueil",label:"Accueil",tab:"Accueil",icon:"compass",desc:"Le jour, la lune, ce qui mord ce mois-ci"},
+ {id:"especes",label:"Espèces",tab:"Espèces",icon:"fish",desc:"19 fiches, mailles et calendrier"},
+ {id:"techniques",label:"Techniques",tab:"Pêches",icon:"rod",desc:"Traîne, poste, dérive, lancer, turlutte…"},
+ {id:"noeuds",label:"Nœuds & montages",tab:"Nœuds",icon:"knot",desc:"12 nœuds pas à pas, 9 montages"},
+ {id:"zones",label:"Zones",tab:"Zones",icon:"pin",desc:"Carte de Théoule aux Lérins et au large"},
+ {id:"carnet",label:"Carnet de prises",tab:"Carnet",icon:"book",desc:"Tes sorties, sauvegardées"},
+ {id:"regles",label:"Règles 2026",icon:"scale",desc:"Mailles, marquage, RecFishing, interdits"},
+ {id:"checklist",label:"Checklist",icon:"check",desc:"Avant de partir en mer ou au bord"},
+ {id:"quiz",label:"Quiz",icon:"quiz",desc:"QCM pour apprendre"},
+ {id:"materiel",label:"Matériel & budget",icon:"bag",desc:"Quoi acheter en partant de zéro"},
+ {id:"securite",label:"Sécurité & météo",icon:"buoy",desc:"Urgences, vent, armement, piqûres"},
+ {id:"glossaire",label:"Glossaire",icon:"abc",desc:"Les mots de la pêche, expliqués simplement"}
+];
+const VIEW_IDS=NAV.map(n=>n.id);
+
+/* =====================================================================
+   Données : espèces
+   g : pred = prédateurs côtiers, pela = pélagiques, fond = fonds et sparidés, cepha = céphalopodes
+   cal : 0 rare, 1 possible, 2 bon, 3 pleine saison (tendances Côte d'Azur)
+   ===================================================================== */
+const SP=[
+ {id:"loup",nom:"Loup",alias:"bar commun",latin:"Dicentrarchus labrax",g:"pred",maille:30,marque:true,
+  cal:[2,2,2,2,1,1,1,1,2,3,3,3],
+  rec:"Corps argenté et allongé, dos gris-bleu, grande bouche, tache sombre au bord des ouïes. Deux nageoires bien séparées sur le dos.",
+  ou:"Rochers battus par les vagues, embouchure de la Siagne, plages après un coup de mer, sorties de port.",prof:"0–15 m",
+  quand:"Automne et hiver surtout. Aube, crépuscule et nuit. Le top : mer un peu agitée, ou eau teintée après la pluie.",
+  tech:["lancer","surfcasting","traine-cotiere","vif"],
+  app:"Leurres : poisson nageur 9–14 cm, leurre souple 10–12 cm, stickbait. Appâts : vers (américain, néréis), sardine, crevette, petit mulet vivant.",
+  astuce:"Cherche-le quand l'écume blanchit le pied des rochers, et ramène lentement. Par mer d'huile et eau claire, il se méfie : vise la nuit.",
+  att:"Épines aux ouïes et sur le dos : tiens-le par la mâchoire du bas. Il se reproduit en hiver : garde les gros avec modération.",
+  zones:["siagne","plages","ports","aiguille","esterel","croisette","marguerite"]},
+ {id:"dorade",nom:"Dorade royale",alias:"daurade",latin:"Sparus aurata",g:"fond",maille:23,marque:true,
+  cal:[1,1,1,2,2,2,2,2,3,3,2,1],
+  rec:"Bandeau doré entre les yeux, tache noire en haut des ouïes, corps ovale argenté. Grosses dents qui broient les coquillages.",
+  ou:"Fonds mixtes sable et roche, bords d'herbier, plages, embouchures.",prof:"2–40 m",
+  quand:"Septembre à novembre : elle mange beaucoup avant de partir se reproduire plus au large en hiver.",
+  tech:["surfcasting","mouillage","flotteur","derive"],
+  app:"Vers (américain, coréen), bibi, moule, crabe, crevette, couteau. Hameçons solides n°2 à 1/0 : sa bouche est dure.",
+  astuce:"La touche arrive souvent en deux temps : petites tirées, puis départ franc. Ferre au départ.",
+  att:"Gros coups de tête au combat : frein réglé, pas bloqué.",
+  zones:["siagne","plages","golfe","marguerite","milieu"]},
+ {id:"bonite",nom:"Bonite",alias:"pélamide en Provence",latin:"Sarda sarda",g:"pela",maille:null,marque:true,
+  cal:[0,0,1,2,2,2,2,2,3,3,3,2],
+  rec:"Petit thon en fuseau, dos bleu barré de lignes sombres obliques, ventre argenté, petites dents.",
+  ou:"Pleine eau, au large et parfois dans le golfe, là où les oiseaux plongent sur les bancs d'anchois et de sardines.",prof:"Surface – 30 m",
+  quand:"Automne (septembre à novembre) et printemps. Tôt le matin surtout.",
+  tech:["traine-large","lancer"],
+  app:"Traîne : plumes, petits poissons nageurs, cuillers. Lancer : casting jig 20–40 g ou stickbait, ramené vite.",
+  astuce:"Ne traverse pas la chasse : longe son bord, ou coupe le moteur avant et lance.",
+  att:"Saigne-la et mets-la tout de suite dans la glace : sa chair supporte mal la chaleur.",
+  zones:["golfe","honorat","large"]},
+ {id:"thonine",nom:"Thonine",alias:"thonine commune",latin:"Euthynnus alletteratus",g:"pela",maille:null,marque:false,
+  cal:[0,0,0,0,1,1,2,3,3,3,2,1],
+  rec:"Petit thon trapu, lignes ondulées seulement sur l'arrière du dos, quelques points noirs sous la nageoire de côté.",
+  ou:"Au large et sur les chasses, parfois près des pointes.",prof:"Surface – 20 m",
+  quand:"Fin d'été et automne (août à novembre).",
+  tech:["traine-large","lancer"],
+  app:"Petites plumes, poissons nageurs 7–11 cm, casting jigs 20–40 g ramenés très vite.",
+  astuce:"Plus méfiante que la bonite : bas de ligne fluorocarbone fin (35–40/100) et petits leurres.",
+  att:"Combat puissant : fil en bon état et frein bien réglé.",
+  zones:["honorat","large"]},
+ {id:"liche",nom:"Liche amie",alias:"liche",latin:"Lichia amia",g:"pred",maille:null,marque:false,
+  cal:[1,0,0,1,1,1,1,2,3,3,3,2],
+  rec:"Grand poisson argenté et haut, ligne latérale en vague, petites épines devant la nageoire du dos. Peut dépasser 10 kg.",
+  ou:"Près des pointes rocheuses, où elle chasse mulets, saupes et sévereaux.",prof:"Surface – 20 m",
+  quand:"Automne surtout (septembre à décembre).",
+  tech:["vif","lancer","traine-cotiere"],
+  app:"Le mieux : mulet ou sévereau vivant. Sinon stickbaits et poissons nageurs de 12–18 cm.",
+  astuce:"Au vif, laisse-la partir quelques secondes avec le poisson avant de ferrer.",
+  att:"Très puissante : nœuds parfaits, frein solide. Épines dorsales coupantes.",
+  zones:["aiguille","esterel","croisette","marguerite"]},
+ {id:"denti",nom:"Denti",alias:"denté",latin:"Dentex dentex",g:"pred",maille:null,marque:true,repro:[3,4,5],
+  cal:[1,1,2,1,1,1,2,2,3,3,2,1],
+  rec:"Sparidé massif bleu-rosé à petits points bleus, grandes canines à l'avant. Les gros ont une bosse sur le front.",
+  ou:"Têtes de roche et tombants : sud de Saint-Honorat, côte de l'Estérel, La Fourmigue.",prof:"15–100 m",
+  quand:"Toute l'année ; mieux en mars et en automne. Lever et coucher du soleil.",
+  tech:["vif","jig","traine-cotiere"],
+  app:"Calamar vivant (le meilleur), sévereau, girelle. Leurres : fireball, leurre souple 12–15 cm, jig.",
+  astuce:"Trouve les têtes de roche au sondeur, marque-les au GPS et repasse dessus en dérive lente.",
+  att:"Il se reproduit d'avril à juin : laisse-le tranquille. Dents redoutables : pince obligatoire.",
+  zones:["esterel","honorat","fourmigue"]},
+ {id:"seriole",nom:"Sériole",alias:"limon",latin:"Seriola dumerili",g:"pela",maille:null,marque:false,
+  cal:[0,0,0,0,0,1,1,2,3,3,2,1],
+  rec:"Grand poisson allongé, dos bleu-vert, bande ambrée le long du flanc, bande sombre en travers de l'œil.",
+  ou:"Têtes de roche, tombants, épaves et objets flottants.",prof:"Surface – 100 m",
+  quand:"Fin d'été et automne (août à novembre).",
+  tech:["vif","jig"],
+  app:"Calamar ou sévereau vivant, jigs 60–150 g, stickbaits.",
+  astuce:"Les petites tournent en bande autour des objets flottants : un leurre lancé à côté suffit souvent.",
+  att:"Elle fonce vers le fond à la touche : serre le frein tout de suite pour l'éloigner des roches.",
+  zones:["honorat","large","fourmigue"]},
+ {id:"pagre",nom:"Pagre",alias:"pagre commun",latin:"Pagrus pagrus",g:"fond",maille:18,marque:true,
+  cal:[2,2,2,2,2,1,1,1,2,2,2,2],
+  rec:"Sparidé rose-rouge à reflets argentés, petits points bleus, front arrondi, bouts de queue blancs.",
+  ou:"Fonds rocheux et mixtes.",prof:"20–80 m",
+  quand:"Toute l'année ; l'hiver, au calamar en appât jusqu'à 60 m.",
+  tech:["derive","mouillage","jig"],
+  app:"Calamar en lanières, crevette, sardine. Tenya garni d'une crevette, petits jigs.",
+  astuce:"Au tenya : touche le fond, remonte d'un mètre, attends. Ferre fort, sa bouche est dure.",
+  att:"",
+  zones:["esterel","honorat","fourmigue"]},
+ {id:"sar",nom:"Sar commun",alias:"sar",latin:"Diplodus sargus",g:"fond",maille:23,marque:true,mailleNote:"sar à tête noire et sar à museau pointu : 18 cm",
+  cal:[3,3,2,2,1,1,1,1,2,2,3,3],
+  rec:"Argenté avec 8–9 bandes verticales sombres (nettes chez les jeunes) et une tache noire sur la queue.",
+  ou:"Rochers battus, digues, sorties de port, herbiers. Adore l'écume quand la mer est formée.",prof:"0–30 m",
+  quand:"Toute l'année ; top en automne et en hiver par mer agitée.",
+  tech:["flotteur","mouillage","derive"],
+  app:"Moule, crevette, ver, sardine. Un peu de broumé ou de pain trempé pour attirer.",
+  astuce:"Pêche dans le blanc de l'écume au pied des rochers, avec un flotteur et très peu de plomb.",
+  att:"Rochers glissants par mer formée : jamais seul, jamais au ras des vagues.",
+  zones:["ports","aiguille","esterel","croisette","marguerite","milieu"]},
+ {id:"marbre",nom:"Marbré",alias:"morme",latin:"Lithognathus mormyrus",g:"fond",maille:20,marque:false,
+  cal:[0,0,0,1,2,3,3,3,3,2,1,0],
+  rec:"Argenté à fines rayures verticales grises, museau pointu.",
+  ou:"Plages de sable, souvent dans très peu d'eau.",prof:"0–10 m",
+  quand:"Été et début d'automne, la nuit.",
+  tech:["surfcasting"],
+  app:"Vers (néréis, américain) sur petit hameçon fin n°4 à 6.",
+  astuce:"Lance à 30–50 m seulement : il mange tout près du bord.",
+  att:"",
+  zones:["siagne","plages"]},
+ {id:"dorade-grise",nom:"Dorade grise",alias:"griset",latin:"Spondyliosoma cantharus",g:"fond",maille:23,marque:false,
+  cal:[1,1,2,3,3,2,1,1,1,1,1,1],
+  rec:"Sparidé gris argenté avec de fines lignes le long du corps, petite bouche.",
+  ou:"Fonds rocheux et mixtes, souvent en bande.",prof:"20–40 m",
+  quand:"Printemps surtout (avril-mai), en groupes de beaux poissons.",
+  tech:["derive","mouillage"],
+  app:"Crevette (au tenya), ver, petits morceaux de calamar.",
+  astuce:"Au printemps, quand tu en prends une, reste sur place : le groupe est en dessous.",
+  att:"",
+  zones:["esterel","golfe","honorat"]},
+ {id:"pageot",nom:"Pageots",alias:"pageot rouge, pageot acarné",latin:"Pagellus erythrinus / P. acarne",g:"fond",maille:"15 / 17",marque:false,mailleNote:"pageot rouge 15 cm, pageot acarné 17 cm",
+  cal:[2,2,2,2,2,2,2,2,2,2,2,2],
+  rec:"Petits sparidés roses à reflets argentés. L'acarné a une tache noire à la base de la nageoire de côté.",
+  ou:"Sable, vase et graviers près des roches.",prof:"20–100 m",
+  quand:"Toute l'année.",
+  tech:["derive","mouillage"],
+  app:"Ver, calamar en lanières, sardine. Montage potence 2–3 hameçons n°4 à 2.",
+  astuce:"Pêche de dérive régulière : parfaite pour débuter en bateau.",
+  att:"Ne le confonds pas avec la dorade rose (tache noire au début de la ligne latérale, gros œil) : 33 cm minimum et déclaration RecFishing obligatoire.",
+  zones:["golfe","honorat"]},
+ {id:"chapon",nom:"Chapon",alias:"rascasse rouge",latin:"Scorpaena scrofa",g:"fond",maille:30,marque:true,
+  cal:[2,2,2,2,2,2,2,2,2,2,2,2],
+  rec:"Rouge-orangé marbré, grosse tête hérissée d'épines, lambeaux de peau sous la mâchoire.",
+  ou:"Roches et éboulis.",prof:"20–100 m",
+  quand:"Toute l'année.",
+  tech:["derive","palangre"],
+  app:"Sardine, calamar, petit poisson.",
+  astuce:"Il reste collé au fond : pêche au ras des roches.",
+  att:"Épines venimeuses : gants et pince. En cas de piqûre : eau très chaude sans te brûler, puis avis médical.",
+  zones:["esterel","honorat"]},
+ {id:"maquereau",nom:"Maquereau & chinchards",alias:"sévereau, bogue",latin:"Scomber spp. / Trachurus spp.",g:"pela",maille:"18 / 15",marque:true,mailleNote:"maquereaux 18 cm, chinchards 15 cm ; le maquereau se marque avant le débarquement",
+  cal:[1,1,2,3,3,3,3,2,2,2,1,1],
+  rec:"Maquereau : dos vert-bleu zébré. Chinchard (sévereau) : grandes écailles en ligne le long du flanc. Bogue : petit, gros yeux, lignes dorées.",
+  ou:"Partout : ports, digues, au-dessus des fonds de 10 à 50 m.",prof:"0–50 m",
+  quand:"Printemps et été surtout.",
+  tech:["derive","lancer","vif"],
+  app:"Mitraillette (bas de ligne à petites plumes), petits leurres, morceaux de sardine.",
+  astuce:"Ce sont les meilleurs vifs pour la liche, le denti et la sériole : garde-les vivants dans un seau aéré.",
+  att:"Une mitraillette de 6 plumes compte 6 hameçons dans la limite de 12 pour tout le bateau.",
+  zones:["ports","golfe","marguerite","large"]},
+ {id:"calamar",nom:"Calamar",alias:"encornet",latin:"Loligo vulgaris",g:"cepha",maille:null,marque:false,
+  cal:[3,3,2,1,0,0,0,0,1,2,3,3],
+  rec:"Corps en tube avec deux nageoires en losange au bout, 10 tentacules. Encre noire !",
+  ou:"Ports et digues éclairés la nuit, pointes rocheuses, herbiers peu profonds ; au large en hiver.",prof:"1–60 m",
+  quand:"De l'automne à la fin de l'hiver, la nuit et au crépuscule. Les guides de Mandelieu le traquent de mi-novembre à début mars.",
+  tech:["turlutte"],
+  app:"Turluttes taille 2.5 à 3.5. Couleurs naturelles de jour, lumineuses ou fluo la nuit.",
+  astuce:"Il attaque souvent pendant la descente ou l'arrêt de la turlutte : surveille ton fil à ce moment-là.",
+  att:"Ferrage doux, sa chair se déchire. Relâche les tout petits.",
+  zones:["ports","aiguille","croisette","marguerite","milieu"]},
+ {id:"seiche",nom:"Seiche",alias:"",latin:"Sepia officinalis",g:"cepha",maille:null,marque:false,
+  cal:[1,2,3,3,2,1,0,0,0,1,1,1],
+  rec:"Corps ovale aplati entouré d'une nageoire, os interne (l'os de seiche).",
+  ou:"Herbiers et fonds de sable peu profonds.",prof:"2–20 m",
+  quand:"Fin d'hiver et printemps, quand elle s'approche de la côte pour pondre.",
+  tech:["turlutte"],
+  app:"Turlutte 2.5 à 3.5 animée lentement au ras du fond, ou traîne très lente.",
+  astuce:"Animation lente au ras du fond, avec de longues pauses.",
+  att:"Elle pond sur les herbiers au printemps : garde-en peu.",
+  zones:["aiguille","golfe","marguerite","milieu"]},
+ {id:"coryphene",nom:"Dorade coryphène",alias:"lampuga",latin:"Coryphaena hippurus",g:"pela",maille:null,marque:true,declare:true,
+  cal:[0,0,0,0,0,0,1,2,3,3,1,0],
+  rec:"Couleurs vert-jaune électriques, front très haut chez les mâles, longue nageoire sur tout le dos.",
+  ou:"Au large, sous les objets flottants (bois, bâches, bouées).",prof:"Surface",
+  quand:"Fin d'été et automne (août à octobre).",
+  tech:["traine-large","lancer"],
+  app:"Petits poissons nageurs, plumes, jigs ; passe à côté des objets flottants.",
+  astuce:"Quand une est ferrée, le banc reste souvent autour du bateau : lance tout de suite à côté.",
+  att:"Espèce sensible 2026 : déclaration RecFishing sous 24 h, même si tu la relâches. Marquage obligatoire.",
+  zones:["large"]},
+ {id:"barracuda",nom:"Barracuda",alias:"bécune",latin:"Sphyraena viridensis",g:"pred",maille:null,marque:false,
+  cal:[0,0,0,0,1,2,2,3,3,2,1,0],
+  rec:"Long poisson argenté en torpille, mâchoire du bas en avant, dents en poignard.",
+  ou:"Pointes, sorties de port et zones éclairées, en bandes.",prof:"0–20 m",
+  quand:"Été et début d'automne, au coucher du soleil et la nuit. Les guides de Mandelieu le pêchent de juin à septembre.",
+  tech:["lancer","traine-cotiere"],
+  app:"Poissons nageurs fins 10–14 cm, leurres souples, ramenés en saccades.",
+  astuce:"Il suit souvent le leurre sans mordre : accélère d'un coup, ça le décide.",
+  att:"Dents très coupantes : bas de ligne fluorocarbone épais (50/100) et pince.",
+  zones:["ports","aiguille","esterel","croisette"]},
+ {id:"thon-rouge",nom:"Thon rouge",alias:"",latin:"Thunnus thynnus",g:"pela",maille:"30 kg ou 115 cm",marque:false,declare:true,regl:true,
+  cal:[0,0,1,1,1,2,2,2,3,3,2,1],
+  rec:"Très grand thon, dos bleu nuit, petites nageoires jaunes vers la queue.",
+  ou:"Au large, parfois sur les chasses.",prof:"Surface – 100 m",
+  quand:"Été et automne.",
+  tech:["traine-large"],
+  app:"Matériel lourd, réservé à cette pêche.",
+  astuce:"Sans autorisation pour ton bateau, ne le cible pas.",
+  att:"Pêche réservée aux bateaux autorisés (demande d'avril à mai). En 2026 : no-kill du 1er juin au 15 novembre ; capture du 10 juillet au 16 octobre avec bague ; déclaration à FranceAgriMer sous 48 h.",
+  zones:["large"]}
+];
+const SPI=Object.fromEntries(SP.map(s=>[s.id,s]));
+const GROUPS=[["tous","Toutes"],["pred","Prédateurs"],["pela","Pélagiques"],["fond","Fonds"],["cepha","Calamars & seiches"]];
+const LVL_TXT=["Rare ce mois-ci","Possible ce mois-ci","Bon ce mois-ci","Pleine saison"];
+
+const PROTEGES=[
+ {nom:"Mérous",txt:"Mérou brun, blanc, gris, royal et badèche : pêche de loisir interdite en Méditerranée française. Moratoire reconduit fin 2023 pour 10 ans. Relâche-le tout de suite."},
+ {nom:"Corb",txt:"Même moratoire que le mérou. À relâcher, même s'il dépasse 35 cm."},
+ {nom:"Espadon et thon germon",txt:"Moratoire de 3 ans depuis juillet 2025 : interdits, même en no-kill. Une capture accidentelle se déclare sous 48 h."},
+ {nom:"Grande nacre et grande cigale",txt:"Espèces protégées ou interdites à la pêche de loisir : on n'y touche pas."}
+];
+
+/* =====================================================================
+   Données : techniques
+   ===================================================================== */
+const TECH=[
+ {id:"traine-cotiere",nom:"Traîne côtière",type:"bateau",
+  resume:"Tu avances lentement le long de la côte en tirant un leurre derrière le bateau. Le meilleur moyen de découvrir un secteur.",
+  cibles:["loup","denti","liche","barracuda","bonite"],vitesse:"2 à 4 nœuds (vitesse fond sur le GPS)",
+  ou:"Le long des tombants et des pointes, en bordure d'herbier (10–30 m d'eau), à 20–100 m des rochers selon la houle.",saison:"Toute l'année, top en automne",
+  mat:"Canne de traîne légère 12/20 ou 20/30 lbs avec moulinet à tambour tournant, ou ta canne spinning avec un leurre léger. Bas de ligne fluorocarbone 40–50/100 de 3 à 5 m.",
+  leurres:"Poissons nageurs plongeants 10–14 cm (la bavette les fait plonger), leurres souples lestés, cuillers.",
+  etapes:["Repère au sondeur le bord d'un tombant ou d'un herbier, et règle ta vitesse entre 2 et 4 nœuds.","Mets le leurre à l'eau en avançant, laisse filer 30 à 50 m de fil, puis règle le frein pour que le fil ne sorte pas tout seul.","Pose la canne dans le porte-canne et mets le cliquet : son bruit t'avertit d'une touche.","Suis la ligne de profondeur choisie en faisant de larges S : le leurre accélère et ralentit, ça déclenche les attaques.","À la touche, ralentis sans t'arrêter net, prends la canne et pompe doucement : lève la canne, puis reprends du fil en la baissant.","Approche le poisson par l'arrière, moteur au neutre, et sors-le à l'épuisette."],
+  erreurs:"Aller trop vite (le leurre tourne sur lui-même). Virer serré en oubliant la ligne : elle part dans l'hélice. Traîner au milieu des baigneurs ou près d'un pavillon de plongée.",
+  flyer:"Avec deux V6, traîne sur un seul moteur au ralenti. Si tu dépasses 4 nœuds, freine avec une ancre flottante (ou un seau) à l'arrière. À force de tourner au ralenti, les moteurs à carburateur encrassent leurs bougies : un coup d'accélérateur de temps en temps, hors bande des 300 m, et alterne les moteurs d'une sortie à l'autre.",
+  regle:"Bande des 300 m : 5 nœuds maximum, ça tombe bien pour la traîne. Pas plus de 12 hameçons ou leurres à l'eau pour tout le bateau.",
+  zones:["aiguille","esterel","marguerite","honorat"],montage:"traine"},
+ {id:"traine-large",nom:"Traîne au large & chasses",type:"bateau",
+  resume:"Plus vite et plus loin, à la recherche des bancs de bonites, thonines et coryphènes qui chassent en surface.",
+  cibles:["bonite","thonine","coryphene","thon-rouge"],vitesse:"5 à 7 nœuds",
+  ou:"Au sud des Lérins et au large de l'Esquillon, au-dessus des grands fonds ; près des objets flottants pour la coryphène.",saison:"Août à novembre surtout",
+  mat:"Canne 20/30 lbs et moulinet 20–30 lbs garni de nylon 40–50/100 (ou tresse avec une tête de ligne en nylon). Bas de ligne fluorocarbone 50–60/100.",
+  leurres:"Plumes (jupettes), petits poissons nageurs à grande bavette, cuillers ondulantes.",
+  etapes:["Cherche les signes : oiseaux qui piquent, eau qui bouillonne, petits poissons qui sautent. Des jumelles aident beaucoup.","Mets deux lignes : une courte (15–25 m, dans les vagues du sillage) et une longue (40–60 m), une de chaque côté pour éviter les emmêlages.","Ne traverse jamais la chasse : longe son bord ou passe devant elle, dans le sens où elle avance.","Quand ça touche, garde un peu de vitesse : souvent une deuxième ligne part juste après.","Pour lancer sur la chasse, coupe le moteur avant d'y arriver et laisse glisser ; lance un casting jig ou un stickbait au-delà des poissons et ramène vite.","Saigne le poisson et mets-le dans la glace tout de suite."],
+  erreurs:"Foncer dans la chasse au moteur : le banc plonge et disparaît. Trop de lignes à la fois. Oublier que la météo change plus vite au large.",
+  flyer:"Reste dans la distance prévue par ton armement de sécurité (Division 240 : basique jusqu'à 2 milles d'un abri, côtier jusqu'à 6 milles, hauturier au-delà). VHF allumée sur le canal 16.",
+  regle:"Thon rouge : uniquement avec l'autorisation du bateau, et une bague pour le garder. Espadon et germon : interdits même en no-kill. Coryphène : déclaration RecFishing sous 24 h.",
+  zones:["large"],montage:"traine"},
+ {id:"vif",nom:"Traîne lente & pêche au vif",type:"bateau",
+  resume:"Un poisson ou un calamar vivant, présenté lentement près du fond : la méthode pour les gros prédateurs.",
+  cibles:["denti","liche","seriole","pagre","loup"],vitesse:"0,5 à 1,5 nœud, ou dérive",
+  ou:"Têtes de roche et tombants (20–60 m) au sud de Saint-Honorat et le long de l'Estérel ; pointes rocheuses pour la liche.",saison:"Printemps et automne",
+  mat:"Canne 20/30 lbs ou canne bateau puissante, moulinet 5000–8000 avec un bon frein. Bas de ligne fluorocarbone 50–70/100. Seau ou vivier avec une pompe à air.",
+  leurres:"Vifs : calamar vivant (le meilleur), sévereau, bogue, maquereau, mulet, girelle.",
+  etapes:["Prends d'abord tes vifs (sévereaux à la mitraillette, calamars à la turlutte) et garde-les dans une eau bien aérée.","Pique le poisson par les lèvres ou le nez, ou le calamar à la pointe du corps, sans toucher les organes.","Descends le vif près du fond avec un plomb ou une tête plombée (fireball), puis remonte de 2–3 m.","Avance très lentement, un moteur à peine embrayé, ou laisse dériver au-dessus des roches repérées au sondeur.","À la touche, le vif s'affole puis la canne plie : laisse le prédateur avaler 3 à 5 secondes, puis ferre fort.","Éloigne vite le poisson du fond pour qu'il ne coupe pas le fil dans les roches."],
+  erreurs:"Vif mal piqué qui meurt vite. Ferrer trop tôt. Frein trop lâche près des roches.",
+  flyer:"Pour aller encore moins vite : embraye et débraye par à-coups, ou dérive avec l'ancre flottante.",
+  regle:"Le denti se reproduit d'avril à juin : évite de le chercher à cette période.",
+  zones:["esterel","honorat","fourmigue"],montage:"vif"},
+ {id:"mouillage",nom:"Pêche à poste au mouillage",type:"bateau",
+  resume:"Bateau ancré, tu attires les poissons avec du broumé et tu pêches avec des appâts au fond ou entre deux eaux. C'est la pêche « statique ».",
+  cibles:["dorade","sar","pagre","pageot","dorade-grise"],vitesse:"Bateau à l'ancre",
+  ou:"Sur le sable à côté des roches ou d'un herbier, entre 10 et 40 m.",saison:"Toute l'année ; dorades en automne",
+  mat:"Canne bateau 2,10–2,40 m (50–150 g) et moulinet 4000–5000, nylon 30/100 ou tresse 15/100 avec bas de ligne 25–30/100. Ou une palangrotte (ligne à main).",
+  leurres:"Appâts : sardine, ver, moule, crevette, calamar. Broumé : sardines hachées mélangées à du pain mouillé, avec un peu de sable pour le faire couler.",
+  etapes:["Choisis un fond de sable à côté des roches. Jamais l'ancre dans l'herbier de posidonie.","Mouille l'ancre en amont du courant pour que le bateau se place au-dessus de la zone.","Lance une petite boule de broumé toutes les 2 à 3 minutes : c'est la régularité qui garde les poissons.","Descends ton montage (potence 1–2 hameçons et plomb) jusqu'au fond, puis remonte de 50 cm.","Garde le fil tendu et la canne en main : les petites tirées, ce sont des poissons qui goûtent. Ferre sur la tirée franche.","Sans touche au bout de 30 à 45 minutes, change d'endroit."],
+  erreurs:"Ancre dans la posidonie. Tout le broumé jeté d'un coup. Hameçons trop gros pour des dorades méfiantes.",
+  flyer:"Enregistre un waypoint à chaque bonne pêche : tu reviendras pile au même endroit.",
+  regle:"12 hameçons maximum à l'eau pour tout le bateau. Marque les sars, dorades et pagres que tu gardes.",
+  zones:["golfe","marguerite","milieu","honorat"],montage:"palangrotte"},
+ {id:"derive",nom:"Pêche à la dérive",type:"bateau",
+  resume:"Moteur coupé, le bateau dérive avec le vent : ton appât balaie le fond et finit par trouver les poissons.",
+  cibles:["pageot","pagre","dorade-grise","chapon","sar"],vitesse:"Dérive lente (moins de 1 nœud)",
+  ou:"Fonds mixtes et roches de 20 à 80 m : golfe de la Napoule, côte de l'Estérel, sud des Lérins.",saison:"Toute l'année",
+  mat:"Canne bateau ou palangrotte sur plioir. Tenya 10–30 g avec une crevette.",
+  leurres:"Ver, calamar en lanières, sardine, crevette.",
+  etapes:["Au sondeur, repère une zone de roches ou une cassure (le fond change brusquement de profondeur).","Place-toi au vent de la zone et coupe le moteur.","Descends jusqu'au fond, remonte de 30–50 cm, et retouche le fond de temps en temps pour garder le contact.","Si le fil part en biais, la dérive est trop rapide : mets l'ancre flottante ou un plomb plus lourd.","En fin de zone, remonte, reviens au départ et refais la même dérive : c'est là que le waypoint sert."],
+  erreurs:"Plomb trop léger : tu ne sens plus rien. Dériver sans regarder le sondeur. Rester accroché au fond (remonte d'un tour de manivelle).",
+  flyer:"Une ancre flottante de 1 à 1,5 m de diamètre rend la dérive d'un 9 m lente et régulière.",
+  regle:"Un poisson remonté de plus de 40 m survit mal s'il est relâché : garde ce qui est maillé et change de zone quand tu as ce qu'il te faut.",
+  zones:["esterel","golfe","honorat","fourmigue"],montage:"palangrotte"},
+ {id:"lancer",nom:"Lancer-ramener au leurre",type:"deux",
+  resume:"Tu lances un leurre et tu le ramènes en l'animant. La technique la plus polyvalente, du bord comme du bateau.",
+  cibles:["loup","bonite","thonine","liche","barracuda"],vitesse:"Selon le leurre",
+  ou:"Pointes, embouchure de la Siagne, digues, et en bateau le long des roches ou sur les chasses.",saison:"Toute l'année",
+  mat:"Canne spinning 2,40–2,70 m (10–40 g) et moulinet 3000–4000, tresse 10–12/100 avec bas de ligne fluorocarbone 30–40/100 (nœud FG ou double Uni).",
+  leurres:"Leurres souples 10–12 cm sur tête plombée 10–20 g, poissons nageurs 9–14 cm, stickbaits, casting jigs 20–40 g pour les chasses.",
+  etapes:["Lance en éventail : à gauche, en face, à droite, puis avance de quelques mètres.","Laisse couler le leurre en comptant (1, 2, 3…) pour pêcher plus profond, puis ramène.","Varie la vitesse et fais des pauses : beaucoup d'attaques arrivent juste après un arrêt.","À la touche, ferre d'un coup sec et garde la canne haute, fil tendu.","Règle le frein pour qu'il cède à environ un tiers de la résistance du fil."],
+  erreurs:"Lancer toujours au même endroit. Ramener trop vite en hiver (eau froide, poissons lents). Bas de ligne trop court : 1 m minimum, 1,5 m conseillé.",
+  flyer:"Place-toi à 30–40 m des rochers et lance vers la côte en longeant doucement.",
+  regle:"Pêche du bord : marque dès la capture les espèces qui doivent l'être.",
+  zones:["siagne","aiguille","esterel","croisette","marguerite","large"],montage:"lancer"},
+ {id:"jig",nom:"Jigging, fireball & tenya",type:"bateau",
+  resume:"Pêche verticale : tu fais monter et descendre un leurre lourd, ou tu présentes un vif sur tête plombée, juste au-dessus des roches.",
+  cibles:["denti","pagre","seriole","dorade-grise"],vitesse:"À la verticale, en dérive",
+  ou:"Têtes de roche de 20 à 120 m repérées au sondeur.",saison:"Printemps et automne",
+  mat:"Canne de jigging ou de slow jig, moulinet 4000–6000, tresse 15–20/100 avec fluorocarbone 40–60/100. Jigs de 40 à 150 g selon la profondeur et le courant.",
+  leurres:"Jigs, fireball avec calamar vivant, tenya avec crevette.",
+  etapes:["Repère une tête de roche au sondeur et place-toi au vent.","Laisse descendre le jig jusqu'au fond, puis rembobine aussitôt deux tours.","Anime : coups de canne vers le haut avec un tour de manivelle, puis laisse retomber. Beaucoup de touches arrivent à la descente.","Fireball : vif sur tête plombée, descendu près du fond et tenu immobile. Ferre très fort.","Tenya : tête plombée garnie d'une crevette, posée au fond puis soulevée doucement."],
+  erreurs:"Jig trop léger qui n'atteint pas le fond. Ferrer mollement sur un denti : sa bouche est dure.",
+  flyer:"Le sondeur fait tout : marque chaque tête de roche en waypoint et nomme-la dans ton GPS.",
+  regle:"Barotraumatisme : un poisson remonté vite de plus de 40 m se relâche mal. Ne prends que ce dont tu as besoin, puis change de zone.",
+  zones:["esterel","honorat","fourmigue"],montage:"jig"},
+ {id:"turlutte",nom:"Calamars & seiches à la turlutte",type:"deux",
+  resume:"La turlutte est un leurre en forme de crevette avec une couronne de pointes : le calamar l'attrape avec ses tentacules et reste piqué.",
+  cibles:["calamar","seiche"],vitesse:"Lancer, ou traîne très lente",
+  ou:"Digues et ports éclairés la nuit, pointes calmes avec herbier, Plateau du Milieu.",saison:"Octobre à mars, la nuit",
+  mat:"Canne eging 2,20–2,50 m et moulinet 2500, tresse 8–10/100 avec 2 m de fluorocarbone 20–25/100. Turluttes taille 2.5 à 3.5.",
+  leurres:"Turluttes naturelles de jour, fluo ou lumineuses la nuit.",
+  etapes:["Le soir, cherche les zones éclairées (ports, digues) ou les pointes calmes avec des herbiers.","Lance, puis laisse couler la turlutte en comptant : environ 3 secondes par mètre pour une taille 3.0.","Donne 2 ou 3 coups de canne secs, puis laisse redescendre en gardant le fil tendu.","Pendant la descente, surveille le fil : s'il s'arrête ou se détend, ferre doucement.","Ramène régulièrement sans à-coups pour ne pas déchirer, et tourne la tête du calamar loin de toi : il crache son encre."],
+  erreurs:"Animer trop vite. Ferrer comme pour un poisson. Garder les tout petits.",
+  flyer:"Depuis le bateau : tataki (turlutte lestée sous le bateau, petites secousses) ou traîne très lente de turluttes au crépuscule.",
+  regle:"Beaucoup de ports interdisent la pêche dans leur enceinte : lis les panneaux ou demande à la capitainerie.",
+  zones:["ports","aiguille","croisette","marguerite","milieu"],montage:"turlutte"},
+ {id:"surfcasting",nom:"Surfcasting depuis la plage",type:"bord",
+  resume:"Tu lances loin un plomb lourd et des appâts depuis la plage, et la canne attend posée sur une pique.",
+  cibles:["dorade","marbre","loup"],vitesse:"Pêche posée",
+  ou:"Plages de Mandelieu et de La Bocca, abords de la Siagne.",saison:"Été (marbrés) ; automne-hiver après un coup de mer",
+  mat:"Canne de surfcasting 4,20–4,50 m (100–200 g) et moulinet 5000–8000, nylon 30–35/100 avec un arrache-plomb (tête de ligne) en 60/100. Plomb grappin 100–150 g, pique.",
+  leurres:"Vers américains ou coréens, néréis, bibi, couteau, crabe.",
+  etapes:["Choisis une nuit qui suit un coup de mer, quand l'eau est un peu teintée : les poissons rentrent sur la plage.","Monte un bas de ligne à 1 ou 2 hameçons et esche généreusement.","Lance en vérifiant que personne n'est derrière toi, tends le fil et pose la canne sur la pique.","Touche franche ou fil qui se détend : prends la canne, rembobine et ferre.","Change l'appât toutes les 15 à 20 minutes, même sans touche."],
+  erreurs:"Pêcher par mer d'huile en plein jour l'été. Lancer un plomb de 120 g sans arrache-plomb : le fil casse au lancer.",
+  flyer:"",
+  regle:"En saison, la pêche est souvent interdite sur les plages surveillées aux heures de baignade (arrêtés municipaux) : lis les panneaux.",
+  zones:["siagne","plages"],montage:"surfcasting"},
+ {id:"flotteur",nom:"Pêche au flotteur des rochers",type:"bord",
+  resume:"Un flotteur tient ton appât entre deux eaux. Simple et parfait pour les sars, oblades et loups.",
+  cibles:["sar","loup","dorade"],vitesse:"Dérive naturelle",
+  ou:"Rochers de Théoule et de l'Estérel, Croisette, digues, Sainte-Marguerite.",saison:"Automne et hiver",
+  mat:"Canne de 3 à 5 m ou canne spinning, flotteur coulissant 4–10 g, nylon 22–26/100, hameçons n°6 à 2.",
+  leurres:"Crevette, moule, ver, pain pour les oblades, sardine.",
+  etapes:["Règle la profondeur avec le nœud d'arrêt : commence à 2–3 m.","Lance au bord de l'écume ou le long des rochers et laisse dériver.","Attire avec un peu de broumé ou de pain trempé.","Le flotteur plonge ou part de côté : ferre tout de suite.","Change la profondeur de 50 cm en 50 cm jusqu'à trouver les poissons."],
+  erreurs:"Flotteur trop gros : le poisson sent la résistance et lâche. Ne jamais changer la profondeur.",
+  flyer:"",
+  regle:"Du bord, marque dès la capture les sars communs et les dorades que tu gardes.",
+  zones:["ports","aiguille","esterel","croisette","marguerite"],montage:"flotteur"},
+ {id:"palangre",nom:"Palangre",type:"bateau",
+  resume:"Une longue ligne de fond équipée d'avançons et d'hameçons, posée puis relevée plus tard. Très efficace, donc très encadrée.",
+  cibles:["chapon","pagre","dorade","pageot"],vitesse:"Posée au fond",
+  ou:"Sable et vase en bordure de roches, golfe de la Napoule.",saison:"Toute l'année",
+  mat:"Ligne mère nylon 70–100/100 ; avançons 35–50/100 de 40 cm tous les 1,5 à 2 m (au moins deux fois la longueur d'un avançon, sinon tout s'emmêle) ; émerillons-agrafes ; hameçons n°2 à 2/0 ; un lest à chaque bout et un orin (corde) vers une bouée marquée.",
+  leurres:"Sardine, calamar, maquereau en morceaux.",
+  etapes:["Prépare la palangre lovée dans un bac, hameçons piqués dans l'ordre sur le bord.","Esche tous les hameçons avant de partir.","Mouille la première bouée et le premier lest, puis file la ligne en avançant lentement, avançons tenus vers l'extérieur.","Mouille le deuxième lest et la deuxième bouée, et note la position GPS.","Relève après 1 à 3 heures. Plus tu attends, plus les petits poissons et les espèces protégées souffrent.","Relâche tout de suite les poissons trop petits et les espèces protégées (mérou, corb). Hameçon avalé : coupe l'avançon plutôt que de tirer."],
+  erreurs:"Avançons trop rapprochés. Bouée non marquée. Palangre posée en pleine roche : tu la perdras.",
+  flyer:"Pose-la sur le sable ou la vase en bordure de roche. Note les deux bouées en waypoints.",
+  regle:"Maximum 2 palangres de 30 hameçons par bateau. Engins marqués avec l'immatriculation du bateau, sinon ils sont considérés comme des épaves. Pas de filets pour la pêche de loisir en Méditerranée. Interdiction de s'approcher à moins de 150 m des engins signalés des autres.",
+  zones:["golfe","honorat"],montage:"palangre"}
+];
+const TECHI=Object.fromEntries(TECH.map(t=>[t.id,t]));
+const TYPE_TXT={bateau:"Bateau",bord:"Du bord",deux:"Bord et bateau","les deux":"Bord et bateau"};
+
+/* =====================================================================
+   Données : nœuds et montages
+   ===================================================================== */
+const NOEUDS=[
+ {id:"palomar",nom:"Palomar",usage:"Attacher un hameçon, un émerillon ou un leurre.",fils:"Tresse, nylon, fluoro",niv:1,sol:"Très solide",
+  etapes:["Plie 15 cm de fil en deux pour faire une boucle.","Passe la boucle dans l'œillet de l'hameçon.","Avec la boucle, fais un nœud simple autour des deux brins, sans serrer. L'hameçon pend en dessous.","Passe l'hameçon (ou le leurre) entier dans la boucle.","Mouille le nœud, puis tire en même temps sur le brin principal et le brin libre pour serrer.","Coupe le brin libre à 3 mm."],
+  astuce:"Le meilleur nœud sur la tresse. Avec un gros leurre, fais une boucle assez grande pour qu'il passe dedans.",lien:"https://www.animatedknots.com/palomar-knot"},
+ {id:"clinch",nom:"Clinch amélioré",usage:"Attacher un hameçon ou un émerillon sur du nylon ou du fluoro.",fils:"Nylon, fluoro (pas la tresse)",niv:1,sol:"Solide",
+  etapes:["Passe 10 à 15 cm de fil dans l'œillet.","Enroule le brin libre 5 à 7 fois autour du brin principal (4 à 5 fois si le fil est gros).","Repasse le brin libre dans la petite boucle formée juste au-dessus de l'œillet.","Puis passe-le dans la grande boucle que tu viens de créer.","Mouille et serre doucement en tirant le brin principal : les tours doivent se ranger proprement.","Coupe le brin libre."],
+  astuce:"Il glisse sur la tresse : là, prends plutôt un Palomar ou un Uni.",lien:"https://www.animatedknots.com/improved-clinch-knot"},
+ {id:"uni",nom:"Uni (Grinner)",usage:"Le nœud à tout faire : hameçon, émerillon, agrafe.",fils:"Tous les fils",niv:1,sol:"Solide",
+  etapes:["Passe le fil dans l'œillet et ramène 15 cm de brin libre le long du brin principal.","Avec le brin libre, forme une boucle qui revient vers l'œillet.","Fais 5 à 6 tours (8 sur la tresse) avec le brin libre autour des deux brins, à l'intérieur de la boucle.","Mouille, puis tire le brin libre pour former le nœud.","Fais glisser le nœud contre l'œillet en tirant le brin principal.","Coupe le brin libre."],
+  astuce:"Si tu ne dois en retenir qu'un pour commencer, c'est celui-là.",lien:"https://www.animatedknots.com/uni-knot"},
+ {id:"double-uni",nom:"Double Uni",usage:"Raccorder deux fils : tresse et fluoro, ou deux nylons.",fils:"Tous les fils",niv:2,sol:"Bon",
+  etapes:["Pose les deux fils côte à côte sur 20 cm, les bouts dans des sens opposés.","Avec le bout du premier fil, fais un nœud Uni autour du second : 6 à 8 tours sur la tresse, 4 sur le fluoro.","Serre ce premier nœud.","Fais pareil avec le bout du second fil autour du premier.","Tire sur les deux brins principaux : les deux nœuds glissent et se collent.","Coupe les bouts au ras."],
+  astuce:"Plus simple que le FG pour débuter, mais il passe un peu moins bien dans les anneaux au lancer.",lien:"https://www.animatedknots.com/uni-knot"},
+ {id:"fg",nom:"FG",usage:"Le raccord tresse et fluoro le plus fin et le plus solide.",fils:"Tresse + fluoro ou nylon",niv:3,sol:"Excellent",
+  etapes:["Tends la tresse : moulinet frein serré, ou tresse tenue entre les dents.","Croise le fluoro sur la tresse, puis fais-le passer alternativement dessus et dessous en le gardant tendu : la tresse s'enroule autour.","Fais 15 à 20 croisements.","Bloque avec deux demi-clés de tresse autour des deux brins.","Mouille et serre très fort en tirant sur les deux brins.","Coupe le fluoro au ras, puis termine par 4 à 6 demi-clés de tresse sur la tresse seule."],
+  astuce:"Difficile au début : regarde l'animation et entraîne-toi chez toi avant la sortie.",lien:"https://www.animatedknots.com/fg-knot"},
+ {id:"albright",nom:"Albright",usage:"Raccorder deux fils de diamètres très différents (traîne).",fils:"Fil fin + fil épais",niv:2,sol:"Bon",
+  etapes:["Avec le gros fil, fais une ganse (un U) de 5 cm.","Passe 15 cm du fil fin dans la ganse.","Enroule le fil fin 10 à 12 fois autour des deux brins de la ganse et de lui-même, en allant vers le bout de la ganse.","Ressors le fil fin par la ganse, du même côté qu'il est entré.","Mouille, tire doucement sur les quatre brins puis serre fort.","Coupe les bouts."],
+  astuce:"Classique pour relier le corps de ligne à un bas de ligne épais en traîne.",lien:"https://www.animatedknots.com/albright-knot"},
+ {id:"potence",nom:"Potence (dropper loop)",usage:"Faire une boucle au milieu de la ligne pour y accrocher un hameçon.",fils:"Nylon, fluoro",niv:2,sol:"Bon",
+  etapes:["Forme une boucle de 10 cm dans le fil.","Enroule un côté de la boucle autour de l'autre 5 à 7 fois, comme une torsade.","Ouvre le milieu de la torsade avec un doigt.","Passe le haut de la boucle dans ce trou du milieu.","Tiens la boucle (avec les dents ou un crayon) et tire sur les deux bouts de la ligne.","La boucle sort bien droite, à angle droit de la ligne."],
+  astuce:"La base de la palangrotte et des bas de ligne de surfcasting. Accroche l'avançon boucle dans boucle.",lien:"https://www.animatedknots.com/dropper-loop-knot"},
+ {id:"chirurgien",nom:"Boucle du chirurgien",usage:"Faire une boucle solide au bout d'un fil.",fils:"Nylon, fluoro",niv:1,sol:"Bon",
+  etapes:["Plie le bout du fil pour faire une ganse (un U).","Avec la ganse doublée, fais un nœud simple.","Repasse la ganse une deuxième fois dans le nœud.","Mouille et serre en tirant la boucle d'un côté, les brins de l'autre.","Coupe le bout."],
+  astuce:"Parfait pour préparer des avançons à l'avance et les changer boucle dans boucle sur le bateau.",lien:"https://www.animatedknots.com/surgeons-loop-knot"},
+ {id:"rapala",nom:"Boucle Rapala",usage:"Attacher un leurre avec une boucle libre qui le rend plus vivant.",fils:"Nylon, fluoro",niv:2,sol:"Bon",
+  etapes:["Fais un nœud simple lâche à 10 cm du bout du fil.","Passe le bout dans l'œillet du leurre, puis repasse-le dans le nœud simple par le même côté.","Fais 3 à 5 tours autour du brin principal.","Repasse le bout dans le nœud simple.","Puis passe-le dans la boucle qui vient de se former.","Mouille, serre, coupe."],
+  astuce:"Le poisson nageur bouge mieux qu'avec un nœud serré contre son œillet.",lien:"https://www.animatedknots.com/rapala-knot"},
+ {id:"snell",nom:"Nœud d'empile (snell)",usage:"Hameçon à palette ou montage d'appât, pour un ferrage dans l'axe.",fils:"Nylon, fluoro",niv:2,sol:"Très bon",
+  etapes:["Passe le fil dans l'œillet (ou le long de la palette) et laisse une grande boucle le long de la tige de l'hameçon.","Avec la boucle, fais 7 à 10 tours serrés autour de la tige et du fil, en partant de l'œillet vers la courbure.","Tiens les tours entre tes doigts.","Tire sur le brin principal : la boucle se resserre sous les tours.","Serre fort et coupe le bout."],
+  astuce:"Pour les montages au vif et les hameçons sans œillet.",lien:"https://www.animatedknots.com/snell-knot"},
+ {id:"arret",nom:"Nœud d'arrêt de flotteur",usage:"Régler la profondeur d'un flotteur coulissant.",fils:"Un petit bout de fil sur ta ligne",niv:1,sol:"Il doit glisser quand tu le pousses",
+  etapes:["Pose un bout de fil de 15 cm le long de ta ligne.","Avec ce bout, forme une boucle le long de la ligne.","Fais 4 à 5 tours autour de la ligne en passant dans la boucle (c'est un Uni sur la ligne).","Serre assez pour qu'il tienne, mais pas au point de bloquer : il doit pouvoir coulisser.","Coupe les bouts à 1 cm : ils passeront dans les anneaux."],
+  astuce:"Ajoute une perle juste en dessous pour qu'il bloque bien le flotteur.",lien:null},
+ {id:"bimini",nom:"Bimini twist",usage:"Doubler le fil en bout de ligne pour la traîne au large.",fils:"Nylon, tresse",niv:3,sol:"Garde presque toute la résistance du fil",
+  etapes:["Nœud avancé : suis l'animation pas à pas.","Il crée une longue boucle en fil doublé très solide, sur laquelle on attache le bas de ligne."],
+  astuce:"Pas nécessaire pour débuter : un Albright ou un Palomar suffisent pour la bonite.",lien:"https://www.animatedknots.com/bimini-twist-knot"}
+];
+const WHICH=[
+ ["Hameçon, émerillon ou leurre sur tresse","palomar"],
+ ["Hameçon ou émerillon sur nylon ou fluoro","clinch"],
+ ["Un seul nœud pour tout, quand on débute","uni"],
+ ["Tresse + bas de ligne, pour lancer","fg"],
+ ["Tresse + bas de ligne, version facile","double-uni"],
+ ["Deux fils très différents (traîne)","albright"],
+ ["Boucle au milieu de la ligne","potence"],
+ ["Boucle au bout du fil","chirurgien"],
+ ["Leurre qui nage mieux","rapala"],
+ ["Montage au vif, hameçon à palette","snell"],
+ ["Régler un flotteur coulissant","arret"],
+ ["Traîne au large (avancé)","bimini"]
+];
+const MONTAGES=[
+ {id:"traine",nom:"Ligne de traîne",usage:"Traîne côtière et au large",items:[{t:"reel",l:"Moulinet de traîne 20–30 lbs"},{t:"line",h:54,l:"Nylon 40–50/100 (ou tresse)"},{t:"knot",l:"Nœud Palomar"},{t:"swivel",l:"Émerillon baril"},{t:"line",h:74,c:"leader",l:"Fluorocarbone 50/100, 3 à 5 m"},{t:"snap",l:"Agrafe"},{t:"lure",l:"Poisson nageur ou plume"}],note:"Le bas de ligne s'use contre les dents et les roches : vérifie-le après chaque poisson."},
+ {id:"lancer",nom:"Montage leurre (spinning)",usage:"Lancer du bord ou du bateau",items:[{t:"reel",l:"Moulinet 3000–4000"},{t:"line",h:52,l:"Tresse 10–12/100"},{t:"knot",l:"Nœud FG ou double Uni"},{t:"line",h:66,c:"leader",l:"Fluorocarbone 30–40/100, 1 à 1,5 m"},{t:"knot",l:"Boucle Rapala ou agrafe"},{t:"line",h:6},{t:"soft",l:"Leurre souple sur tête plombée 10–20 g"}],note:"La tresse sent tout mais se voit et casse sur les roches : le fluoro devant protège."},
+ {id:"palangrotte",nom:"Palangrotte et montage de fond",usage:"Mouillage et dérive",items:[{t:"line",h:36,l:"Corps de ligne nylon 40/100"},{t:"swivel",l:"Émerillon"},{t:"line",h:26},{t:"dropper",l:"Potence + avançon 30/100 de 30 cm"},{t:"line",h:44},{t:"dropper",l:"Potence + hameçon n°4 à 1/0"},{t:"line",h:40},{t:"sinker",l:"Plomb 50 à 150 g selon le courant"}],note:"Garde 50 cm entre les potences pour que les avançons ne s'emmêlent pas."},
+ {id:"surfcasting",nom:"Montage surfcasting",usage:"Plage, de nuit",items:[{t:"reel",l:"Moulinet 5000–8000"},{t:"line",h:40,l:"Nylon 30–35/100"},{t:"knot",l:"Nœud de raccord"},{t:"line",h:40,c:"leader",l:"Arrache-plomb 60/100 (10 m)"},{t:"swivel",l:"Émerillon à agrafe"},{t:"line",h:22},{t:"dropper",l:"Potence + bas de ligne 28/100"},{t:"line",h:44},{t:"dropper",l:"Hameçon n°2 à 1/0 + ver"},{t:"line",h:34},{t:"sinker",l:"Plomb grappin 100–150 g",grap:true}],note:"L'arrache-plomb doit faire au moins 5 tours sur la bobine quand tu lances."},
+ {id:"flotteur",nom:"Montage flotteur coulissant",usage:"Rochers et digues",items:[{t:"line",h:30,l:"Nylon 22–26/100"},{t:"stop",l:"Nœud d'arrêt (règle la profondeur)"},{t:"bead",l:"Perle"},{t:"line",h:12},{t:"float",l:"Flotteur coulissant 4–10 g (surface)"},{t:"line",h:36},{t:"sinker",l:"Olive ou billes de plomb",small:true},{t:"swivel",l:"Petit émerillon"},{t:"line",h:44,c:"leader",l:"Bas de ligne 20/100, 50 cm"},{t:"hook",l:"Hameçon n°6 à 2"}],note:"Le plomb doit presque couler le flotteur : seule l'antenne dépasse."},
+ {id:"turlutte",nom:"Montage turlutte",usage:"Calamars et seiches",items:[{t:"reel",l:"Moulinet 2500"},{t:"line",h:52,l:"Tresse 8–10/100"},{t:"knot",l:"Nœud FG"},{t:"line",h:64,c:"leader",l:"Fluorocarbone 20–25/100, 2 m"},{t:"snap",l:"Agrafe sans émerillon"},{t:"squid",l:"Turlutte 2.5 à 3.5"}],note:"Pas d'émerillon : il gêne la nage de la turlutte."},
+ {id:"vif",nom:"Montage au vif",usage:"Denti, liche, sériole",items:[{t:"line",h:40,l:"Tresse 20/100 ou nylon 40/100"},{t:"sinker",l:"Plomb coulissant 20–60 g"},{t:"bead",l:"Perle"},{t:"swivel",l:"Émerillon"},{t:"line",h:74,c:"leader",l:"Fluorocarbone 50–70/100, 1,5 à 3 m"},{t:"live",l:"Hameçon 2/0 à 5/0, vif piqué aux lèvres"}],note:"Le plomb coulisse : le poisson prend le vif sans sentir de poids."},
+ {id:"jig",nom:"Montage jig",usage:"Pêche verticale",items:[{t:"reel",l:"Moulinet 4000–6000"},{t:"line",h:52,l:"Tresse 15–20/100"},{t:"knot",l:"Nœud FG"},{t:"line",h:60,c:"leader",l:"Fluorocarbone 40–60/100, 2 m"},{t:"ring",l:"Anneau brisé + assist"},{t:"jig",l:"Jig 40–150 g"}],note:"Les hameçons « assist » sont en haut du jig : ils s'accrochent moins au fond."},
+ {id:"palangre",nom:"Palangre de fond",usage:"Sable et vase",custom:true,note:"Au maximum 2 palangres de 30 hameçons par bateau, bouées marquées avec l'immatriculation."}
+];
+
+/* =====================================================================
+   Données : zones (positions approximatives)
+   ===================================================================== */
+const ZONES=[
+ {n:1,id:"siagne",nom:"Embouchure de la Siagne",lieu:"Mandelieu-La Napoule",type:"bord",lat:43.5325,lon:6.9522,fond:"Sable, eau douce mêlée",prof:"0–5 m",sp:["loup","dorade","marbre"],tech:["lancer","surfcasting"],saison:"Octobre à mars ; après la pluie",
+  conseil:"Le loup vient chasser dans l'eau teintée qui sort de la rivière. Pêche à l'aube et la nuit, au leurre ou au ver, côté mer.",
+  att:"Reste côté mer : dans la rivière, la réglementation de l'eau douce (carte de pêche) peut s'appliquer. Fort courant après de grosses pluies.",q:"Embouchure de la Siagne, Mandelieu-la-Napoule"},
+ {n:2,id:"plages",nom:"Plages de Mandelieu et de La Bocca",lieu:"Mandelieu / Cannes",type:"bord",lat:43.5368,lon:6.9735,fond:"Sable",prof:"0–8 m",sp:["dorade","marbre","loup"],tech:["surfcasting"],saison:"Été (marbrés, de nuit) ; automne-hiver après un coup de mer",
+  conseil:"Surfcasting de nuit. Les dorades et les loups rentrent sur la plage quand l'eau est un peu trouble après le vent.",
+  att:"En saison, pêche souvent interdite aux heures de baignade sur les plages surveillées : lis les panneaux.",q:"Plage de la Bocca, Cannes"},
+ {n:3,id:"ports",nom:"Digues des ports",lieu:"La Napoule, La Rague, Théoule, Cannes",type:"bord",lat:43.5228,lon:6.9486,fond:"Enrochements, sable",prof:"2–12 m",sp:["calamar","sar","loup","barracuda","maquereau"],tech:["turlutte","flotteur","lancer"],saison:"Calamars de novembre à mars, la nuit",
+  conseil:"Les lumières des ports attirent les petits poissons, donc les calamars et les prédateurs. Pêche le côté mer des digues.",
+  att:"Pêche souvent interdite dans l'enceinte des ports et près des quais : respecte les panneaux, demande à la capitainerie.",q:"Port de la Napoule, Mandelieu-la-Napoule"},
+ {n:4,id:"aiguille",nom:"Pointe de l'Aiguille",lieu:"Théoule-sur-Mer",type:"deux",lat:43.5139,lon:6.9488,fond:"Roches et herbier",prof:"2–25 m",sp:["sar","loup","calamar","seiche","barracuda","liche"],tech:["flotteur","lancer","turlutte","traine-cotiere"],saison:"Automne-hiver ; l'été au coucher du soleil",
+  conseil:"Pointe rocheuse facile d'accès. Flotteur dans l'écume pour les sars, leurre à l'aube pour le loup, turlutte la nuit.",
+  att:"Sentier sous-marin et baigneurs de mi-juin à mi-septembre : pêche ailleurs à cette période. Rochers glissants.",q:"Pointe de l'Aiguille, Théoule-sur-Mer"},
+ {n:5,id:"esterel",nom:"Côte de l'Estérel",lieu:"La Galère, l'Esquillon, Miramar, Le Trayas",type:"deux",lat:43.4892,lon:6.9545,fond:"Roche rouge (porphyre), tombants",prof:"5–60 m",sp:["loup","sar","denti","liche","pagre","chapon","barracuda"],tech:["traine-cotiere","lancer","derive","vif","flotteur"],saison:"Toute l'année ; top de septembre à décembre",
+  conseil:"Côte sauvage où les roches plongent vite. En bateau : traîne côtière le long des tombants et dérive sur les têtes de roche. Du bord : leurre à l'aube, flotteur dans l'écume.",
+  att:"Bande des 300 m : 5 nœuds, et zone limitée à 15 nœuds au large de Théoule. Au sud du Trayas commence le cantonnement du Cap Roux : toute pêche interdite. Sentiers raides : ne pêche jamais seul la nuit.",q:"Pointe de l'Esquillon, Théoule-sur-Mer"},
+ {n:6,id:"croisette",nom:"Pointe de la Croisette",lieu:"Cannes, Palm Beach",type:"bord",lat:43.5352,lon:7.0405,fond:"Enrochements, sable, herbier",prof:"1–10 m",sp:["loup","sar","calamar","barracuda"],tech:["lancer","turlutte","flotteur"],saison:"Automne et hiver",
+  conseil:"Très fréquenté en journée : viens tôt le matin ou la nuit. Leurre pour le loup, turlutte sous les lumières pour le calamar.",
+  att:"Écoles de voile et baigneurs : ne lance jamais vers eux, respecte les zones de baignade.",q:"Pointe de la Croisette, Cannes"},
+ {n:7,id:"golfe",nom:"Centre du golfe de la Napoule",lieu:"Entre Théoule et Cannes",type:"bateau",lat:43.5228,lon:6.9905,fond:"Sable et vase, herbiers près des bords",prof:"15–60 m",sp:["dorade","pageot","dorade-grise","maquereau","seiche","bonite"],tech:["mouillage","derive","palangre"],saison:"Automne pour les dorades",
+  conseil:"Dérive sur le sable au sondeur pour les pageots, ou mouillage avec broumé en bordure d'herbier pour les dorades. Les bonites entrent parfois dans le golfe à l'automne.",
+  att:"Trafic des navettes et des bateaux vers les îles. Ne mouille pas dans la posidonie.",q:null},
+ {n:8,id:"marguerite",nom:"Tour de Sainte-Marguerite",lieu:"Îles de Lérins",type:"deux",lat:43.5266,lon:7.0490,fond:"Roches et herbiers",prof:"2–30 m",sp:["sar","loup","dorade","calamar","seiche","liche"],tech:["lancer","flotteur","turlutte","traine-cotiere","mouillage"],saison:"Toute l'année ; calamars l'hiver",
+  conseil:"Du bord, accès en navette depuis le Vieux-Port de Cannes : des roches tout autour de l'île. En bateau, traîne lente autour de l'île et mouillage sur le sable.",
+  att:"Vérifie l'heure de la dernière navette. Forêt protégée : pas de feu. Hauts-fonds rocheux : navigue doucement.",q:"Île Sainte-Marguerite, Cannes"},
+ {n:9,id:"milieu",nom:"Plateau du Milieu",lieu:"Entre Sainte-Marguerite et Saint-Honorat",type:"bateau",lat:43.5131,lon:7.0472,fond:"Posidonie et sable",prof:"3–15 m",sp:["seiche","calamar","sar","dorade"],tech:["turlutte","mouillage"],saison:"Hiver et printemps",
+  conseil:"Chenal d'environ 800 m entre les deux îles. Turlutte en dérive lente au-dessus de l'herbier pour les seiches et les calamars.",
+  att:"L'été, c'est un parking à bateaux : pêche hors saison. Ancre seulement dans le sable.",q:"Plateau du Milieu, îles de Lérins"},
+ {n:10,id:"honorat",nom:"Tombants sud de Saint-Honorat",lieu:"Balise des Moines, Saint-Ferréol",type:"bateau",lat:43.4993,lon:7.0490,fond:"Roches, tombants jusqu'à 100 m",prof:"20–100 m",sp:["denti","pagre","seriole","chapon","pageot","bonite"],tech:["vif","jig","derive","traine-cotiere"],saison:"Printemps et automne",
+  conseil:"Les naturalistes le décrivent comme le secteur le plus riche de la région de Cannes, avec le passage de nombreux poissons du large. Repère les têtes de roche au sondeur, puis vif, fireball ou jig en dérive lente.",
+  att:"Roches et balise des Moines : navigue au GPS. Ne relâche pas les poissons remontés de plus de 40 m. Denti : laisse-le tranquille d'avril à juin.",q:null},
+ {n:11,id:"large",nom:"Le large",lieu:"Au sud des Lérins et de l'Esquillon",type:"bateau",lat:43.4660,lon:7.0240,fond:"Grands fonds",prof:"plus de 100 m",sp:["bonite","thonine","coryphene","thon-rouge","seriole"],tech:["traine-large","lancer"],saison:"Août à novembre",
+  conseil:"Cherche les oiseaux et les chasses. Coryphènes sous les objets flottants en fin d'été. Traîne à 5–7 nœuds, lancer sur les chasses.",
+  att:"La météo change vite : un vent d'est fait lever la mer. Armement de sécurité adapté à la distance. Thon rouge : autorisation obligatoire.",q:null},
+ {n:12,id:"fourmigue",nom:"La Fourmigue",lieu:"Golfe Juan",type:"bateau",lat:43.5393,lon:7.0832,fond:"Récif balisé, tombant côté ouest",prof:"5–35 m",sp:["denti","sar","pagre","seriole"],tech:["derive","vif","jig"],saison:"Printemps et automne",
+  conseil:"Récif dangereux marqué par une balise au milieu du golfe Juan, avec un tombant d'environ 30 m côté ouest.",
+  att:"Spot de plongée très fréquenté : reste loin des pavillons de plongée. Plus près de la côte de Golfe-Juan, une zone marine protégée balisée interdit toute pêche.",q:"La Fourmigue, Golfe-Juan"}
+];
+const ZONEI=Object.fromEntries(ZONES.map(z=>[z.id,z]));
+const BANS=[
+ {nom:"Cantonnement du Cap Roux",lieu:"Saint-Raphaël (Var), juste au sud du Trayas",txt:"Toute pêche interdite, loisir comme professionnelle, de la côte jusqu'aux fonds de 80 m. Limite nord : 43°28,09′ N. Arrêté de 2014, renouvelé pour 10 ans en 2024."},
+ {nom:"Zone marine protégée de Golfe-Juan",lieu:"Golfe Juan, à environ 500 m du rivage, par 30 m de fond",txt:"Pêche sous toutes ses formes, plongée et mouillage interdits. Bouées jaunes surmontées d'une croix de Saint-André, indiquées sur les cartes marines."},
+ {nom:"Ports",lieu:"Cannes, La Napoule, La Rague, Théoule",txt:"La pêche est souvent interdite dans l'enceinte des ports et près des quais (règlement de chaque port)."},
+ {nom:"Plages et zones de baignade",lieu:"En saison",txt:"Arrêtés municipaux : pêche souvent interdite aux heures de baignade. Les zones de baignade balisées sont interdites aux bateaux."}
+];
+
+/* Contours de la carte (lat, lon), schéma indicatif */
+const COAST=[[43.5690,7.1100],[43.5666,7.0950],[43.5660,7.0840],[43.5640,7.0762],[43.5606,7.0690],[43.5560,7.0612],[43.5500,7.0522],[43.5440,7.0444],[43.5396,7.0402],[43.5362,7.0378],[43.5392,7.0334],[43.5452,7.0300],[43.5490,7.0236],[43.5478,7.0182],[43.5490,7.0130],[43.5500,7.0070],[43.5476,6.9950],[43.5426,6.9812],[43.5378,6.9662],[43.5334,6.9520],[43.5290,6.9472],[43.5240,6.9464],[43.5212,6.9440],[43.5178,6.9406],[43.5160,6.9440],[43.5143,6.9466],[43.5118,6.9426],[43.5085,6.9396],[43.5040,6.9416],[43.4990,6.9464],[43.4945,6.9446],[43.4882,6.9508],[43.4842,6.9430],[43.4790,6.9336],[43.4730,6.9242],[43.4681,6.9256],[43.4610,6.9300],[43.4530,6.9295],[43.4455,6.9255],[43.4387,6.9207],[43.4320,6.9150],[43.4250,6.9062]];
+const ISLES=[
+ [[43.5232,7.0302],[43.5246,7.0345],[43.5252,7.0420],[43.5245,7.0505],[43.5228,7.0585],[43.5200,7.0640],[43.5178,7.0618],[43.5170,7.0545],[43.5166,7.0455],[43.5176,7.0375],[43.5198,7.0322]],
+ [[43.5086,7.0398],[43.5099,7.0450],[43.5101,7.0510],[43.5080,7.0560],[43.5056,7.0532],[43.5042,7.0470],[43.5056,7.0418]]
+];
+const ISLETS=[[43.5185,7.0682],[43.5060,7.0600],[43.5033,7.0478]];
+const CAPROUX=[[43.46812,6.92562],[43.46779,6.94000],[43.44195,6.94193],[43.43871,6.92070]];
+
+/* =====================================================================
+   Données : règles
+   ===================================================================== */
+const MAILLES=[["Sparaillon",12],["Pageot rouge",15],["Rougets",15],["Chinchards (sévereau)",15],["Pageot acarné",17],["Maquereaux",18],["Pagre",18],["Sar à museau pointu",18],["Sar à tête noire",18],["Marbré",20],["Dorade grise",23],["Dorade royale",23],["Sar commun",23],["Soles",24],["Loup (bar)",30],["Chapon",30],["Mostelle",30],["Dorade rose",33],["Cernier",45],["Maigre",45],["Congre",60]];
+
+/* =====================================================================
+   Données : quiz, checklist, glossaire, matériel, mois
+   ===================================================================== */
+const QUIZ=[
+ {q:"Quelle est la taille minimale du loup (bar) en Méditerranée ?",o:["23 cm","30 cm","36 cm","42 cm"],a:1,e:"30 cm en Méditerranée (42 cm en Atlantique). On mesure du bout du museau au bout de la queue."},
+ {q:"Taille minimale de la dorade royale ?",o:["18 cm","20 cm","23 cm","30 cm"],a:2,e:"23 cm, comme le sar commun et la dorade grise."},
+ {q:"Marquer un poisson gardé, c'est…",o:["Couper la partie basse de sa queue","Lui mettre une bague","Couper une nageoire du dos","L'écrire dans un carnet"],a:0,e:"On coupe le lobe inférieur de la nageoire de la queue. En bateau, dès la mise à bord ; du bord, dès la capture."},
+ {q:"Combien d'hameçons au maximum à l'eau pour tout le bateau (lignes) ?",o:["6","12","20","30"],a:1,e:"12 hameçons pour l'ensemble des lignes. Un leurre compte comme un hameçon."},
+ {q:"Combien de palangres par bateau en pêche de loisir ?",o:["1 de 50 hameçons","2 de 30 hameçons","3 de 20 hameçons","Aucune en Méditerranée"],a:1,e:"Deux palangres de 30 hameçons au maximum, marquées avec l'immatriculation du bateau."},
+ {q:"En Méditerranée, qui doit s'enregistrer sur RecFishing en 2026 ?",o:["Seulement les pêcheurs de thon","Tous les pêcheurs de loisir de 16 ans et plus, sauf la pêche à pied","Seulement les bateaux de plus de 10 m","Personne"],a:1,e:"Depuis le 12 février 2026, tous les pêcheurs de loisir de 16 ans et plus, quelle que soit l'espèce. Enregistrement valable 12 mois."},
+ {q:"Quelles espèces faut-il déclarer sous 24 h en Méditerranée en 2026 ?",o:["Loup, dorade royale, sar","Thon rouge, dorade rose, dorade coryphène","Bonite, thonine, liche","Calamar, seiche, poulpe"],a:1,e:"Les trois espèces sensibles de 2026, même relâchées."},
+ {q:"Le mérou, en Méditerranée française…",o:["Se garde au-dessus de 45 cm","Est interdit à la pêche de loisir","Se garde seulement l'hiver","Se garde avec une autorisation"],a:1,e:"Moratoire reconduit fin 2023 pour 10 ans : on le relâche."},
+ {q:"Tu prends un corb de 40 cm :",o:["Je le garde, il fait plus de 35 cm","Je le relâche, sa pêche est interdite","Je le déclare et je le garde","Je le marque"],a:1,e:"Le corb est sous moratoire comme le mérou."},
+ {q:"Quel nœud pour attacher un hameçon sur de la tresse ?",o:["Palomar","Nœud de chaise","Demi-clé simple","Nœud de cabestan"],a:0,e:"Le Palomar tient très bien sur la tresse, là où le clinch glisse."},
+ {q:"Le meilleur raccord tresse + fluoro pour lancer loin ?",o:["FG","Palomar","Potence","Boucle du chirurgien"],a:0,e:"Le FG est fin et passe bien dans les anneaux."},
+ {q:"La potence (dropper loop) sert à…",o:["Faire une boucle au milieu de la ligne pour un hameçon","Raccorder deux fils","Attacher un leurre","Arrêter un flotteur"],a:0,e:"C'est la base de la palangrotte et des montages de fond."},
+ {q:"Vitesse typique de la traîne côtière ?",o:["0,5 nœud","2 à 4 nœuds","8 à 10 nœuds","15 nœuds"],a:1,e:"Entre 2 et 4 nœuds, lus en vitesse fond sur le GPS."},
+ {q:"Vitesse maximale dans la bande des 300 m ?",o:["3 nœuds","5 nœuds","10 nœuds","15 nœuds"],a:1,e:"5 nœuds. Au large de Théoule, une zone est en plus limitée à 15 nœuds."},
+ {q:"Des oiseaux piquent sur une eau qui bouillonne. Tu…",o:["Fonces au milieu","Longes le bord, ou coupes le moteur avant et lances","Mouilles l'ancre dessus","T'en vas"],a:1,e:"Traverser la chasse fait plonger le banc."},
+ {q:"Le meilleur vif pour le denti ?",o:["Calamar vivant","Pain","Moule","Maïs"],a:0,e:"Le calamar vivant, présenté près des têtes de roche."},
+ {q:"Quand le denti se reproduit-il ?",o:["D'avril à juin","D'octobre à décembre","En janvier","Toute l'année"],a:0,e:"D'avril à juin : on évite de le chercher à cette période."},
+ {q:"Calamar à la turlutte : quand attaque-t-il le plus souvent ?",o:["Pendant la descente ou l'arrêt","Quand on ramène très vite","Seulement en plein soleil","Jamais la nuit"],a:0,e:"Surveille le fil pendant la descente : s'il s'arrête ou se détend, ferre doucement."},
+ {q:"Juste au sud du Trayas, toute pêche est interdite dans…",o:["Le cantonnement du Cap Roux","Le Plateau du Milieu","La Pointe de la Croisette","L'embouchure de la Siagne"],a:0,e:"Le cantonnement du Cap Roux, de la côte jusqu'aux fonds de 80 m."},
+ {q:"Des bouées jaunes à croix de Saint-André dans le golfe Juan signalent…",o:["Une zone marine protégée : pêche, plongée et mouillage interdits","Une ferme aquacole","Un bon coin de pêche","Un chenal d'accès"],a:0,e:"C'est la zone marine protégée de Golfe-Juan."},
+ {q:"En traîne avec deux V6, la bonne méthode ?",o:["Un seul moteur au ralenti, ancre flottante si c'est trop rapide","Les deux moteurs à mi-régime","Moteurs coupés","En marche arrière"],a:0,e:"Et un coup d'accélérateur de temps en temps pour ne pas encrasser les bougies."},
+ {q:"Un poisson trop petit remonté de 60 m…",o:["Survit toujours","Survit mal : évite de pêcher les petits en profondeur","Se garde quand même","Va dans le vivier"],a:1,e:"Barotraumatisme : la décompression le blesse."},
+ {q:"Vendre le poisson de sa pêche de loisir, c'est…",o:["Autorisé","Interdit","Autorisé au marché","Autorisé entre amis"],a:1,e:"Interdit : amende jusqu'à 22 500 €. C'est pour ça qu'on marque les poissons."},
+ {q:"Numéro de téléphone pour joindre les secours en mer ?",o:["15","17","196","3615"],a:2,e:"Le 196 joint le CROSS. En mer, la VHF canal 16 est le plus rapide."},
+ {q:"Piqûre de vive ou de rascasse : premier geste ?",o:["Eau très chaude sans se brûler, puis avis médical","Glace","Alcool","Rien"],a:0,e:"La chaleur calme la douleur ; consulte ensuite (15 ou 112)."},
+ {q:"Thon rouge, sans autorisation pour ton bateau :",o:["Je le garde s'il fait 30 kg","Je ne le pêche pas, même en no-kill","Je le garde si je le déclare","C'est libre en octobre"],a:1,e:"Le no-kill lui aussi demande une autorisation."},
+ {q:"Taille minimale du sar commun ?",o:["15 cm","18 cm","23 cm","30 cm"],a:2,e:"23 cm. Sar à tête noire et sar à museau pointu : 18 cm."},
+ {q:"Avant d'ancrer pour pêcher, on évite…",o:["Le sable","L'herbier de posidonie","Les fonds de 10 m","Le vent"],a:1,e:"La posidonie est la nurserie des poissons : l'ancre l'arrache."},
+ {q:"Le broumé, c'est…",o:["Un nœud","Un mélange de sardine hachée et de pain pour attirer","Un vent du sud","Un type de canne"],a:1,e:"Jeté en petites quantités et régulièrement."},
+ {q:"Le frein du moulinet se règle à environ…",o:["100 % de la résistance du fil","Un tiers de la résistance du fil","Totalement desserré","Bloqué"],a:1,e:"Il doit céder avant que le fil casse."},
+ {q:"Un tombant, c'est…",o:["Une chute brusque du fond","Un poisson","Un nœud","Une marée"],a:0,e:"Les prédateurs chassent le long de ces parois."},
+ {q:"Au-delà de 6 milles d'un abri, ton armement doit être…",o:["Basique","Côtier","Hauturier","Aucun"],a:2,e:"Division 240 : basique jusqu'à 2 milles, côtier jusqu'à 6 milles, hauturier au-delà."}
+];
+const CHECK={
+ bateau:[
+  ["Météo et sécurité",["Bulletin côtier, vent et houle vérifiés","Quelqu'un à terre connaît ma zone et mon heure de retour","VHF chargée et sur le canal 16, téléphone chargé en pochette étanche","Un gilet par personne, armement adapté à la distance (Division 240)","Carburant et réserve, moteurs testés au ponton","Ancre et ancre flottante à bord"]],
+  ["Papiers et règles",["Enregistrement RecFishing valable (12 mois)","Règle ou mètre pour mesurer la maille","Couteau pour le marquage"]],
+  ["Pêche",["Cannes montées, bas de ligne de rechange","Leurres, turluttes, plombs, émerillons","Épuisette, pince, gants","Appâts : sardines, broumé, vers ou calamars","Seau aéré avec pompe à air pour les vifs","Waypoints des spots dans le GPS, sondeur allumé"]],
+  ["Confort",["Glacière avec de la glace","Eau, crème solaire, casquette, coupe-vent","Lampe frontale à lumière rouge pour le retour"]]
+ ],
+ bord:[
+  ["Météo et sécurité",["Météo et houle vérifiées (houle d'est = danger sur les rochers)","Quelqu'un sait où je pêche, jamais seul la nuit sur les rochers","Chaussures qui accrochent, frontale, téléphone chargé"]],
+  ["Papiers et règles",["Enregistrement RecFishing si tu pêches aussi en bateau","Règle ou mètre, couteau pour le marquage","Panneaux lus : plage surveillée, port, sentier sous-marin"]],
+  ["Pêche",["Canne et moulinet, bas de ligne de rechange","Leurres ou turluttes, flotteurs, plombs","Pince, dégorgeoir, gants","Appâts : vers, crevettes, moules, sardines"]],
+  ["Confort",["Sac ou glacière souple","Eau, vêtements chauds pour la nuit"]]
+ ]
+};
+const GLOSS=[
+ ["Ancre flottante","Sorte de parachute qu'on met à l'eau pour ralentir la dérive du bateau."],
+ ["Appât (esche)","Ce qu'on met sur l'hameçon : ver, sardine, crevette… « Escher », c'est mettre l'appât."],
+ ["Arrache-plomb","Bout de fil plus gros en tête de ligne qui encaisse le choc du lancer en surfcasting."],
+ ["Avançon","Petit fil qui porte l'hameçon, attaché à la ligne principale."],
+ ["Bande des 300 m","Bande de mer le long de la côte où la vitesse est limitée à 5 nœuds."],
+ ["Barotraumatisme","Blessure d'un poisson remonté vite des grands fonds. Relâché, il survit mal."],
+ ["Bas de ligne","Dernier morceau de fil, plus discret ou plus solide, entre la ligne et le leurre."],
+ ["Bibi","Ver marin très apprécié des dorades."],
+ ["Broumé","Mélange de sardine hachée et de pain qu'on jette pour attirer les poissons."],
+ ["Cassure","Endroit où le fond change brusquement de profondeur."],
+ ["Chasse","Prédateurs qui attaquent un banc de petits poissons en surface, souvent avec des oiseaux au-dessus."],
+ ["Coralligène","Fonds rocheux couverts d'algues rouges et d'animaux fixés, très riches, souvent entre 20 et 100 m."],
+ ["Dérive","Laisser le bateau avancer poussé par le vent et le courant, moteur coupé."],
+ ["Émerillon","Petite pièce de métal qui tourne sur elle-même et empêche le fil de vriller."],
+ ["Agrafe","Attache rapide pour changer de leurre sans refaire de nœud."],
+ ["Ferrer","Donner un coup sec pour planter l'hameçon quand le poisson mord."],
+ ["Fluorocarbone","Fil presque invisible dans l'eau et résistant au frottement, pour les bas de ligne."],
+ ["Frein","Réglage du moulinet qui laisse sortir le fil quand le poisson tire trop fort."],
+ ["Herbier de posidonie","Prairie sous-marine protégée (une plante, pas une algue), nurserie des poissons. On n'y jette pas l'ancre."],
+ ["Isobathe","Ligne qui relie les points de même profondeur sur une carte marine."],
+ ["Jig","Leurre en métal lourd qu'on anime de haut en bas."],
+ ["Lbs (livres)","Unité de résistance des fils et des cannes de traîne : 1 lb vaut environ 0,45 kg."],
+ ["Leurre souple","Imitation en caoutchouc d'un poisson ou d'un ver, montée sur une tête plombée."],
+ ["Maille","Taille minimale légale pour garder un poisson."],
+ ["Marquage","Couper le lobe du bas de la queue d'un poisson gardé : la preuve qu'il ne peut pas être vendu."],
+ ["Mitraillette","Bas de ligne avec plusieurs petites plumes pour les maquereaux et sévereaux."],
+ ["Mouillage","Pêcher le bateau ancré ; aussi l'endroit où l'on jette l'ancre."],
+ ["No-kill (pêcher-relâcher)","Remettre le poisson à l'eau vivant."],
+ ["Nylon (monofilament)","Fil classique, un peu élastique, pas cher."],
+ ["Orin","Corde qui relie un engin posé au fond (palangre, casier) à sa bouée."],
+ ["Palangre","Longue ligne de fond avec beaucoup d'hameçons, posée puis relevée."],
+ ["Palangrotte","Ligne à main traditionnelle de Provence, enroulée sur un plioir."],
+ ["Poisson nageur","Leurre dur en forme de poisson. Sa bavette (la palette à l'avant) le fait plonger."],
+ ["Potence","Boucle faite au milieu de la ligne pour accrocher un hameçon."],
+ ["Sondeur","Appareil qui montre la profondeur, le relief du fond et les poissons sous le bateau."],
+ ["SOG","Vitesse fond lue sur le GPS : la vraie vitesse de traîne."],
+ ["Stickbait, popper","Leurres de surface qui imitent un poisson en fuite."],
+ ["Tenya","Tête plombée avec hameçon, garnie d'une crevette."],
+ ["Tête de roche","Rocher isolé qui dépasse du fond, où se tiennent les prédateurs."],
+ ["Tombant","Paroi où le fond plonge fortement."],
+ ["Tresse","Fil tressé très fin et sans élasticité, idéal pour sentir les touches."],
+ ["Turlutte","Leurre avec une couronne de pointes, pour les calamars et les seiches."],
+ ["/100","Diamètre d'un fil en centièmes de millimètre : 30/100 = 0,30 mm."],
+ ["Vif","Petit poisson ou calamar vivant utilisé comme appât."],
+ ["Waypoint","Point GPS enregistré pour revenir à un spot."],
+ ["Zone de baignade (ZRUB)","Zone balisée l'été, réservée aux baigneurs : interdite aux bateaux."]
+];
+const KITS=[
+ {nom:"Kit lancer polyvalent",prio:"À acheter en premier",pour:"Du bord et du bateau : loup, bonite, thonine, barracuda, liche.",items:[["Ensemble canne spinning 2,40–2,70 m (10–40 g) + moulinet 3000–4000","50–100 €"],["Tresse 10–12/100, 150 m","15–30 €"],["Fluorocarbone 30–40/100 pour les bas de ligne","10–15 €"],["3 leurres souples et têtes plombées, 2 poissons nageurs, 2 casting jigs","40–70 €"]],tot:"115–215 €"},
+ {nom:"Kit calamar",prio:"Pour la saison qui commence",pour:"Calamars et seiches, du bord et en bateau, de novembre à mars.",items:[["Ensemble canne eging 2,20–2,50 m + moulinet 2500","40–80 €"],["4 turluttes 2.5 à 3.5, naturelles et fluo","20–40 €"],["Fluorocarbone 20–25/100","10 €"]],tot:"70–130 €"},
+ {nom:"Accessoires indispensables",prio:"Avec le premier kit",pour:"Mesurer, marquer, décrocher, conserver.",items:[["Épuisette, manche 1,70–2 m","30–40 €"],["Pince à bec long et coupe-tresse","10–20 €"],["Règle ou mètre pour la maille","5–10 €"],["Couteau","10–20 €"],["Gants et lampe frontale à lumière rouge","25–40 €"],["Boîte, émerillons, agrafes, hameçons","20–30 €"]],tot:"100–160 €"},
+ {nom:"Kit traîne",prio:"Pour les bonites de l'an prochain",pour:"Traîne côtière et au large depuis le Flyer.",items:[["Ensemble canne 20/30 lbs + moulinet à tambour tournant","150–250 €"],["Nylon 40–50/100","15–25 €"],["Plumes, poissons nageurs à bavette, cuillers","40–80 €"],["Porte-canne, si le bateau en manque","20–40 € pièce"]],tot:"225–395 €"},
+ {nom:"Kit fond et dérive",prio:"Pour les pageots et les dorades",pour:"Mouillage, dérive, palangrotte.",items:[["Ensemble canne bateau 2,10–2,40 m + moulinet 5000, ou palangrotte sur plioir","15–100 €"],["Plombs 50–150 g, hameçons n°4 à 1/0, fil 30/100","20–30 €"],["Tenya 10–30 g (option)","5–10 € pièce"]],tot:"40–140 €"},
+ {nom:"Kit surfcasting",prio:"Pour les nuits d'automne sur la plage",pour:"Dorade, marbré, loup depuis la plage.",items:[["Ensemble surfcasting 4,20 m (100–200 g)","60–150 €"],["Pique, plombs grappin 100–150 g, arrache-plomb","25–40 €"]],tot:"85–190 €"},
+ {nom:"Palangre maison",prio:"Option",pour:"Fonds de sable et de vase.",items:[["Ligne mère, avançons, émerillons-agrafes, 30 hameçons, 2 lests, 2 orins, 2 bouées marquées","30–60 €"]],tot:"30–60 €"}
+];
+const IDEES=[
+ "Calamars la nuit sur les digues et à la Pointe de l'Aiguille. Sars par mer agitée, au flotteur. Loups dans l'écume et à l'embouchure de la Siagne après la pluie.",
+ "Toujours les calamars. Premières seiches sur les herbiers du Plateau du Milieu. Pagres au calamar en dérive.",
+ "Seiches sur les herbiers. Dentis qui remontent sur les têtes de roche avant la ponte. Pagres et dorades grises en dérive.",
+ "Dorades grises en bande vers 30–40 m, au tenya. Retour des maquereaux et des sévereaux. Le denti se reproduit : laisse-le tranquille.",
+ "Maquereaux à la mitraillette, bonites de printemps au large. Les dorades royales se rapprochent des côtes.",
+ "Marbrés de nuit sur les plages. Barracudas au coucher du soleil près des pointes. Début du no-kill thon rouge pour les bateaux autorisés.",
+ "Pêche tôt le matin ou la nuit, à cause de la chaleur et du monde. Marbrés, barracudas, calamars rouges de nuit au large.",
+ "Premières thonines et coryphènes au large. Sérioles autour des têtes de roche. Barracudas le soir.",
+ "Grand mois : chasses de bonites et de thonines, coryphènes sous les objets flottants, sérioles, dentis. Dorades royales en forme.",
+ "Chasses de bonites et de thonines au large, dorades royales sur les fonds mixtes, liches le long des pointes, retour des loups et premiers calamars.",
+ "Loups dans l'écume et à la Siagne, calamars la nuit sur les digues, dernières bonites. Les dorades mangent avant de partir au large.",
+ "Calamars en pleine saison, sars et loups par mer formée, pagres au calamar. Sorties courtes : c'est la météo d'hiver."
+];
+
+/* =====================================================================
+   Soleil et lune (calcul local, Mandelieu-La Napoule)
+   ===================================================================== */
+const HOME={lat:43.52,lon:6.94};
+const RAD=Math.PI/180,DAYMS=86400000,J1970=2440588,J2000=2451545;
+function sunTimes(date,lat,lng){
+ const lw=RAD*-lng,phi=RAD*lat;
+ const d=date.valueOf()/DAYMS-0.5+J1970-J2000;
+ const n=Math.round(d-0.0009-lw/(2*Math.PI));
+ const ds=0.0009+lw/(2*Math.PI)+n;
+ const M=RAD*(357.5291+0.98560028*ds);
+ const C=RAD*(1.9148*Math.sin(M)+0.02*Math.sin(2*M)+0.0003*Math.sin(3*M));
+ const L=M+C+RAD*102.9372+Math.PI;
+ const dec=Math.asin(Math.sin(RAD*23.4397)*Math.sin(L));
+ const Jnoon=J2000+ds+0.0053*Math.sin(M)-0.0069*Math.sin(2*L);
+ const fromJ=j=>new Date((j+0.5-J1970)*DAYMS);
+ const out={};
+ [[-0.833,"rise","set"],[-6,"dawn","dusk"]].forEach(([h,a,b])=>{
+  const w=Math.acos((Math.sin(h*RAD)-Math.sin(phi)*Math.sin(dec))/(Math.cos(phi)*Math.cos(dec)));
+  const Jset=J2000+(0.0009+(w+lw)/(2*Math.PI)+n)+0.0053*Math.sin(M)-0.0069*Math.sin(2*L);
+  out[a]=fromJ(Jnoon-(Jset-Jnoon));out[b]=fromJ(Jset);
+ });
+ return out;
+}
+function moonInfo(date){
+ const syn=29.530588853,ref=Date.UTC(2000,0,6,18,14);
+ let age=((date-ref)/DAYMS)%syn;if(age<0)age+=syn;
+ const f=age/syn,ill=(1-Math.cos(2*Math.PI*f))/2;
+ const names=["Nouvelle lune","Premier croissant","Premier quartier","Gibbeuse croissante","Pleine lune","Gibbeuse décroissante","Dernier quartier","Dernier croissant"];
+ const idx=Math.floor((age/syn)*8+0.5)%8;
+ return {f,ill,name:names[idx],age};
+}
+function moonSVG(f){
+ const r=10,cx=12,cy=12,wax=f<0.5,k=Math.cos(2*Math.PI*f),rx=Math.abs(k)*r;
+ const ls=wax?1:0,ts=k>0?(wax?0:1):(wax?1:0);
+ return '<svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><circle class="m-dark" cx="12" cy="12" r="10"/><path class="m-lit" d="M'+cx+" "+(cy-r)+" A"+r+" "+r+" 0 0 "+ls+" "+cx+" "+(cy+r)+" A"+rx.toFixed(2)+" "+r+" 0 0 "+ts+" "+cx+" "+(cy-r)+'Z"/></svg>';
+}
+
+/* =====================================================================
+   Petits rendus partagés
+   ===================================================================== */
+const rulerGlyph='<svg viewBox="0 0 16 10" aria-hidden="true"><rect x=".6" y="2" width="14.8" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M4 2v2.5M7 2v3.5M10 2v2.5M13 2v3.5" stroke="currentColor" stroke-width="1.1"/></svg>';
+function mailleBadge(s){
+ if(s.maille==null) return '<span class="maille" title="Pas de taille minimale fixée en Méditerranée">'+rulerGlyph+"pas de maille</span>";
+ const v=typeof s.maille==="number"?s.maille+" cm":s.maille+(String(s.maille).includes("kg")?"":" cm");
+ return '<span class="maille" title="Taille minimale de capture">'+rulerGlyph+esc(v)+"</span>";
+}
+function strip(cal,showMonths){
+ return '<div class="strip" aria-hidden="true">'+cal.map((v,i)=>'<i class="l'+v+(i===MON?" now":"")+'"></i>').join("")+"</div>"+(showMonths?'<div class="strip-m" aria-hidden="true">'+M1.map(m=>"<span>"+m+"</span>").join("")+"</div>":"");
+}
+const spLink=id=>{const s=SPI[id];return s?'<a class="tag" href="#especes" data-go="especes" data-target="sp-'+id+'">'+esc(s.nom)+"</a>":""};
+const techLink=id=>{const t=TECHI[id];return t?'<a class="tag" href="#techniques" data-go="techniques" data-target="t-'+id+'">'+esc(t.nom)+"</a>":""};
+const zoneLink=id=>{const z=ZONEI[id];return z?'<a class="tag" href="#zones" data-go="zones" data-target="z-'+id+'">'+z.n+". "+esc(z.nom)+"</a>":""};
+const vh=(eyebrow,title,lede)=>'<header class="vh"><p class="eyebrow">'+eyebrow+"</p><h1>"+title+"</h1>"+(lede?"<p>"+lede+"</p>":"")+"</header>";
+const note=(kind,icon,html)=>'<div class="note '+kind+'">'+ico(icon)+"<div>"+html+"</div></div>";
+
+/* =====================================================================
+   Vue : Accueil
+   ===================================================================== */
+function renderAccueil(){
+ const st=sunTimes(new Date(NOW.getFullYear(),NOW.getMonth(),NOW.getDate(),12),HOME.lat,HOME.lon);
+ const mo=moonInfo(NOW);
+ const dateTxt=NOW.toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+ const pics=SP.filter(s=>s.cal[MON]===3&&!s.regl), bons=SP.filter(s=>s.cal[MON]===2&&!s.regl);
+ const tiles=NAV.filter(n=>n.id!=="accueil").map(n=>'<a class="tile" href="#'+n.id+'" data-nav-tile="'+n.id+'">'+ico(n.icon)+"<b>"+esc(n.label)+"</b><span>"+esc(n.desc)+"</span></a>").join("");
+ $("#v-accueil").innerHTML=
+ '<div class="hero"><p class="eyebrow">43°31′ N · 6°57′ E · Mandelieu-La Napoule</p>'+
+ "<h1>Pêcher le golfe,<br><em>de Théoule au large</em></h1>"+
+ '<p class="lede">Ton guide de poche pour la mer entre Théoule, Cannes et les Lérins : quoi pêcher, comment, où, avec quels nœuds, et dans quelles règles.</p>'+
+ '<div class="today" aria-label="Aujourd\'hui">'+
+  '<div><span class="k">Aujourd\'hui</span><span class="v" style="font-family:var(--f-body)">'+esc(dateTxt.charAt(0).toUpperCase()+dateTxt.slice(1))+"</span></div>"+
+  '<div><span class="k">Soleil</span><span class="v">'+hhmm(st.rise)+" → "+hhmm(st.set)+'</span><span class="s">Lever et coucher à Mandelieu</span></div>'+
+  '<div><span class="k">Coups du matin et du soir</span><span class="v">'+hhmm(st.dawn)+" · "+hhmm(st.dusk)+'</span><span class="s">Aube et crépuscule : les meilleures heures</span></div>'+
+  '<div><span class="k">Lune</span><span class="v" style="font-family:var(--f-body)">'+moonSVG(mo.f)+esc(mo.name)+'</span><span class="s">Éclairée à '+Math.round(mo.ill*100)+" %. Note-la dans ton carnet pour voir ce qui marche.</span></div>"+
+ "</div></div>"+
+ '<section class="block"><h2>En '+MOIS[MON]+"</h2>"+
+  '<p class="idee">'+esc(IDEES[MON])+"</p>"+
+  '<div class="now-grid">'+
+   (pics.length?'<div class="now-row"><span class="lab">Pleine saison</span>'+pics.map(s=>spLink(s.id)).join("")+"</div>":"")+
+   (bons.length?'<div class="now-row"><span class="lab">Bon ce mois-ci</span>'+bons.map(s=>spLink(s.id)).join("")+"</div>":"")+
+  "</div>"+
+  '<div class="btn-row"><a class="btn" href="#checklist">'+ico("check")+"Préparer une sortie</a>"+'<a class="btn ghost" href="#especes" data-go="especes" data-target="calendrier">Voir le calendrier</a></div>'+
+ "</section>"+
+ '<section class="block" id="homeCarnet" hidden></section>'+
+ '<section class="block"><h2>Les 5 règles d\'or</h2><ol class="golden">'+
+  "<li><span><strong>Enregistre-toi sur RecFishing</strong> : obligatoire en Méditerranée depuis février 2026 (16 ans et plus), valable 12 mois.</span></li>"+
+  "<li><span><strong>Mesure tout</strong> : loup 30 cm, dorade royale 23 cm, sar commun 23 cm, pagre 18 cm. En dessous, à l'eau tout de suite.</span></li>"+
+  "<li><span><strong>Marque ce que tu gardes</strong> : coupe le lobe du bas de la queue (loup, dorade, sar, pagre, denti, bonite, chapon…).</span></li>"+
+  "<li><span><strong>Relâche les interdits</strong> : mérous et corb. Espadon et germon : on ne les pêche pas.</span></li>"+
+  "<li><span><strong>Ne vends jamais ta pêche</strong> : c'est interdit, jusqu'à 22 500 € d'amende.</span></li>"+
+ '</ol><a class="ext" href="#regles">Toutes les règles 2026</a></section>'+
+ '<section class="block"><h2>Toutes les sections</h2><div class="tiles">'+tiles+"</div></section>";
+}
+function renderHomeCarnet(){
+ const box=$("#homeCarnet");if(!box)return;
+ if(C.state!=="ready"){box.hidden=true;return}
+ const rows=C.rows,n=rows.reduce((a,r)=>a+(+r.nombre||1),0);
+ const last=rows.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)))[0];
+ box.hidden=false;
+ box.innerHTML='<h2>Ton carnet</h2><p>'+(rows.length?n+" poisson"+(n>1?"s":"")+" noté"+(n>1?"s":"")+", dernière sortie le "+esc(frDate(last.date))+".":"Aucune prise notée pour l'instant.")+'</p><div class="btn-row"><a class="btn accent" href="#carnet" data-go="carnet" data-action="new">'+ico("plus")+'Noter une prise</a><a class="btn ghost" href="#carnet">Ouvrir le carnet</a></div>';
+}
+
+/* =====================================================================
+   Vue : Espèces
+   ===================================================================== */
+let spFilter="tous",spQuery="",spTab="fiches";
+function renderEspeces(){
+ const v=$("#v-especes");
+ v.innerHTML=vh("19 fiches · tendances Côte d'Azur","Espèces","Reconnaître le poisson, connaître sa maille, savoir quand et comment le pêcher. Touche une fiche pour l'ouvrir.")+
+ '<div class="segs" role="group" aria-label="Affichage"><button type="button" data-sptab="fiches" aria-pressed="true">Fiches</button><button type="button" data-sptab="calendrier" aria-pressed="false" id="calendrier">Calendrier</button></div>'+
+ '<div id="spFiches" class="block">'+
+  '<div class="toolbar"><label class="search">'+ico("search")+'<span class="sr">Chercher une espèce</span><input id="spSearch" type="search" placeholder="Chercher : loup, calamar, dorade…" autocomplete="off"></label>'+
+  '<div class="chips" role="group" aria-label="Filtrer">'+GROUPS.map(g=>'<button type="button" class="chip sm" data-spf="'+g[0]+'" aria-pressed="'+(g[0]==="tous")+'">'+g[1]+"</button>").join("")+"</div></div>"+
+  '<div class="sp-list" id="spList"></div>'+
+  '<section class="block"><h2>Interdits à la pêche de loisir</h2><div class="ban-list">'+PROTEGES.map(p=>'<div class="ban"><b>'+esc(p.nom)+"</b><span>"+esc(p.txt)+"</span></div>").join("")+"</div></section>"+
+ "</div>"+
+ '<div id="spCal" class="block" hidden>'+
+  "<p>Tendances générales pour la Côte d'Azur : elles bougent selon l'année et la température de l'eau. Ton carnet te dira la vérité de ton coin. La colonne entourée, c'est le mois en cours.</p>"+
+  '<div class="legend"><span><i style="background:var(--lvl-0)"></i>Rare</span><span><i style="background:var(--lvl-1)"></i>Possible</span><span><i style="background:var(--lvl-2)"></i>Bon</span><span><i style="background:var(--lvl-3)"></i>Pleine saison</span><span><b class="mono">R</b> reproduction, à éviter</span></div>'+
+  '<div class="cal-wrap"><table class="cal"><thead><tr><th class="sp-h" scope="col">Espèce</th>'+M1.map((m,i)=>'<th scope="col" class="'+(i===MON?"now":"")+'" title="'+MOIS[i]+'">'+m+"</th>").join("")+"</tr></thead><tbody>"+
+  SP.map(s=>'<tr><th class="sp-h" scope="row"><a href="#especes" data-go="especes" data-target="sp-'+s.id+'" data-sptab-go="fiches" style="text-decoration:none">'+esc(s.nom)+"</a></th>"+s.cal.map((c,i)=>'<td class="l'+c+(i===MON?" now":"")+'" title="'+MOIS[i]+" : "+LVL_TXT[c].replace(" ce mois-ci","")+'">'+((s.repro||[]).includes(i)?"R":"")+"</td>").join("")+"</tr>").join("")+
+  "</tbody></table></div>"+
+ "</div>";
+ renderSpList();
+}
+function renderSpList(){
+ const q=spQuery.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
+ const list=SP.filter(s=>(spFilter==="tous"||s.g===spFilter)&&(!q||(s.nom+" "+s.alias+" "+s.latin).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").includes(q)));
+ $("#spList").innerHTML=list.length?list.map(spCard).join(""):'<p class="muted">Aucune espèce ne correspond. Essaie un autre mot.</p>';
+}
+function spCard(s){
+ const lvl=s.cal[MON];
+ return '<details class="sp" id="sp-'+s.id+'"><summary>'+
+  '<div class="sp-top"><div><div class="sp-name">'+esc(s.nom)+'</div><div class="sp-sub">'+(s.alias?esc(s.alias)+" · ":"")+"<i>"+esc(s.latin)+'</i></div></div>'+
+  '<div class="sp-badges">'+mailleBadge(s)+(s.marque?'<span class="tag mark">Marquage</span>':"")+(s.declare?'<span class="tag decl">À déclarer</span>':"")+(s.regl?'<span class="tag no">Autorisation</span>':"")+"</div></div>"+
+  '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="sp-now l'+lvl+'">'+(s.regl?"Pêche très encadrée":LVL_TXT[lvl])+"</span>"+ico("chev","chev")+"</div>"+
+  strip(s.cal,true)+
+ "</summary><div class=\"sp-body\">"+
+  '<div class="sp-grid">'+
+   "<div><h4>Le reconnaître</h4><p>"+esc(s.rec)+"</p></div>"+
+   "<div><h4>Où</h4><p>"+esc(s.ou)+' <span class="mono small muted">'+esc(s.prof)+"</span></p></div>"+
+   "<div><h4>Quand</h4><p>"+esc(s.quand)+"</p></div>"+
+   "<div><h4>Appâts et leurres</h4><p>"+esc(s.app)+"</p></div>"+
+  "</div>"+
+  (s.mailleNote?'<p class="small muted">Maille : '+esc(s.mailleNote)+".</p>":"")+
+  "<div><h4>Techniques</h4><div class=\"chips\">"+s.tech.map(techLink).join("")+"</div></div>"+
+  "<div><h4>Zones</h4><div class=\"chips\">"+s.zones.map(zoneLink).join("")+"</div></div>"+
+  (s.astuce?note("ok","ok","<p><strong>Astuce</strong> "+esc(s.astuce)+"</p>"):"")+
+  (s.att?note(s.declare||s.regl?"restrict":"warn","warn","<p><strong>Attention</strong> "+esc(s.att)+"</p>"):"")+
+ "</div></details>";
+}
+
+/* =====================================================================
+   Vue : Techniques
+   ===================================================================== */
+let techFilter="toutes";
+function renderTechniques(){
+ const v=$("#v-techniques");
+ v.innerHTML=vh(TECH.length+" techniques · bateau et bord","Techniques","Traîne, pêche à poste, dérive, lancer, turlutte, surfcasting, palangre : à quoi ça sert, le matériel, le pas-à-pas et les erreurs à éviter.")+
+ '<div class="chips" role="group" aria-label="Filtrer"><button type="button" class="chip sm" data-tf="toutes" aria-pressed="true">Toutes</button><button type="button" class="chip sm" data-tf="bateau" aria-pressed="false">En bateau</button><button type="button" class="chip sm" data-tf="bord" aria-pressed="false">Du bord</button></div>'+
+ '<div class="sp-list" id="techList">'+TECH.map(techCard).join("")+"</div>";
+}
+function techCard(t){
+ const mt=MONTAGES.find(m=>m.id===t.montage);
+ return '<article class="tech card" id="t-'+t.id+'" data-type="'+t.type+'">'+
+  '<div class="tech-head"><div class="chips"><span class="tag'+(t.type==="bord"?" bord":"")+'">'+TYPE_TXT[t.type]+'</span><span class="tag">'+esc(t.saison)+"</span></div><h3>"+esc(t.nom)+"</h3><p>"+esc(t.resume)+"</p></div>"+
+  '<dl class="facts"><dt>Cibles</dt><dd><div class="chips">'+t.cibles.map(spLink).join("")+"</div></dd><dt>Vitesse</dt><dd>"+esc(t.vitesse)+"</dd><dt>Où</dt><dd>"+esc(t.ou)+"</dd><dt>Zones</dt><dd><div class=\"chips\">"+t.zones.map(zoneLink).join("")+"</div></dd></dl>"+
+  '<details open><summary>Pas à pas'+ico("chev","chev")+'</summary><div><ol class="steps">'+t.etapes.map(e=>"<li><span>"+esc(e)+"</span></li>").join("")+"</ol></div></details>"+
+  "<details><summary>Matériel et appâts"+ico("chev","chev")+"</summary><div><p>"+esc(t.mat)+"</p><p>"+esc(t.leurres)+"</p></div></details>"+
+  (mt?"<details><summary>Le montage"+ico("chev","chev")+'</summary><div>'+(mt.custom?palangreSVG():rigSVG(mt.items))+'<p class="small muted">'+esc(mt.note)+"</p></div></details>":"")+
+  "<details><summary>Erreurs de débutant"+ico("chev","chev")+"</summary><div><p>"+esc(t.erreurs)+"</p></div></details>"+
+  (t.flyer?'<div class="flyer"><b>Avec le Flyer</b>'+esc(t.flyer)+"</div>":"")+
+  (t.regle?note("warn","scale","<p><strong>Règles</strong> "+esc(t.regle)+"</p>"):"")+
+ "</article>";
+}
+
+/* =====================================================================
+   Schémas de montage (SVG)
+   ===================================================================== */
+function wrapTxt(t,max){const w=String(t).split(" ");const out=[];let cur="";for(const x of w){if((cur+" "+x).trim().length>max&&cur){out.push(cur);cur=x}else cur=(cur+" "+x).trim()}if(cur)out.push(cur);return out}
+function rigSVG(items){
+ const X=70;let y=12;const P=[],L=[];
+ const lab=(ly,t)=>{if(t)L.push([ly,t])};
+ for(const it of items){
+  const t=it.t;
+  if(t==="reel"){P.push('<rect class="rg-gear" x="'+(X-17)+'" y="'+y+'" width="34" height="22" rx="6"/><circle class="rg-gear" cx="'+X+'" cy="'+(y+11)+'" r="5.5"/>');lab(y+11,it.l);y+=22}
+  else if(t==="line"){const h=it.h||40;P.push('<line class="'+(it.c==="leader"?"rg-leader":"rg-line")+'" x1="'+X+'" y1="'+y+'" x2="'+X+'" y2="'+(y+h)+'"/>');lab(y+h/2,it.l);y+=h}
+  else if(t==="knot"){P.push('<circle class="rg-knot" cx="'+X+'" cy="'+y+'" r="5"/>');lab(y,it.l)}
+  else if(t==="swivel"){P.push('<circle class="rg-metal" cx="'+X+'" cy="'+(y+4)+'" r="3.6"/><rect class="rg-metal" x="'+(X-3.8)+'" y="'+(y+8)+'" width="7.6" height="10" rx="3"/><circle class="rg-metal" cx="'+X+'" cy="'+(y+22)+'" r="3.6"/>');lab(y+13,it.l);y+=26}
+  else if(t==="snap"){P.push('<path class="rg-metal" d="M'+X+" "+y+" v5 c-7 1 -7 14 0 15 c7 -1 7 -10 2 -12\"/>");lab(y+11,it.l);y+=20}
+  else if(t==="ring"){P.push('<circle class="rg-metal" cx="'+X+'" cy="'+(y+5)+'" r="5"/>');lab(y+5,it.l);y+=10}
+  else if(t==="bead"){P.push('<circle class="rg-bead" cx="'+X+'" cy="'+(y+5)+'" r="5"/>');lab(y+5,it.l);y+=10}
+  else if(t==="stop"){P.push('<path class="rg-stop" d="M'+(X-8)+" "+(y+2)+" h16 M"+(X-8)+" "+(y+6)+' h16"/>');lab(y+4,it.l);y+=8}
+  else if(t==="float"){P.push('<path class="rg-water" d="M10 '+(y+26)+" q10 -6 20 0 t20 0 t20 0 t20 0 t20 0\"/>");P.push('<line class="rg-line" x1="'+X+'" y1="'+y+'" x2="'+X+'" y2="'+(y+6)+'"/><path class="rg-float-top" d="M'+X+" "+(y+6)+" c8 4 9 14 9 20 h-18 c0 -6 1 -16 9 -20z\"/><path class=\"rg-float-bot\" d=\"M"+(X-9)+" "+(y+26)+" h18 c0 8 -4 16 -9 20 c-5 -4 -9 -12 -9 -20z\"/><line class=\"rg-line\" x1=\""+X+'" y1="'+(y+46)+'" x2="'+X+'" y2="'+(y+52)+'"/>');lab(y+26,it.l);y+=52}
+  else if(t==="sinker"){const s=it.small?.6:1;P.push('<path class="rg-sink" d="M'+X+" "+y+" c"+(9*s)+" "+(8*s)+" "+(11*s)+" "+(22*s)+" 0 "+(26*s)+" c"+(-11*s)+" "+(-4*s)+" "+(-9*s)+" "+(-18*s)+' 0 '+(-26*s)+'z"/>'+(it.grap?'<path class="rg-hook" d="M'+(X-6)+" "+(y+20)+" l-8 7 M"+(X+6)+" "+(y+20)+' l8 7"/>':""));lab(y+13*s,it.l);y+=26*s+(it.grap?6:2)}
+  else if(t==="hook"){P.push('<path class="rg-hook" d="M'+X+" "+y+" v18 a8 8 0 0 1 -16 0 v-5\"/><path class=\"rg-hook\" d=\"M"+(X-16)+" "+(y+13)+' l4 4"/>');lab(y+16,it.l);y+=30}
+  else if(t==="lure"){P.push('<path class="rg-lure" d="M'+X+" "+(y+2)+" c9 6 11 18 9 30 c-2 8 -5 12 -9 14 c-4 -2 -7 -6 -9 -14 c-2 -12 0 -24 9 -30z\"/><path class=\"rg-lure\" d=\"M"+X+" "+(y+46)+" l-7 9 h14z\"/><circle class=\"rg-eye\" cx=\""+(X-3)+'" cy="'+(y+12)+'" r="1.7"/><path class="rg-hook" d="M'+(X+9)+" "+(y+26)+" h7 v6 M"+(X+16)+" "+(y+26)+' v-5"/>');lab(y+24,it.l);y+=58}
+  else if(t==="soft"){P.push('<circle class="rg-head" cx="'+X+'" cy="'+(y+7)+'" r="7"/><path class="rg-soft" d="M'+(X-5)+" "+(y+12)+" c0 14 2 26 5 32 c3 -6 5 -18 5 -32z\"/><path class=\"rg-soft\" d=\"M"+X+" "+(y+44)+" l-7 8 h14z\"/><path class=\"rg-hook\" d=\"M"+(X+2)+" "+(y+30)+' q7 -2 7 -11"/>');lab(y+26,it.l);y+=54}
+  else if(t==="squid"){let sp="";[-60,-30,0,30,60].forEach(a=>{const r=a*RAD;sp+="M"+X+" "+(y+36)+" l"+(9*Math.sin(r)).toFixed(1)+" "+(9*Math.cos(r)).toFixed(1)+" "});P.push('<path class="rg-soft" d="M'+X+" "+y+" c7 4 8 12 7 26 l-7 8 l-7 -8 c-1 -14 0 -22 7 -26z\"/><path class=\"rg-hook\" d=\"M"+(X-6)+" "+(y+10)+" l-6 -4 M"+(X+6)+" "+(y+10)+" l6 -4 "+sp+'"/>');lab(y+20,it.l);y+=50}
+  else if(t==="jig"){P.push('<path class="rg-hook" d="M'+X+" "+y+" v5 M"+X+" "+(y+3)+' q9 1 9 11 l-3 -3"/><path class="rg-lure" d="M'+X+" "+(y+7)+" c6 6 7 24 3 38 l-3 6 l-3 -6 c-4 -14 -3 -32 3 -38z\"/>");lab(y+26,it.l);y+=54}
+  else if(t==="dropper"){P.push('<path class="rg-line" d="M'+X+" "+y+" c-6 0 -16 4 -26 12 v10\"/><path class=\"rg-hook\" d=\"M"+(X-26)+" "+(y+22)+' a6 6 0 0 0 12 0 v-4"/>');lab(y+10,it.l);y+=6}
+  else if(t==="live"){P.push('<path class="rg-hook" d="M'+X+" "+y+" v14 a6 6 0 0 1 -12 0 v-3\"/><path class=\"rg-lure\" d=\"M"+(X-2)+" "+(y+16)+" c8 -9 26 -9 34 0 c-8 9 -26 9 -34 0z\"/><path class=\"rg-lure\" d=\"M"+(X+32)+" "+(y+16)+" l9 -7 v14z\"/><circle class=\"rg-eye\" cx=\""+(X+5)+'" cy="'+(y+14)+'" r="1.7"/>');lab(y+16,it.l);y+=36}
+ }
+ let last=-99;const out=[];
+ for(const [ly,t] of L){
+  const lines=wrapTxt(t,25),h=15*lines.length;
+  let top=Math.max(ly-h/2,last+7);const mid=top+h/2;last=top+h;
+  out.push('<path class="rg-lead" d="M'+(X+16)+" "+ly.toFixed(1)+" L118 "+mid.toFixed(1)+'"/>');
+  out.push('<text class="rg-lbl" x="124" y="'+(top+11).toFixed(1)+'">'+lines.map((ln,i)=>'<tspan x="124" dy="'+(i?15:0)+'">'+esc(ln)+"</tspan>").join("")+"</text>");
+ }
+ const H=Math.ceil(Math.max(y,last)+12);
+ return '<svg viewBox="0 0 340 '+H+'" role="img" aria-label="Schéma du montage">'+P.join("")+out.join("")+"</svg>";
+}
+function palangreSVG(){
+ const hooks=[];for(let x=108;x<=532;x+=38){hooks.push('<path class="rg-line" d="M'+x+' 171 l-5 -18"/><path class="rg-hook" d="M'+(x-5)+' 153 v-6 a4 4 0 0 0 -8 0"/>')}
+ return '<svg viewBox="0 0 640 228" role="img" aria-label="Schéma d\'une palangre de fond">'+
+ '<rect class="rg-sea" x="0" y="34" width="640" height="160" rx="6"/>'+
+ '<path class="rg-water" d="M0 34 q16 -7 32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0"/>'+
+ '<path class="rg-bed" d="M0 194 q40 -10 80 -4 t80 0 t80 -6 t80 4 t80 -2 t80 4 t80 -4 t80 2 V228 H0z"/>'+
+ '<line class="rg-metal" x1="44" y1="12" x2="44" y2="30"/><path class="rg-buoy" d="M44 12 l12 4 l-12 4z"/><circle class="rg-buoy" cx="44" cy="32" r="9"/>'+
+ '<line class="rg-metal" x1="596" y1="12" x2="596" y2="30"/><path class="rg-buoy" d="M596 12 l12 4 l-12 4z"/><circle class="rg-buoy" cx="596" cy="32" r="9"/>'+
+ '<path class="rg-line" d="M44 41 Q 52 110 62 168"/><path class="rg-line" d="M596 41 Q 588 110 578 168"/>'+
+ '<rect class="rg-sink" x="52" y="166" width="22" height="13" rx="2"/><rect class="rg-sink" x="566" y="166" width="22" height="13" rx="2"/>'+
+ '<path class="rg-leader" d="M74 172 Q 320 180 566 172"/>'+hooks.join("")+
+ '<text class="rg-lbl" x="62" y="22">Bouée marquée</text><text class="rg-small" x="62" y="62">orin</text>'+
+ '<text class="rg-lbl" x="420" y="22">Bouée + immatriculation</text>'+
+ '<text class="rg-small" x="80" y="214">lest</text><text class="rg-lbl" x="210" y="140">avançons 35–50/100 · 40 cm · tous les 1,5–2 m</text>'+
+ '<text class="rg-lbl" x="222" y="214">ligne mère 70–100/100 · 30 hameçons max</text>'+
+ "</svg>";
+}
+
+/* =====================================================================
+   Vue : Nœuds & montages
+   ===================================================================== */
+let knotTab="noeuds";
+function anatomySVG(){
+ let back="",front="";
+ for(let i=0;i<4;i++){const x=100+i*22;front+='<path class="an-tag" d="M'+x+" 76 C "+(x+2)+" 62, "+(x+8)+" 52, "+(x+11)+' 48"/>';back+='<path class="an-back" d="M'+(x+11)+" 48 C "+(x+15)+" 56, "+(x+19)+" 68, "+(x+22)+' 76"/>'}
+ return '<svg class="anat" viewBox="0 0 340 132" role="img" aria-label="Vocabulaire : œillet, brin principal, brin libre, tours">'+
+  back+'<path class="an-main" d="M332 62 H44"/><circle class="an-ring" cx="44" cy="62" r="17"/>'+
+  '<path class="an-tag" d="M44 62 C 26 66, 30 84, 56 82 C 72 81, 86 79, 100 76"/>'+front+
+  '<path class="an-tag" d="M188 76 C 202 82, 214 92, 226 100"/>'+
+  '<text class="an-txt b" x="44" y="106" text-anchor="middle">œillet</text>'+
+  '<text class="an-txt b" x="332" y="48" text-anchor="end">brin principal</text><text class="an-txt" x="332" y="84" text-anchor="end">(vers la canne)</text>'+
+  '<text class="an-txt b" x="144" y="34" text-anchor="middle">tours (spires)</text>'+
+  '<text class="an-txt b" x="232" y="112">brin libre</text><text class="an-txt" x="232" y="127">(le bout du fil)</text>'+
+ "</svg>";
+}
+function renderNoeuds(){
+ const v=$("#v-noeuds");
+ v.innerHTML=vh("12 nœuds · 9 montages","Nœuds & montages","Les nœuds qui servent vraiment en mer, expliqués étape par étape, avec un lien vers une animation pour chacun. Entraîne-toi à la maison avec un vieux fil.")+
+ '<div class="segs" role="group" aria-label="Affichage"><button type="button" data-ktab="noeuds" aria-pressed="true">Nœuds</button><button type="button" data-ktab="montages" aria-pressed="false" id="montages">Montages</button></div>'+
+ '<div id="kNoeuds" class="block">'+
+  '<div class="card pad" style="display:flex;flex-direction:column;gap:10px"><h3>Les mots utilisés dans les étapes</h3>'+anatomySVG()+'<p class="small muted">Mouille toujours le nœud avec de la salive ou de l\'eau avant de serrer : le fil chauffe moins et garde sa solidité.</p></div>'+
+  '<section class="block"><h2>Quel nœud pour quoi ?</h2><div class="card" style="overflow-x:auto"><table class="which"><tbody>'+WHICH.map(w=>{const k=NOEUDS.find(n=>n.id===w[1]);return "<tr><td>"+esc(w[0])+'</td><td><a href="#noeuds" data-go="noeuds" data-target="k-'+k.id+'">'+esc(k.nom)+"</a></td></tr>"}).join("")+"</tbody></table></div></section>"+
+  NOEUDS.map(knotCard).join("")+
+ "</div>"+
+ '<div id="kMontages" class="block" hidden><p>Chaque montage se lit de haut en bas, du moulinet vers l\'hameçon. Le trait rouge, c\'est le bas de ligne.</p><div class="rig-grid">'+
+  MONTAGES.map(m=>'<article class="rig card" id="m-'+m.id+'"><h3>'+esc(m.nom)+'</h3><p class="small muted">'+esc(m.usage)+"</p>"+(m.custom?palangreSVG():rigSVG(m.items))+'<p class="small">'+esc(m.note)+"</p></article>").join("")+
+ "</div></div>";
+}
+function knotCard(k){
+ const lv=[1,2,3].map(i=>'<i class="'+(i<=k.niv?"on":"")+'"></i>').join("");
+ return '<article class="knot card" id="k-'+k.id+'"><div class="knot-head"><div><h3>'+esc(k.nom)+'</h3><p class="small muted" style="margin-top:4px">'+esc(k.usage)+'</p></div><span class="lvl" title="Difficulté">'+lv+" "+["","facile","moyen","difficile"][k.niv]+"</span></div>"+
+ '<dl class="facts"><dt>Fils</dt><dd>'+esc(k.fils)+"</dd><dt>Solidité</dt><dd>"+esc(k.sol)+"</dd></dl>"+
+ '<ol class="steps">'+k.etapes.map(e=>"<li><span>"+esc(e)+"</span></li>").join("")+"</ol>"+
+ note("ok","ok","<p><strong>Astuce</strong> "+esc(k.astuce)+"</p>")+
+ (k.lien?extLink(k.lien,"Voir l'animation pas à pas"):"")+
+ "</article>";
+}
+
+/* =====================================================================
+   Vue : Zones (carte schématique)
+   ===================================================================== */
+const MB={lat0:43.575,lat1:43.425,lon0:6.89,lon1:7.11,W:1000};
+const KX=Math.cos(43.5*RAD);
+const MS=MB.W/((MB.lon1-MB.lon0)*KX);
+const MH=Math.round((MB.lat0-MB.lat1)*MS);
+const pj=(lat,lon)=>[+((lon-MB.lon0)*KX*MS).toFixed(1),+((MB.lat0-lat)*MS).toFixed(1)];
+const KM=MS/110.95;
+function segs(pts,closed){
+ const n=pts.length;let d="";const g=i=>closed?pts[(i+n)%n]:pts[Math.max(0,Math.min(n-1,i))];
+ const cnt=closed?n:n-1;
+ for(let i=0;i<cnt;i++){const p0=g(i-1),p1=g(i),p2=g(i+1),p3=g(i+2);
+  d+=" C"+(p1[0]+(p2[0]-p0[0])/6).toFixed(1)+","+(p1[1]+(p2[1]-p0[1])/6).toFixed(1)+" "+(p2[0]-(p3[0]-p1[0])/6).toFixed(1)+","+(p2[1]-(p3[1]-p1[1])/6).toFixed(1)+" "+p2[0]+","+p2[1]}
+ return d;
+}
+function mapSVG(){
+ const cp=COAST.map(p=>pj(p[0],p[1])),f=cp[0],l=cp[cp.length-1];
+ const coastD="M"+f[0]+","+f[1]+segs(cp,false);
+ const landD="M"+(MB.W+6)+",-6 L"+(MB.W+6)+","+f[1]+" L"+f[0]+","+f[1]+segs(cp,false)+" L"+l[0]+","+(MH+6)+" L-6,"+(MH+6)+" L-6,-6 Z";
+ const isles=ISLES.map(is=>{const p=is.map(q=>pj(q[0],q[1]));return "M"+p[0][0]+","+p[0][1]+segs(p,true)+"Z"});
+ const islets=ISLETS.map(q=>{const p=pj(q[0],q[1]);return '<circle class="m-land" cx="'+p[0]+'" cy="'+p[1]+'" r="4.5"/>'}).join("");
+ const cr=CAPROUX.map(q=>pj(q[0],q[1]));
+ const crD="M"+cr.map(p=>p.join(",")).join(" L")+" Z";
+ const zmp=pj(43.5565,7.0745);
+ const four=pj(43.5393,7.0832);
+ const grid=[];
+ [43+26/60,43+28/60,43+30/60,43+32/60,43+34/60].forEach((la,i)=>{const y=pj(la,7)[1];grid.push('<line class="m-grid" x1="0" y1="'+y+'" x2="'+MB.W+'" y2="'+y+'"/><text class="m-tick" x="'+(MB.W-8)+'" y="'+(y-6)+'" text-anchor="end">43°'+(26+i*2)+"′</text>")});
+ [[6,54],[6,56],[6,58],[7,0],[7,2],[7,4],[7,6]].forEach(([d,m])=>{const x=pj(43.5,d+m/60)[0];grid.push('<line class="m-grid" x1="'+x+'" y1="0" x2="'+x+'" y2="'+MH+'"/><text class="m-tick" x="'+(x+5)+'" y="'+(MH-10)+'">'+d+"°"+pad2(m)+"′</text>")});
+ const T=(lat,lon,txt,cls,anchor)=>{const p=pj(lat,lon);return '<text class="'+cls+'" x="'+p[0]+'" y="'+p[1]+'"'+(anchor?' text-anchor="'+anchor+'"':"")+">"+txt+"</text>"};
+ const marks=ZONES.map(z=>{const p=pj(z.lat,z.lon);const tc=z.type==="deux"?"deux":z.type;return '<g class="mk '+tc+'" data-mk="'+z.id+'" tabindex="0" role="button" aria-label="'+esc(z.n+". "+z.nom)+'"><circle cx="'+p[0]+'" cy="'+p[1]+'" r="20"/><text x="'+p[0]+'" y="'+(p[1]+1)+'">'+z.n+"</text></g>"}).join("");
+ const nm=1.852*KM,sx=720,sy=MH-58;
+ return '<svg id="zoneMap" viewBox="0 0 '+MB.W+" "+MH+'" role="img" aria-label="Carte schématique de Cap Roux à Golfe-Juan avec les zones de pêche numérotées">'+
+  '<defs><pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line class="m-hatch" x1="0" y1="0" x2="0" y2="12"/></pattern></defs>'+
+  grid.join("")+
+  '<path class="m-band" d="'+coastD+'"/>'+isles.map(d=>'<path class="m-band" d="'+d+'"/>').join("")+
+  '<path class="m-ban" d="'+crD+'"/>'+
+  '<path class="m-land" d="'+landD+'"/>'+isles.map(d=>'<path class="m-land" d="'+d+'"/>').join("")+islets+
+  '<circle class="m-zmp" cx="'+zmp[0]+'" cy="'+zmp[1]+'" r="'+(0.35*KM).toFixed(1)+'"/>'+
+  '<text class="m-bantxt" x="'+zmp[0]+'" y="'+(zmp[1]+0.35*KM+18).toFixed(1)+'" text-anchor="middle">ZMP ≈</text>'+
+  '<rect class="m-beacon" x="'+(four[0]-3)+'" y="'+(four[1]-14)+'" width="6" height="14"/><rect class="m-beacon2" x="'+(four[0]-3)+'" y="'+(four[1]-9)+'" width="6" height="4"/>'+
+  T(43.4470,6.9520,"Cantonnement du Cap Roux","m-bantxt")+T(43.4430,6.9520,"toute pêche interdite","m-bantxt")+
+  T(43.5300,7.0000,"Golfe de la Napoule","m-water","middle")+
+  T(43.5445,7.1078,"Golfe Juan","m-water","end")+
+  T(43.4560,7.0350,"Le large","m-water","middle")+
+  T(43.5126,7.0380,"Plateau du Milieu","m-water s","end")+
+  T(43.5555,7.0040,"Cannes","m-town","middle")+
+  T(43.5440,6.9300,"Mandelieu","m-town","middle")+
+  T(43.5390,6.9300,"La Napoule","m-town","middle")+
+  T(43.5065,6.9160,"Théoule","m-town","middle")+
+  T(43.4752,6.9020,"Le Trayas","m-town","start")+
+  T(43.4560,6.8970,"Cap Roux","m-town","start")+
+  T(43.5708,7.0640,"Golfe-Juan","m-town","middle")+
+  T(43.5203,7.0470,"Ste-Marguerite","m-isle","middle")+
+  T(43.5050,7.0384,"St-Honorat","m-isle","end")+
+  marks+
+  '<line class="m-scale" x1="'+sx+'" y1="'+sy+'" x2="'+(sx+nm).toFixed(1)+'" y2="'+sy+'"/><line class="m-scale" x1="'+sx+'" y1="'+(sy-7)+'" x2="'+sx+'" y2="'+(sy+7)+'"/><line class="m-scale" x1="'+(sx+nm).toFixed(1)+'" y1="'+(sy-7)+'" x2="'+(sx+nm).toFixed(1)+'" y2="'+(sy+7)+'"/><text class="m-scaletxt" x="'+sx+'" y="'+(sy-14)+'">1 mille (1,85 km)</text>'+
+  '<g transform="translate(935,560)"><path class="m-north" d="M0 -34 L11 8 L0 0 L-11 8 Z"/><text class="m-scaletxt" x="0" y="30" text-anchor="middle">N</text></g>'+
+  '<rect class="m-frame" x="1" y="1" width="'+(MB.W-2)+'" height="'+(MH-2)+'"/>'+
+ "</svg>";
+}
+let zoneFilter="tous";
+function renderZones(){
+ const v=$("#v-zones");
+ v.innerHTML=vh("12 zones · bord et bateau","Zones","De Cap Roux à Golfe-Juan, en passant par les Lérins et le large. Touche un numéro sur la carte pour ouvrir la fiche.")+
+ '<div class="map-tools"><div class="chips" role="group" aria-label="Filtrer les zones"><button type="button" class="chip sm" data-zf="tous" aria-pressed="true">Toutes</button><button type="button" class="chip sm" data-zf="bord" aria-pressed="false">Du bord</button><button type="button" class="chip sm" data-zf="bateau" aria-pressed="false">En bateau</button></div><button type="button" class="chip sm" id="zoomBtn" aria-pressed="false">'+ico("zoom")+"Agrandir</button></div>"+
+ '<div class="map-wrap" id="mapWrap">'+mapSVG()+"</div>"+
+ '<div class="legend"><span><span class="dotk" style="background:var(--accent)"></span>Du bord</span><span><span class="dotk" style="background:var(--ink)"></span>En bateau</span><span><span class="dotk" style="background:var(--ok)"></span>Les deux</span><span><i style="background:var(--map-band)"></i>Bande des 300 m (5 nœuds)</span><span><i style="background:var(--restrict-soft);outline:2px solid var(--restrict)"></i>Pêche interdite</span></div>'+
+ note("warn","info","<p><strong>Schéma indicatif.</strong> Les positions et les contours sont approximatifs : ils ne remplacent pas une carte marine. Navigue avec ton GPS, ton sondeur et la carte officielle "+extLink("https://data.shom.fr","data.shom.fr")+".</p>")+
+ '<div class="zone-list" id="zoneList">'+ZONES.map(zoneCard).join("")+"</div>"+
+ '<section class="block"><h2>Où la pêche est interdite ou limitée</h2><div class="ban-list">'+BANS.map(b=>'<div class="ban"><b>'+esc(b.nom)+'</b><span class="small" style="font-weight:700">'+esc(b.lieu)+"</span><span>"+esc(b.txt)+"</span></div>").join("")+"</div>"+
+ note("","info","<p><strong>Parc maritime départemental Estérel-Théoule</strong> (353 ha au large de Théoule). Ce n'est pas une réserve : la pêche à la ligne y reste possible avec les règles générales. Le Département rappelle de respecter tailles et quantités, et la pêche des oursins y est fermée du 16 avril au 31 octobre.</p>")+
+ "</section>";
+}
+function zoneCard(z){
+ const tc=z.type==="deux"?"deux":z.type;
+ return '<article class="zone card" id="z-'+z.id+'" data-type="'+tc+'">'+
+  '<div class="zone-head"><span class="znum '+tc+'">'+z.n+"</span><div><h3>"+esc(z.nom)+"</h3><p>"+esc(z.lieu)+" · "+TYPE_TXT[z.type]+"</p></div></div>"+
+  '<dl class="facts"><dt>Fond</dt><dd>'+esc(z.fond)+' <span class="mono small muted">'+esc(z.prof)+"</span></dd><dt>Saison</dt><dd>"+esc(z.saison)+'</dd><dt>Position</dt><dd class="mono small">≈ '+fmtDM(z.lat,"N")+" · "+fmtDM(z.lon,"E")+"</dd></dl>"+
+  "<p>"+esc(z.conseil)+"</p>"+
+  '<div class="chips">'+z.sp.map(spLink).join("")+"</div>"+
+  '<div class="chips">'+z.tech.map(techLink).join("")+"</div>"+
+  note(/interdit|cantonnement/i.test(z.att)?"restrict":"warn","warn","<p><strong>Attention</strong> "+esc(z.att)+"</p>")+
+  (z.q?extLink(gmaps(z.q),"Ouvrir dans Google Maps"):"")+
+ "</article>";
+}
+function fmtDM(v,h){const d=Math.floor(v),m=(v-d)*60;return d+"°"+m.toFixed(1).replace(".",",")+"′ "+h}
+function selectZone(id,scroll){
+ $$(".mk").forEach(g=>g.classList.toggle("sel",g.dataset.mk===id));
+ $$(".zone").forEach(c=>c.classList.toggle("sel",c.id==="z-"+id));
+ const el=document.getElementById("z-"+id);
+ if(el&&scroll)el.scrollIntoView({behavior:REDUCE?"auto":"smooth",block:"start"});
+}
+function applyZoneFilter(){
+ $$(".zone").forEach(c=>{const t=c.dataset.type;c.hidden=!(zoneFilter==="tous"||t===zoneFilter||t==="deux")});
+ $$(".mk").forEach(g=>{const z=ZONEI[g.dataset.mk];const t=z.type==="deux"?"deux":z.type;g.classList.toggle("dim",!(zoneFilter==="tous"||t===zoneFilter||t==="deux"))});
+}
+
+/* =====================================================================
+   Vue : Règles
+   ===================================================================== */
+const FISH_PATH="M0,0 C8,-14 40,-18 62,-12 C72,-9 80,-5 86,-2 L100,-14 L96,0 L100,14 L86,2 C80,5 72,9 62,12 C40,18 8,14 0,0Z";
+function rulerSVG(){
+ let ticks="",nums="",notch="";const x0=20,base=112;
+ for(let cm=0;cm<=60;cm++){const x=x0+cm*10,len=cm%10===0?20:cm%5===0?14:8;ticks+='<line class="ru-tick" x1="'+x+'" y1="'+base+'" x2="'+x+'" y2="'+(base+len)+'"/>';if(cm%10===0)nums+='<text class="ru-num" x="'+x+'" y="'+(base+36)+'" text-anchor="middle">'+cm+"</text>"}
+ [...new Set(MAILLES.map(m=>m[1]))].forEach(v=>{const x=x0+v*10;notch+='<path class="ru-notch" d="M'+(x-4)+" "+(base-1)+" l4 6 l4 -6z\"/>"});
+ return '<svg viewBox="0 44 640 118" role="img" aria-label="Règle de maille de 0 à 60 cm">'+
+  '<g class="ru-fishg" id="ruFish" style="transform:translate(20px,82px) scale(3,1.3)"><path class="ru-fish" d="'+FISH_PATH+'" vector-effect="non-scaling-stroke"/></g>'+
+  '<line class="ru-end" id="ruEnd" x1="320" y1="52" x2="320" y2="'+base+'"/>'+
+  '<rect class="ru-body" x="10" y="'+base+'" width="620" height="42" rx="4"/>'+ticks+nums+notch+
+  '<text class="ru-num" x="626" y="'+(base+36)+'" text-anchor="end">cm</text>'+
+ "</svg>";
+}
+function setRuler(i){
+ const [nom,cm]=MAILLES[i];const sx=cm/10,sy=0.75+sx*0.2;
+ const g=$("#ruFish");if(g)g.style.transform="translate(20px,"+(104-16*sy)+"px) scale("+sx+","+sy+")";
+ const e=$("#ruEnd");if(e){e.setAttribute("x1",20+cm*10);e.setAttribute("x2",20+cm*10)}
+ $("#ruLbl").textContent=nom;$("#ruLbl2").textContent=cm+" cm minimum · du museau au bout de la queue";
+ $$(".size-table tr").forEach((tr,k)=>tr.classList.toggle("sel",k===i));
+}
+function renderRegles(){
+ const v=$("#v-regles");
+ v.innerHTML=vh("Réglementation · à jour fin octobre 2026","Règles 2026","Ce qu'il faut savoir pour pêcher en règle en Méditerranée, du bord comme en bateau. Les règles bougent chaque année : revérifie avant chaque saison.")+
+ '<section class="block"><h2>Avant de pêcher</h2><div class="rules">'+
+  '<div class="rule card"><h3>Enregistrement RecFishing</h3><p>Depuis le 12 février 2026, en Méditerranée, tous les pêcheurs de loisir de 16 ans et plus doivent s\'enregistrer sur l\'application gratuite RecFishing, quelle que soit l\'espèce recherchée. Seuls les pêcheurs à pied en sont dispensés. L\'enregistrement est valable 12 mois.</p>'+note("ok","ok","<p><strong>Pour toi</strong> Tu pêches en bateau : tu dois être enregistré. Fais-le au moins la veille de ta sortie.</p>")+"</div>"+
+  '<div class="rule card"><h3>Déclarer sous 24 h</h3><p>En Méditerranée, trois espèces « sensibles » se déclarent dans RecFishing dans les 24 heures qui suivent la capture, même si tu les relâches : <strong>thon rouge, dorade rose, dorade coryphène</strong>. Tu indiques le lieu, l\'espèce, la quantité, la technique, la taille et le poids.</p></div>'+
+ "</div></section>"+
+ '<section class="block"><h2>Tailles minimales</h2><p>Arrêté du 26 octobre 2012, Méditerranée. Choisis une espèce : la silhouette s\'étire jusqu\'à sa maille.</p>'+
+  '<div class="ruler-box card"><p class="ru-out"><strong id="ruLbl"></strong><span id="ruLbl2"></span></p>'+rulerSVG()+"</div>"+
+  '<div class="card" style="overflow:hidden"><table class="size-table"><tbody>'+MAILLES.map((m,i)=>'<tr><td><button type="button" data-ru="'+i+'">'+esc(m[0])+"</button></td><td>"+m[1]+" cm</td></tr>").join("")+
+  '<tr><td>Thon rouge</td><td>30 kg ou 115 cm</td></tr><tr><td>Corb · mérous</td><td>interdits</td></tr></tbody></table></div>'+
+  note("warn","info","<p><strong>Pas de maille</strong> fixée en Méditerranée pour la bonite, la thonine, le denti, la liche, la sériole, le barracuda, le calamar et la seiche. Ne garde que ce que tu mangeras.</p>")+
+ "</section>"+
+ '<section class="block"><h2>Marquage</h2><div class="rule card"><p>Pour lutter contre la vente illégale, certains poissons gardés doivent être marqués en <strong>coupant la partie inférieure de la nageoire de la queue</strong>. En bateau : dès la mise à bord (sauf poisson gardé vivant pour être relâché). Du bord : dès la capture. Le poisson reste entier jusqu\'au débarquement, pour pouvoir être mesuré.</p>'+
+  '<p class="small"><strong>Espèces concernées :</strong> loup, dorade royale, dorade rose, sar commun, pagre, denti, bonite, chapon (rascasse rouge), dorade coryphène, maquereau (avant le débarquement), maigre, sole, langouste et homard (avant le débarquement), ainsi que les thons et grands poissons du large.</p></div></section>'+
+ '<section class="block"><h2>Espèces interdites</h2><div class="ban-list">'+PROTEGES.map(p=>'<div class="ban"><b>'+esc(p.nom)+"</b><span>"+esc(p.txt)+"</span></div>").join("")+"</div></section>"+
+ '<section class="block"><h2>Thon rouge en 2026</h2><div class="rule card"><ul class="dots">'+
+  "<li>Pêche de loisir seulement avec une <strong>autorisation par bateau</strong>, demandée entre le 1er avril et le 31 mai (Télésisaap ou courrier à la DIRM Méditerranée).</li>"+
+  "<li><strong>No-kill</strong> (pêcher-relâcher) autorisé du 1er juin au 15 novembre 2026, poisson relâché vivant immédiatement.</li>"+
+  "<li><strong>Capture</strong> autorisée du 10 juillet au 16 octobre 2026, avec une bague de marquage.</li>"+
+  "<li>Taille minimale : 30 kg ou 115 cm à la fourche. Déclaration du débarquement à FranceAgriMer sous 48 h.</li>"+
+ "</ul></div></section>"+
+ '<section class="block"><h2>Engins autorisés en bateau</h2><div class="rule card"><ul class="dots">'+
+  "<li>Des lignes avec <strong>12 hameçons au maximum pour tout le bateau</strong>. Un leurre compte comme un hameçon.</li>"+
+  "<li><strong>2 palangres</strong> de 30 hameçons au maximum chacune, et 2 casiers.</li>"+
+  "<li>1 foëne, 1 épuisette (ou salabre), 1 grapette à dents (Méditerranée).</li>"+
+  "<li>Jusqu'à 3 moulinets ou vire-lignes électriques de 800 W maximum.</li>"+
+  "<li>Engins marqués avec l'immatriculation du bateau, sinon ils sont considérés comme des épaves.</li>"+
+  "<li>Pas de filet pour la pêche de loisir en Méditerranée.</li>"+
+ "</ul></div></section>"+
+ '<section class="block"><h2>Zones et navigation</h2><div class="rule card"><ul class="dots">'+
+  "<li><strong>Cantonnement du Cap Roux</strong>, juste au sud du Trayas : toute pêche interdite, de la côte aux fonds de 80 m.</li>"+
+  "<li><strong>Zone marine protégée de Golfe-Juan</strong> : pêche, plongée et mouillage interdits (bouées jaunes à croix de Saint-André).</li>"+
+  "<li><strong>Bande des 300 m</strong> : 5 nœuds maximum. Au large de Théoule, une zone est limitée à 15 nœuds.</li>"+
+  "<li>Interdiction de s'approcher à moins de <strong>150 m</strong> des bateaux en pêche et des engins signalés, et de prendre le poisson dans les engins des autres.</li>"+
+  "<li>Ports et plages surveillées : souvent interdits à la pêche, selon les règlements locaux.</li>"+
+ '</ul><a class="ext" href="#zones">Voir les zones sur la carte</a></div></section>'+
+ '<section class="block"><h2>Vente et sanctions</h2>'+note("restrict","warn","<p><strong>Vente interdite</strong> Le produit de la pêche de loisir se consomme, il ne se vend jamais. Les infractions peuvent coûter jusqu'à 22 500 € d'amende.</p>")+"</section>"+
+ '<section class="block"><h2>Sources officielles</h2><div class="src">'+
+  extLink("https://www.mer.gouv.fr/peche-de-loisir-en-mer","Ministère de la Mer : pêche de loisir en mer")+
+  extLink("https://www.service-public.gouv.fr/particuliers/vosdroits/F2118","Service-public.fr : pêche de loisir en mer")+
+  extLink("https://www.dirm.mediterranee.developpement-durable.gouv.fr/peche-de-loisir-du-thon-rouge-annee-2026-a2742.html?lang=fr","DIRM Méditerranée : thon rouge 2026")+
+  extLink("https://www.antibes-juanlespins.com/vivre-a-antibes/lenvironnement/natura-2000/titre-par-defaut/titre-par-defaut-3/tailles-minimales-des-captures-en-peche-de-loisir","Tailles minimales en Méditerranée")+
+  extLink("https://aida.ineris.fr/reglementation/arrete-040714-portant-renouvellement-cantonnement-peche-cap-roux-departement-var","Arrêté du cantonnement du Cap Roux")+
+ "</div></section>";
+ setRuler(14);
+}
+
+/* =====================================================================
+   Vue : Checklist
+   ===================================================================== */
+let ckMode=LS.get("ck-mode","bateau");
+const CK=LS.get("ck-state",{bateau:{},bord:{}});
+function renderChecklist(){
+ const v=$("#v-checklist");
+ v.innerHTML=vh("Avant chaque sortie","Checklist","Coche au fur et à mesure. Ta liste reste cochée sur cet appareil jusqu'à ce que tu la remettes à zéro.")+
+ '<div class="segs" role="group" aria-label="Type de sortie"><button type="button" data-ck="bateau" aria-pressed="'+(ckMode==="bateau")+'">Sortie en bateau</button><button type="button" data-ck="bord" aria-pressed="'+(ckMode==="bord")+'">Pêche du bord</button></div>'+
+ '<div class="ck-prog"><div class="bar"><i id="ckBar"></i></div><span class="mono small" id="ckCount"></span></div>'+
+ '<div class="block" id="ckList"></div>'+
+ '<div class="btn-row"><button type="button" class="btn ghost" id="ckReset">Tout décocher</button><a class="btn ghost" href="#securite">Sécurité & météo</a></div>';
+ renderCkList();
+}
+function renderCkList(){
+ const st=CK[ckMode]||(CK[ckMode]={});let total=0;
+ $("#ckList").innerHTML=CHECK[ckMode].map(([g,items],gi)=>'<div class="ck-group card"><h3>'+esc(g)+"</h3>"+items.map((it,ii)=>{const key=gi+"-"+ii;total++;const on=!!st[key];return '<label class="ck-item'+(on?" done":"")+'" for="ck-'+ckMode+"-"+key+'"><input type="checkbox" id="ck-'+ckMode+"-"+key+'" data-key="'+key+'"'+(on?" checked":"")+"><span>"+esc(it)+"</span></label>"}).join("")+"</div>").join("");
+ updCk(total);
+}
+function updCk(total){
+ total=total||$$("#ckList input").length;const done=$$("#ckList input:checked").length;
+ $("#ckBar").style.width=(total?done/total*100:0)+"%";$("#ckCount").textContent=done+" / "+total;
+}
+
+/* =====================================================================
+   Vue : Quiz
+   ===================================================================== */
+const Q={set:[],i:0,score:0,locked:false,timer:null};
+function renderQuizShell(){
+ $("#v-quiz").innerHTML=vh(QUIZ.length+" questions · séries de 10","Quiz","Espèces, mailles, nœuds, techniques, sécurité. Les questions s'enchaînent ; une bonne réponse passe à la suite toute seule.")+'<div class="quiz card" id="quizBox"></div>';
+ quizStart();
+}
+function quizStart(){clearTimeout(Q.timer);Q.set=shuffle(QUIZ.slice()).slice(0,10).map(q=>Object.assign({},q,{ord:shuffle([0,1,2,3])}));Q.i=0;Q.score=0;renderQuestion()}
+function renderQuestion(){
+ const box=$("#quizBox");if(!box)return;
+ if(Q.i>=Q.set.length){
+  const best=Math.max(LS.get("quiz-best",0),Q.score);LS.set("quiz-best",best);
+  const msg=Q.score>=9?"Excellent, tu es prêt pour la mer.":Q.score>=7?"Très bien, encore quelques révisions.":Q.score>=5?"Pas mal : relis les règles et les nœuds.":"Relis les fiches et retente ta chance.";
+  box.innerHTML='<div class="q-end"><span class="mono small muted">Série terminée</span><span class="q-score">'+Q.score+'<span style="font-size:1.6rem">/10</span></span><p>'+msg+'</p><p class="small muted">Meilleur score sur cet appareil : '+best+'/10</p><button type="button" class="btn accent" id="qAgain">Nouvelle série de 10</button></div>';
+  return;
+ }
+ const q=Q.set[Q.i];Q.locked=false;
+ box.innerHTML='<div class="q-top"><span>Question '+(Q.i+1)+" / "+Q.set.length+"</span><span>Score "+Q.score+'</span></div><div class="q-bar"><i style="width:'+(Q.i/Q.set.length*100)+'%"></i></div><h3 class="q-q">'+esc(q.q)+'</h3><div class="q-opts">'+q.ord.map(k=>'<button type="button" class="q-opt" data-k="'+k+'">'+esc(q.o[k])+"</button>").join("")+'</div><div class="q-exp" id="qExp" hidden></div>';
+}
+function answer(k){
+ if(Q.locked)return;Q.locked=true;
+ const q=Q.set[Q.i],ok=k===q.a;if(ok)Q.score++;
+ $$(".q-opt").forEach(b=>{const bk=+b.dataset.k;b.disabled=true;if(bk===q.a)b.classList.add("good");else if(bk===k)b.classList.add("bad")});
+ const ex=$("#qExp");ex.hidden=false;
+ ex.innerHTML=note(ok?"ok":"restrict",ok?"ok":"warn","<p><strong>"+(ok?"Bonne réponse.":"Raté.")+"</strong> "+esc(q.e)+"</p>")+'<div class="btn-row"><button type="button" class="btn" id="qNext">'+(Q.i+1<Q.set.length?"Question suivante":"Voir le score")+"</button></div>";
+ if(ok){Q.timer=setTimeout(()=>{Q.i++;renderQuestion()},1900)}
+}
+
+/* =====================================================================
+   Vue : Matériel, Sécurité, Glossaire
+   ===================================================================== */
+function renderMateriel(){
+ $("#v-materiel").innerHTML=vh("Tu pars de zéro · sondeur et GPS déjà à bord","Matériel & budget","Dans quel ordre acheter, pour quoi faire, et combien prévoir. Les prix sont des ordres de grandeur constatés en ligne en 2026 (grandes surfaces de sport, magasins spécialisés) : compare avant d'acheter.")+
+ '<div class="budget"><div class="card"><span class="mono small muted">Démarrage conseillé</span><span class="v">300–500 €</span><span class="small">Kit lancer + kit calamar + accessoires. De quoi pêcher du bord et en bateau dès cet hiver.</span></div><div class="card"><span class="mono small muted">Équipement complet</span><span class="v">650–1 300 €</span><span class="small">Tous les kits, achetés au fil des saisons.</span></div></div>'+
+ note("ok","ok","<p><strong>En ce moment</strong> Fin octobre, le meilleur rapport plaisir/prix : une canne spinning et quelques leurres pour les loups et les dernières bonites, et une turlutte pour les calamars qui arrivent.</p>")+
+ KITS.map((k,i)=>'<article class="kit card"><div class="kit-head"><div><span class="mono small" style="color:var(--accent)">'+pad2(i+1)+" · "+esc(k.prio)+"</span><h3>"+esc(k.nom)+'</h3><p class="small muted">'+esc(k.pour)+"</p></div></div><table><tbody>"+k.items.map(it=>"<tr><td>"+esc(it[0])+"</td><td>"+esc(it[1])+"</td></tr>").join("")+'<tr class="tot"><td>Total</td><td>≈ '+esc(k.tot)+"</td></tr></tbody></table></article>").join("")+
+ '<section class="block"><h2>Bien choisir</h2><ul class="dots">'+
+  "<li><strong>Moulinet</strong> : taille 3000–4000 pour le lancer, 2500 pour la turlutte. Rince-le à l'eau douce après chaque sortie : le sel tue les roulements.</li>"+
+  "<li><strong>Tresse ou nylon</strong> : la tresse pour sentir les touches au leurre, le nylon pour la traîne et le surfcasting (il amortit).</li>"+
+  "<li><strong>Bas de ligne</strong> : toujours en fluorocarbone devant la tresse, plus épais contre les dents et les roches.</li>"+
+  "<li><strong>Hameçons</strong> : plus le numéro est grand, plus l'hameçon est petit (n°8 petit, n°1 moyen). Au-dessus de 1 on passe à 1/0, 2/0… qui grossissent.</li>"+
+ "</ul></section>";
+}
+function renderSecurite(){
+ $("#v-securite").innerHTML=vh("À lire avant de partir","Sécurité & météo","Le plus beau poisson ne vaut pas une sortie qui tourne mal. Les bons réflexes, du bord comme en mer.")+
+ '<section class="block"><h2>Urgences</h2><div class="sos"><div class="card"><span class="mono small muted">En mer</span><span class="n">VHF 16</span><span class="small">Le canal 16 joint le CROSS directement, sans réseau téléphonique.</span></div><div class="card"><span class="mono small muted">Téléphone</span><span class="n">196</span><span class="small">Le numéro du CROSS pour les urgences en mer, gratuit, 24 h/24.</span></div><div class="card"><span class="mono small muted">Urgence générale</span><span class="n">112</span><span class="small">Et le 15 pour le SAMU.</span></div></div>'+extLink("https://www.mer.gouv.fr/comment-alerter-les-secours-en-mer","Comment alerter les secours en mer")+"</section>"+
+ '<section class="block"><h2>Météo</h2><ul class="dots">'+
+  "<li>Regarde le vent <strong>et</strong> la houle, la veille et le matin même.</li>"+
+  "<li><strong>Vent de terre</strong> (mistral, vent de nord-ouest) : mer plate au bord, mais ça forcit vite au large et ça te pousse vers le large. Reste près de la côte.</li>"+
+  "<li><strong>Vent d'est ou de sud-est</strong> : la houle entre dans le golfe et sur les Lérins. Danger sur les rochers du bord.</li>"+
+  "<li>Le matin est souvent plus calme : pars tôt, rentre avant que la brise thermique se lève l'après-midi.</li>"+
+ '</ul><div class="src">'+extLink("https://www.windy.com","Windy : vent, houle, rafales")+extLink("https://meteofrance.com","Météo-France")+extLink("https://marine.meteoconsult.fr","Météo Consult Marine")+"</div></section>"+
+ '<section class="block"><h2>Le bateau</h2><ul class="dots">'+
+  "<li><strong>Armement de sécurité (Division 240)</strong> : basique jusqu'à 2 milles d'un abri, côtier jusqu'à 6 milles, hauturier au-delà. Il doit correspondre à la distance où tu vas pêcher.</li>"+
+  "<li>Gilet sur le dos dès que la mer se forme ou que tu es seul.</li>"+
+  "<li>Ne traîne jamais près des baigneurs ni d'un pavillon de plongée.</li>"+
+  "<li>Remonte les lignes avant toute manœuvre de port ou de mouillage : une ligne dans l'hélice gâche la journée.</li>"+
+ "</ul></section>"+
+ '<section class="block"><h2>Du bord</h2><ul class="dots">'+
+  "<li>Jamais seul la nuit sur les rochers. Préviens quelqu'un.</li>"+
+  "<li>Chaussures qui accrochent, frontale, et un œil sur les vagues : une série plus grosse arrive toujours.</li>"+
+  "<li>Ne lance jamais sans regarder derrière toi.</li>"+
+ "</ul></section>"+
+ '<section class="block"><h2>Poissons à manipuler avec soin</h2><ul class="dots">'+
+  "<li><strong>Vive</strong> : épines venimeuses sur le dos, souvent cachée dans le sable des plages.</li>"+
+  "<li><strong>Rascasses et chapon</strong> : épines venimeuses sur la tête et les nageoires.</li>"+
+  "<li><strong>Raie pastenague</strong> : dard sur la queue.</li>"+
+  "<li><strong>Murène, congre, barracuda, denti</strong> : morsures et dents coupantes. Pince obligatoire.</li>"+
+ "</ul>"+note("restrict","warn","<p><strong>Piqûre</strong> Mets la zone dans l'eau la plus chaude que tu supportes, sans te brûler, et demande un avis médical (15 ou 112).</p><p><strong>Hameçon planté</strong> au-delà de l'ardillon : ne tire pas, coupe le fil et va consulter.</p>")+"</section>";
+}
+function renderGlossaire(){
+ $("#v-glossaire").innerHTML=vh(GLOSS.length+" mots","Glossaire","Les mots de la pêche en mer, expliqués simplement.")+
+ '<label class="search">'+ico("search")+'<span class="sr">Chercher un mot</span><input id="glSearch" type="search" placeholder="Chercher : tresse, tombant, broumé…" autocomplete="off"></label>'+
+ '<dl class="glos" id="glList"></dl>';
+ renderGlList("");
+}
+function renderGlList(q){
+ const n=s=>s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");const qq=n(q.trim());
+ const list=GLOSS.slice().sort((a,b)=>a[0].localeCompare(b[0],"fr")).filter(g=>!qq||n(g[0]+" "+g[1]).includes(qq));
+ $("#glList").innerHTML=list.length?list.map(g=>"<div><dt>"+esc(g[0])+"</dt><dd>"+esc(g[1])+"</dd></div>").join(""):'<p class="muted">Aucun mot trouvé.</p>';
+}
+
+/* =====================================================================
+   Vue : Carnet de prises (stockage db, réservé au propriétaire)
+   ===================================================================== */
+const C={state:"loading",mode:"db",rows:[],db:null,editId:null,err:null};
+/* Hors de Claude (par exemple sur GitHub Pages), le carnet est gardé dans le navigateur de l'appareil. */
+const LKEY="carnet-peche-v1";
+function loadLocal(){try{const v=JSON.parse(localStorage.getItem(LKEY)||"[]");return Array.isArray(v)?v:[]}catch(e){return []}}
+function saveLocal(rows){try{localStorage.setItem(LKEY,JSON.stringify(rows));return true}catch(e){return false}}
+const newId=()=>"p"+Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+function initLocal(){
+ C.mode="local";C.rows=loadLocal();C.state="ready";renderCarnet();renderHomeCarnet();
+ window.addEventListener("storage",e=>{if(e.key===LKEY){C.rows=loadLocal();renderCarnetList();renderHomeCarnet()}});
+}
+function downloadFile(name,text,type){
+ const blob=new Blob([text],{type});const a=document.createElement("a");
+ a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();
+ setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1500);
+}
+function backupJSON(){
+ downloadFile("carnet-peche-sauvegarde-"+isoDate(new Date())+".json",JSON.stringify({app:"peche-golfe-napoule",version:1,date:new Date().toISOString(),rows:C.rows},null,1),"application/json");
+ toast("Sauvegarde téléchargée");
+}
+function restoreBackup(file){
+ if(!file)return;
+ const rd=new FileReader();
+ rd.onload=()=>{
+  try{
+   const obj=JSON.parse(rd.result);
+   const rows=Array.isArray(obj)?obj:(obj&&Array.isArray(obj.rows)?obj.rows:null);
+   if(!rows)throw new Error("format");
+   const map=new Map(C.rows.map(r=>[r.id,r]));let n=0;
+   rows.forEach(r=>{if(r&&typeof r==="object"&&r.date&&r.espece){const id=String(r.id||newId());if(!map.has(id))n++;map.set(id,Object.assign({},r,{id}))}});
+   const all=Array.from(map.values());
+   if(!saveLocal(all)){toast("Restauration impossible : le stockage du navigateur est plein ou bloqué");return}
+   C.rows=all;renderCarnetList();renderHomeCarnet();
+   toast(n?n+" prise"+(n>1?"s":"")+" ajoutée"+(n>1?"s":"")+" depuis la sauvegarde":"Rien de nouveau dans cette sauvegarde");
+  }catch(e){toast("Fichier non reconnu : choisis une sauvegarde du carnet (.json)")}
+ };
+ rd.readAsText(file);
+}
+const MER=["Calme","Peu agitée","Agitée","Forte"],EAU=["Claire","Teintée","Trouble"];
+const frDate=iso=>{if(!iso)return"";const [y,m,d]=String(iso).split("-").map(Number);if(!y)return String(iso);return new Date(y,m-1,d).toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"})};
+const spName=r=>r.espece==="autre"?(r.especeLibre||"Autre"):r.espece==="merou"?"Mérou":r.espece==="corb"?"Corb":r.espece==="dorade-rose"?"Dorade rose":(SPI[r.espece]?SPI[r.espece].nom:r.espece||"?");
+const zoneName=r=>r.zone==="autre"?(r.zoneLibre||"Autre spot"):(ZONEI[r.zone]?ZONEI[r.zone].nom:"");
+const techName=r=>TECHI[r.technique]?TECHI[r.technique].nom:"";
+const MAILLE_NUM={loup:30,dorade:23,pagre:18,sar:23,marbre:20,"dorade-grise":23,pageot:15,chapon:30,maquereau:18,"dorade-rose":33};
+const MARK_SET=new Set(["loup","dorade","bonite","denti","pagre","sar","chapon","coryphene","maquereau","dorade-rose"]);
+const DECL_SET=new Set(["coryphene","thon-rouge","dorade-rose"]);
+function renderCarnet(){
+ const v=$("#v-carnet");
+ const local=C.mode==="local";
+ const head=vh(local?"Tes sorties · enregistrées sur cet appareil":"Tes sorties · enregistrées en ligne","Carnet de prises","Note chaque poisson : espèce, taille, spot, technique, météo. La lune est ajoutée toute seule. Au fil des sorties, tu verras ce qui marche vraiment chez toi.");
+ if(C.state==="loading"){v.innerHTML=head+'<p class="status muted">Ouverture du carnet…</p>';return}
+ if(C.state==="unavailable"){v.innerHTML=head+note("warn","info","<p><strong>Carnet indisponible ici.</strong> Il s'ouvre quand tu es connecté à ton compte Claude et que tu ouvres la page depuis claude.ai ou l'app.</p>");return}
+ if(C.state==="readonly"){v.innerHTML=head+note("","info","<p><strong>Carnet privé.</strong> Ce carnet est réservé au propriétaire de la page.</p>");return}
+ if(C.state==="error"){v.innerHTML=head+note("restrict","warn","<p><strong>Le carnet ne répond plus.</strong> Recharge la page pour réessayer.</p>");return}
+ v.innerHTML=head+
+ (local?note("","info","<p><strong>Enregistré dans ce navigateur.</strong> Ton carnet reste sur cet appareil. Fais une sauvegarde de temps en temps : si tu effaces les données du navigateur, il disparaît. Pour passer sur un autre téléphone, sauvegarde ici puis restaure là-bas.</p>"):"")+
+ '<div class="btn-row"><button type="button" class="btn accent" id="cNew">'+ico("plus")+'Noter une prise</button><button type="button" class="btn ghost" id="cExport">'+ico("dl")+"Exporter (CSV)</button>"+
+ (local?'<button type="button" class="btn ghost" id="cBackup">'+ico("dl")+'Sauvegarder</button><label class="btn ghost" for="cRestore" tabindex="0" role="button" id="cRestoreLbl">Restaurer</label><input type="file" id="cRestore" accept=".json,application/json" hidden>':"")+"</div>"+
+ '<form class="form card" id="cForm" hidden novalidate></form>'+
+ '<div class="stats" id="cStats"></div>'+
+ '<div class="entries" id="cList"></div>';
+ renderCarnetList();
+}
+function optionList(arr,sel){return arr.map(([v,t])=>'<option value="'+esc(v)+'"'+(v===sel?" selected":"")+">"+esc(t)+"</option>").join("")}
+function openForm(id){
+ const f=$("#cForm");if(!f)return;
+ const r=id?C.rows.find(x=>x.id===id):null;C.editId=r?id:null;
+ const d=r||{date:isoDate(new Date()),heure:hhmm(new Date()),espece:"loup",nombre:1,garde:true,zone:"aiguille",technique:"lancer",mer:"Peu agitée",eau:"Claire"};
+ const spOpts=[["","Choisis…"]].concat(SP.map(s=>[s.id,s.nom]),[["dorade-rose","Dorade rose"],["merou","Mérou (interdit)"],["corb","Corb (interdit)"],["autre","Autre espèce"]]);
+ const zOpts=ZONES.map(z=>[z.id,z.n+". "+z.nom]).concat([["autre","Autre spot"]]);
+ const tOpts=TECH.map(t=>[t.id,t.nom]);
+ f.innerHTML='<h3>'+(r?"Modifier la prise":"Nouvelle prise")+'</h3>'+
+ '<div class="fgrid"><div class="field"><label for="cf-date">Date</label><input type="date" id="cf-date" value="'+esc(d.date)+'" required></div><div class="field"><label for="cf-heure">Heure</label><input type="time" id="cf-heure" value="'+esc(d.heure||"")+'"></div></div>'+
+ '<div class="fgrid"><div class="field"><label for="cf-espece">Espèce</label><select id="cf-espece">'+optionList(spOpts,d.espece)+'</select></div><div class="field" id="cf-esp-lib-w"'+(d.espece==="autre"?"":" hidden")+'><label for="cf-esp-lib">Quelle espèce ?</label><input id="cf-esp-lib" value="'+esc(d.especeLibre||"")+'" placeholder="Ex. oblade"></div></div>'+
+ '<div class="fgrid"><div class="field"><label for="cf-nb">Nombre</label><input type="number" id="cf-nb" min="1" step="1" inputmode="numeric" value="'+esc(d.nombre||1)+'"></div><div class="field"><label for="cf-taille">Taille (cm)</label><input type="number" id="cf-taille" min="0" step="0.5" inputmode="decimal" value="'+esc(d.taille==null?"":d.taille)+'"></div><div class="field"><label for="cf-poids">Poids (kg)</label><input type="number" id="cf-poids" min="0" step="0.05" inputmode="decimal" value="'+esc(d.poids==null?"":d.poids)+'"></div></div>'+
+ '<div class="field"><span class="lab" id="cf-garde-l">Gardé ou relâché</span><div class="radio-seg" role="radiogroup" aria-labelledby="cf-garde-l"><label><input type="radio" name="cf-garde" id="cf-garde-1" value="1"'+(d.garde!==false?" checked":"")+'><span>Gardé</span></label><label><input type="radio" name="cf-garde" id="cf-garde-0" value="0"'+(d.garde===false?" checked":"")+"><span>Relâché</span></label></div></div>"+
+ '<div class="fgrid"><div class="field"><label for="cf-zone">Spot</label><select id="cf-zone">'+optionList(zOpts,d.zone)+'</select></div><div class="field" id="cf-zone-lib-w"'+(d.zone==="autre"?"":" hidden")+'><label for="cf-zone-lib">Nom du spot</label><input id="cf-zone-lib" value="'+esc(d.zoneLibre||"")+'"></div><div class="field"><label for="cf-gps">Point GPS (option)</label><input id="cf-gps" value="'+esc(d.gps||"")+'" placeholder="43°31,2′ N 7°02,4′ E"></div></div>'+
+ '<div class="fgrid"><div class="field"><label for="cf-tech">Technique</label><select id="cf-tech">'+optionList(tOpts,d.technique)+'</select></div><div class="field"><label for="cf-appat">Appât ou leurre</label><input id="cf-appat" value="'+esc(d.appat||"")+'" placeholder="Ex. poisson nageur 12 cm"></div></div>'+
+ '<div class="fgrid"><div class="field"><label for="cf-mer">Mer</label><select id="cf-mer">'+optionList(MER.map(m=>[m,m]),d.mer)+'</select></div><div class="field"><label for="cf-vent">Vent</label><input id="cf-vent" value="'+esc(d.vent||"")+'" placeholder="Ex. est 10 nœuds"></div><div class="field"><label for="cf-eau">Eau</label><select id="cf-eau">'+optionList(EAU.map(m=>[m,m]),d.eau)+"</select></div></div>"+
+ '<div class="field"><label for="cf-notes">Notes</label><textarea id="cf-notes" placeholder="Ce qui a marché, profondeur, couleur du leurre…">'+esc(d.notes||"")+"</textarea></div>"+
+ '<p class="small muted" id="cf-lune"></p><div class="alerts" id="cf-alerts"></div><div class="alerts" id="cf-err"></div>'+
+ '<div class="btn-row"><button type="submit" class="btn accent" id="cf-save">Enregistrer</button><button type="button" class="btn ghost" id="cf-cancel">Annuler</button></div>';
+ f.hidden=false;updFormHints();
+ f.scrollIntoView({behavior:REDUCE?"auto":"smooth",block:"start"});
+}
+function closeForm(){const f=$("#cForm");if(f){f.hidden=true;f.innerHTML=""}C.editId=null}
+function readForm(){
+ const g=id=>{const e=document.getElementById(id);return e?e.value.trim():""};
+ const num=id=>{const v=g(id).replace(",",".");return v===""?null:Number(v)};
+ const esp=g("cf-espece"),date=g("cf-date");
+ if(!date||!esp){$("#cf-err").innerHTML=note("restrict","warn","<p>Indique au moins la date et l'espèce.</p>");return null}
+ const [y,m,d]=date.split("-").map(Number);const mo=moonInfo(new Date(y,m-1,d,22));
+ return {date,heure:g("cf-heure"),espece:esp,especeLibre:esp==="autre"?g("cf-esp-lib"):"",nombre:Math.max(1,Math.round(num("cf-nb")||1)),taille:num("cf-taille"),poids:num("cf-poids"),
+  garde:(document.querySelector('input[name="cf-garde"]:checked')||{}).value!=="0",zone:g("cf-zone"),zoneLibre:g("cf-zone")==="autre"?g("cf-zone-lib"):"",gps:g("cf-gps"),technique:g("cf-tech"),appat:g("cf-appat"),
+  mer:g("cf-mer"),vent:g("cf-vent"),eau:g("cf-eau"),notes:g("cf-notes"),lune:mo.name,luneIllum:Math.round(mo.ill*100),ts:new Date().toISOString()};
+}
+function updFormHints(){
+ const g=id=>{const e=document.getElementById(id);return e?e.value:""};
+ const esp=g("cf-espece"),taille=parseFloat(String(g("cf-taille")).replace(",",".")),garde=(document.querySelector('input[name="cf-garde"]:checked')||{}).value!=="0";
+ const date=g("cf-date");
+ if(date){const [y,m,d]=date.split("-").map(Number);const mo=moonInfo(new Date(y,m-1,d,22));$("#cf-lune").innerHTML="Lune ce soir-là : "+esc(mo.name)+", éclairée à "+Math.round(mo.ill*100)+" %."}
+ const a=[];
+ if(esp==="merou"||esp==="corb")a.push(note("restrict","warn","<p><strong>Espèce interdite</strong> Relâche-le immédiatement.</p>"));
+ if(esp==="thon-rouge")a.push(note("restrict","warn","<p><strong>Thon rouge</strong> Uniquement avec l'autorisation du bateau ; déclaration à FranceAgriMer sous 48 h.</p>"));
+ if(garde&&MAILLE_NUM[esp]&&!isNaN(taille)&&taille<MAILLE_NUM[esp])a.push(note("restrict","warn","<p><strong>Sous la maille</strong> Minimum "+MAILLE_NUM[esp]+" cm pour cette espèce : remets-le à l'eau.</p>"));
+ if(DECL_SET.has(esp))a.push(note("warn","info","<p><strong>À déclarer</strong> sur RecFishing dans les 24 h, même relâché.</p>"));
+ if(garde&&MARK_SET.has(esp))a.push(note("warn","scale","<p><strong>Marquage</strong> Coupe le lobe du bas de la queue.</p>"));
+ $("#cf-alerts").innerHTML=a.join("");
+ const w1=$("#cf-esp-lib-w"),w2=$("#cf-zone-lib-w");if(w1)w1.hidden=esp!=="autre";if(w2)w2.hidden=g("cf-zone")!=="autre";
+}
+function dbMsg(code){
+ if(code==="invalid_argument")return "Enregistrement refusé : ce compte ne peut pas écrire dans ce carnet.";
+ if(code==="quota_exceeded")return "Le carnet est plein : supprime d'anciennes prises pour faire de la place.";
+ if(code==="resource_exhausted")return "Trop de demandes d'un coup : réessaie dans un instant.";
+ if(code==="revoked"||code==="not_granted"||code==="capability_disabled"||code==="capability_removed")return "Le carnet n'est plus accessible dans cette vue : recharge la page.";
+ return "Enregistrement impossible pour le moment : vérifie ta connexion et réessaie.";
+}
+async function saveEntry(){
+ const data=readForm();if(!data)return;
+ const btn=$("#cf-save");btn.disabled=true;$("#cf-err").innerHTML="";
+ if(C.mode==="local"){
+  const rows=C.rows.slice(),wasEdit=!!C.editId;
+  if(wasEdit){const i=rows.findIndex(r=>r.id===C.editId);if(i>=0)rows[i]=Object.assign({id:C.editId},data);else rows.push(Object.assign({id:C.editId},data))}
+  else rows.push(Object.assign({id:newId()},data));
+  if(!saveLocal(rows)){btn.disabled=false;$("#cf-err").innerHTML=note("restrict","warn","<p>Impossible d'enregistrer sur cet appareil : le stockage du navigateur est plein ou bloqué (navigation privée ?).</p>");return}
+  C.rows=rows;renderCarnetList();renderHomeCarnet();toast(wasEdit?"Prise modifiée":"Prise enregistrée");closeForm();return;
+ }
+ const run=()=>C.editId?C.db.doc("carnet/"+C.editId).set(data):C.db.collection("carnet").add(data);
+ try{await run()}
+ catch(e){
+  if(e&&e.code==="unavailable"){await sleep(500+Math.random()*700);try{await run()}catch(e2){btn.disabled=false;$("#cf-err").innerHTML=note("restrict","warn","<p>"+esc(dbMsg(e2&&e2.code))+"</p>");return}}
+  else{btn.disabled=false;$("#cf-err").innerHTML=note("restrict","warn","<p>"+esc(dbMsg(e&&e.code))+"</p>");return}
+ }
+ toast(C.editId?"Prise modifiée":"Prise enregistrée");closeForm();
+}
+async function deleteEntry(id){
+ if(C.mode==="local"){const rows=C.rows.filter(r=>r.id!==id);if(saveLocal(rows)){C.rows=rows;renderCarnetList();renderHomeCarnet();toast("Prise supprimée")}else toast("Suppression impossible sur cet appareil");return}
+ try{await C.db.doc("carnet/"+id).delete();toast("Prise supprimée")}
+ catch(e){toast(dbMsg(e&&e.code))}
+}
+function topOf(rows,keyFn){const m={};rows.forEach(r=>{const k=keyFn(r);if(k)m[k]=(m[k]||0)+(+r.nombre||1)});const e=Object.entries(m).sort((a,b)=>b[1]-a[1])[0];return e?e[0]:"—"}
+function renderCarnetList(){
+ const st=$("#cStats"),list=$("#cList");if(!st||!list)return;
+ const rows=C.rows.slice().sort((a,b)=>(String(b.date)+String(b.heure||"")).localeCompare(String(a.date)+String(a.heure||"")));
+ const fish=rows.reduce((a,r)=>a+(+r.nombre||1),0),days=new Set(rows.map(r=>r.date)).size;
+ st.innerHTML=[["Poissons",fish],["Sorties",days],["Espèce n°1",rows.length?topOf(rows,spName):"—"],["Spot n°1",rows.length?topOf(rows,zoneName):"—"]].map(([k,v],i)=>'<div class="stat card"><span class="k">'+k+'</span><span class="v'+(i>1?" t":"")+'" title="'+esc(v)+'">'+esc(v)+"</span></div>").join("");
+ if(!rows.length){
+  list.innerHTML='<div class="empty card"><p><strong>Ton carnet est vide.</strong> Touche « Noter une prise » après ta prochaine sortie. Chaque fiche ressemblera à ceci :</p>'+
+  '<div class="entry card preview" aria-hidden="true"><div class="entry-top"><span class="entry-t">Loup</span><span class="tag">Aperçu</span></div><span class="entry-m">42 cm · 0,9 kg · gardé</span><span class="small">Pointe de l\'Aiguille · Lancer-ramener au leurre · poisson nageur 12 cm</span><span class="small muted">Mer agitée · eau teintée · Premier quartier</span></div></div>';
+  return;
+ }
+ const by={};rows.forEach(r=>{(by[r.date]=by[r.date]||[]).push(r)});
+ list.innerHTML=Object.keys(by).map(dt=>'<div class="day"><span class="day-h">'+esc(frDate(dt))+"</span>"+by[dt].map(entryCard).join("")+"</div>").join("");
+}
+function entryCard(r){
+ const meta=[r.nombre>1?r.nombre+" poissons":"",r.taille!=null&&r.taille!==""?String(r.taille).replace(".",",")+" cm":"",r.poids!=null&&r.poids!==""?String(r.poids).replace(".",",")+" kg":"",r.garde===false?"relâché":"gardé"].filter(Boolean).join(" · ");
+ const where=[zoneName(r),techName(r),r.appat].filter(Boolean).join(" · ");
+ const cond=[r.heure,r.mer?"mer "+r.mer.toLowerCase():"",r.vent?"vent "+r.vent:"",r.eau?"eau "+r.eau.toLowerCase():"",r.lune].filter(Boolean).join(" · ");
+ return '<article class="entry card" id="e-'+esc(r.id)+'"><div class="entry-top"><span class="entry-t">'+esc(spName(r))+'</span><div class="entry-actions"><button type="button" class="linkbtn" data-edit="'+esc(r.id)+'">Modifier</button><button type="button" class="linkbtn" data-del="'+esc(r.id)+'">Supprimer</button></div></div>'+
+ '<span class="entry-m">'+esc(meta)+"</span>"+(where?'<span class="small">'+esc(where)+"</span>":"")+(cond?'<span class="small muted">'+esc(cond)+"</span>":"")+(r.gps?'<span class="small mono">'+esc(r.gps)+"</span>":"")+(r.notes?'<span class="small">'+esc(r.notes)+"</span>":"")+
+ '<div class="confirm" hidden data-confirm="'+esc(r.id)+'"><div class="note restrict">'+ico("warn")+'<div><p><strong>Supprimer cette prise ?</strong> C\'est définitif.</p><div class="btn-row" style="margin-top:8px"><button type="button" class="btn danger" data-del-yes="'+esc(r.id)+'">Supprimer</button><button type="button" class="btn ghost" data-del-no="'+esc(r.id)+'">Garder</button></div></div></div></div>'+
+ "</article>";
+}
+async function exportCSV(){
+ if(!C.rows.length){toast("Rien à exporter pour l'instant");return}
+ const cols=[["date","Date"],["heure","Heure"],["esp","Espèce"],["nombre","Nombre"],["taille","Taille (cm)"],["poids","Poids (kg)"],["garde","Gardé"],["zone","Spot"],["gps","GPS"],["tech","Technique"],["appat","Appât/leurre"],["mer","Mer"],["vent","Vent"],["eau","Eau"],["lune","Lune"],["notes","Notes"]];
+ const val=(r,k)=>k==="esp"?spName(r):k==="zone"?zoneName(r):k==="tech"?techName(r):k==="garde"?(r.garde===false?"non":"oui"):(k==="taille"||k==="poids")?(r[k]==null?"":String(r[k]).replace(".",",")):(r[k]==null?"":r[k]);
+ const cell=v=>{const s=String(v);return /[;"\n\r]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s};
+ const rows=C.rows.slice().sort((a,b)=>String(a.date).localeCompare(String(b.date)));
+ const csv="﻿"+[cols.map(c=>c[1]).join(";")].concat(rows.map(r=>cols.map(c=>cell(val(r,c[0]))).join(";"))).join("\r\n");
+ const fname="carnet-peche-"+isoDate(new Date())+".csv";
+ if(C.mode==="local"){downloadFile(fname,csv,"text/csv;charset=utf-8");toast("Fichier CSV téléchargé");return}
+ const cl=window.claude;let dl=null;
+ try{dl=cl&&typeof cl.use==="function"?await cl.use("downloads"):null}catch(e){dl=null}
+ if(!dl){toast("Export indisponible dans cette vue");return}
+ try{await dl.save({filename:fname,data:csv});toast("Fichier enregistré")}
+ catch(e){if(e&&e.code==="declined")return;toast("Export impossible pour le moment")}
+}
+async function carnetInit(){
+ try{
+  const cl=window.claude;
+  if(!cl||typeof cl.use!=="function"){initLocal();return}
+  const res=await Promise.all([cl.use("db"),cl.use("user")]);const db=res[0],user=res[1];
+  if(!db){C.state="unavailable";renderCarnet();return}
+  C.db=db;
+  const owner=user?await user.isOwner():false;
+  if(!owner){C.state="readonly";renderCarnet();return}
+  db.collection("carnet").onSnapshot(snap=>{
+   C.rows=snap.docs.map(d=>Object.assign({id:d.id},d.data()));
+   if(C.state!=="ready"){C.state="ready";renderCarnet()}else renderCarnetList();
+   renderHomeCarnet();
+  },err=>{C.state="error";C.err=err&&err.code;renderCarnet();renderHomeCarnet()});
+ }catch(e){C.state="unavailable";renderCarnet()}
+}
+
+/* =====================================================================
+   Navigation et événements
+   ===================================================================== */
+function renderNav(){
+ $("#sidenav").innerHTML=NAV.map((n,i)=>(i===6?'<div class="nav-sep" role="presentation"></div>':"")+'<a class="navlink" href="#'+n.id+'" data-nav="'+n.id+'">'+ico(n.icon)+esc(n.label)+"</a>").join("");
+ $("#tabbar").innerHTML=NAV.filter(n=>n.tab).map(n=>'<a class="tab" href="#'+n.id+'" data-nav="'+n.id+'">'+ico(n.icon)+"<span>"+esc(n.tab)+"</span></a>").join("");
+ $("#sheetGrid").innerHTML=NAV.map(n=>'<a href="#'+n.id+'" data-nav="'+n.id+'">'+ico(n.icon)+esc(n.label)+"</a>").join("");
+}
+let PENDING=null,PENDING_ACTION=null;
+function go(id,target){
+ if(!VIEW_IDS.includes(id))id="accueil";
+ $$(".view").forEach(v=>{v.hidden=v.dataset.view!==id});
+ $$("[data-nav]").forEach(a=>a.setAttribute("aria-current",a.dataset.nav===id?"page":"false"));
+ closeSheet();
+ if(id==="especes"&&target){const wantCal=target==="calendrier";setSpTab(wantCal?"calendrier":"fiches")}
+ if(id==="noeuds"&&target){setKTab(target.indexOf("m-")===0||target==="montages"?"montages":"noeuds")}
+ if(target){
+  const el=document.getElementById(target);
+  if(el){if(el.tagName==="DETAILS")el.open=true;
+   requestAnimationFrame(()=>{el.scrollIntoView({behavior:REDUCE?"auto":"smooth",block:"start"});el.classList.add("flash");setTimeout(()=>el.classList.remove("flash"),1700)});
+   if(target.indexOf("z-")===0)selectZone(target.slice(2),false);
+  }else window.scrollTo(0,0);
+ }else window.scrollTo(0,0);
+ if(id==="carnet"&&PENDING_ACTION==="new"){PENDING_ACTION=null;if(C.state==="ready")openForm(null)}
+}
+function setSpTab(t){spTab=t;$$("[data-sptab]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.sptab===t));$("#spFiches").hidden=t!=="fiches";$("#spCal").hidden=t!=="calendrier"}
+function setKTab(t){knotTab=t;$$("[data-ktab]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.ktab===t));$("#kNoeuds").hidden=t!=="noeuds";$("#kMontages").hidden=t!=="montages"}
+function openSheet(){$("#sheet").hidden=false;$("#menuBtn").setAttribute("aria-expanded","true");$("#sheetClose").focus()}
+function closeSheet(){const s=$("#sheet");if(s.hidden)return;s.hidden=true;$("#menuBtn").setAttribute("aria-expanded","false")}
+
+document.addEventListener("click",e=>{
+ const t=e.target;
+ const goEl=t.closest("[data-go]");
+ if(goEl){e.preventDefault();const id=goEl.dataset.go;PENDING=goEl.dataset.target||null;PENDING_ACTION=goEl.dataset.action||null;if(location.hash.slice(1)===id){go(id,PENDING);PENDING=null}else location.hash=id;return}
+ if(t.closest("#menuBtn")){openSheet();return}
+ if(t.closest("#sheetClose")||t===$("#sheet")){closeSheet();return}
+ const spf=t.closest("[data-spf]");if(spf){spFilter=spf.dataset.spf;$$("[data-spf]").forEach(b=>b.setAttribute("aria-pressed",b===spf));renderSpList();return}
+ const spt=t.closest("[data-sptab]");if(spt){setSpTab(spt.dataset.sptab);return}
+ const kt=t.closest("[data-ktab]");if(kt){setKTab(kt.dataset.ktab);return}
+ const tf=t.closest("[data-tf]");if(tf){techFilter=tf.dataset.tf;$$("[data-tf]").forEach(b=>b.setAttribute("aria-pressed",b===tf));$$("#techList .tech").forEach(c=>{const ty=c.dataset.type;c.hidden=!(techFilter==="toutes"||ty===techFilter||ty==="deux")});return}
+ const zf=t.closest("[data-zf]");if(zf){zoneFilter=zf.dataset.zf;$$("[data-zf]").forEach(b=>b.setAttribute("aria-pressed",b===zf));applyZoneFilter();return}
+ if(t.closest("#zoomBtn")){const w=$("#mapWrap"),b=$("#zoomBtn");const on=!w.classList.contains("zoom");w.classList.toggle("zoom",on);b.setAttribute("aria-pressed",on);b.lastChild.textContent=on?"Réduire":"Agrandir";if(on){w.scrollLeft=(w.scrollWidth-w.clientWidth)*0.45;w.scrollTop=(w.scrollHeight-w.clientHeight)*0.3}return}
+ const mk=t.closest("[data-mk]");if(mk){selectZone(mk.dataset.mk,true);return}
+ const ru=t.closest("[data-ru]");if(ru){setRuler(+ru.dataset.ru);return}
+ const ck=t.closest("[data-ck]");if(ck){ckMode=ck.dataset.ck;LS.set("ck-mode",ckMode);$$("[data-ck]").forEach(b=>b.setAttribute("aria-pressed",b===ck));renderCkList();return}
+ if(t.closest("#ckReset")){CK[ckMode]={};LS.set("ck-state",CK);renderCkList();toast("Liste remise à zéro");return}
+ const qo=t.closest(".q-opt");if(qo){answer(+qo.dataset.k);return}
+ if(t.closest("#qNext")){clearTimeout(Q.timer);Q.i++;renderQuestion();return}
+ if(t.closest("#qAgain")){quizStart();return}
+ if(t.closest("#cNew")){openForm(null);return}
+ if(t.closest("#cf-cancel")){closeForm();return}
+ if(t.closest("#cExport")){exportCSV();return}
+ if(t.closest("#cBackup")){if(!C.rows.length){toast("Rien à sauvegarder pour l'instant");return}backupJSON();return}
+ const ed=t.closest("[data-edit]");if(ed){openForm(ed.dataset.edit);return}
+ const dl=t.closest("[data-del]");if(dl){const c=document.querySelector('[data-confirm="'+CSS.escape(dl.dataset.del)+'"]');if(c)c.hidden=false;return}
+ const dy=t.closest("[data-del-yes]");if(dy){deleteEntry(dy.dataset.delYes);return}
+ const dn=t.closest("[data-del-no]");if(dn){const c=document.querySelector('[data-confirm="'+CSS.escape(dn.dataset.delNo)+'"]');if(c)c.hidden=true;return}
+});
+document.addEventListener("keydown",e=>{
+ if(e.key==="Escape")closeSheet();
+ if(e.target&&e.target.id==="cRestoreLbl"&&(e.key==="Enter"||e.key===" ")){e.preventDefault();const inp=$("#cRestore");if(inp)inp.click();return}
+ const mk=e.target.closest&&e.target.closest("[data-mk]");
+ if(mk&&(e.key==="Enter"||e.key===" ")){e.preventDefault();selectZone(mk.dataset.mk,true)}
+});
+document.addEventListener("input",e=>{
+ const t=e.target;
+ if(t.id==="spSearch"){spQuery=t.value;renderSpList()}
+ else if(t.id==="glSearch")renderGlList(t.value);
+ else if(t.closest&&t.closest("#cForm"))updFormHints();
+});
+document.addEventListener("change",e=>{
+ const t=e.target;
+ if(t.id==="cRestore"){restoreBackup(t.files&&t.files[0]);t.value="";return}
+ if(t.matches("#ckList input[type=checkbox]")){const st=CK[ckMode]||(CK[ckMode]={});if(t.checked)st[t.dataset.key]=true;else delete st[t.dataset.key];LS.set("ck-state",CK);t.closest(".ck-item").classList.toggle("done",t.checked);updCk()}
+ else if(t.closest&&t.closest("#cForm"))updFormHints();
+});
+document.addEventListener("submit",e=>{if(e.target.id==="cForm"){e.preventDefault();saveEntry()}});
+window.addEventListener("hashchange",()=>{const id=location.hash.slice(1);go(id,PENDING);PENDING=null});
+
+/* =====================================================================
+   Démarrage
+   ===================================================================== */
+renderNav();
+renderAccueil();
+renderEspeces();
+renderTechniques();
+renderNoeuds();
+renderZones();
+renderCarnet();
+renderRegles();
+renderChecklist();
+renderQuizShell();
+renderMateriel();
+renderSecurite();
+renderGlossaire();
+go(location.hash.slice(1)||"accueil");
+carnetInit();
+})();
+</script>
+
+</body>
+</html>
