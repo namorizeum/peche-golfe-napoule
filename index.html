@@ -449,6 +449,56 @@ dl.glos dd{margin:0;color:var(--ink-2)}
 .sos .n{font-family:var(--f-display);font-weight:700;font-size:2.3rem;line-height:1;color:var(--restrict)}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 14px);z-index:60;background:var(--ink);color:var(--paper);padding:11px 16px;border-radius:10px;font-weight:700;box-shadow:var(--shadow);max-width:calc(100% - 32px)}
 @media (min-width:960px){.toast{bottom:24px}}
+.gl-tools{display:flex;flex-direction:column;gap:10px}
+dl.glos dt .gl-c{display:block;font:600 .64rem/1.5 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-top:2px}
+dl.glos div{scroll-margin-top:84px}
+
+/* ---------- Mots expliqués (lexique au toucher) ---------- */
+.term{cursor:help;text-decoration:underline dotted;-webkit-text-decoration:underline dotted;text-decoration-color:var(--accent);-webkit-text-decoration-color:var(--accent);text-decoration-thickness:1.5px;text-underline-offset:3px;border-radius:3px}
+.term:hover{background:var(--accent-soft)}
+.term:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.term.on{background:var(--accent-soft)}
+.defn{position:fixed;left:0;right:0;bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 10px);z-index:55;display:flex;justify-content:center;padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px));pointer-events:none}
+.defn-in{pointer-events:auto;width:100%;max-width:560px;background:var(--ink);color:var(--paper);border-radius:14px;box-shadow:var(--shadow);padding:12px 12px 14px 16px;display:flex;flex-direction:column;gap:6px}
+.defn-h{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.defn-k{display:block;font:600 .64rem/1.4 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;opacity:.72}
+.defn-t{display:block;font-family:var(--f-display);font-weight:700;font-size:1.35rem;line-height:1.05;text-transform:uppercase;letter-spacing:.03em;margin-top:2px}
+.defn p{line-height:1.45;padding-right:4px}
+.defn a{color:inherit;font-weight:700;font-size:.88rem;align-self:flex-start}
+.defn-x{flex:none;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer;opacity:.85}
+.defn-x .ico{width:18px;height:18px}
+@media (min-width:960px){.defn{bottom:24px}}
+
+/* ---------- Vidéos ---------- */
+.vid{display:grid;grid-template-columns:136px minmax(0,1fr);gap:12px;align-items:center;padding:8px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);text-decoration:none;color:var(--ink)}
+.vid:hover{border-color:var(--ink-3)}
+.vid-th{position:relative;display:block;width:136px;height:76px;border-radius:8px;overflow:hidden;background:linear-gradient(135deg,#17405A,#0B2433)}
+.vid-th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.vid-play{position:absolute;inset:0;display:grid;place-items:center}
+.vid-play svg{width:40px;height:40px;filter:drop-shadow(0 1px 3px rgba(0,0,0,.45))}
+.vid-tx{display:flex;flex-direction:column;gap:3px;min-width:0}
+.vid-k{font:600 .66rem/1.3 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.vid-tx b{font-weight:700;line-height:1.3;font-size:.95rem}
+.vid-s{font-size:.8rem;color:var(--ink-2);line-height:1.35}
+.vp-c{fill:var(--accent)} .vp-t{fill:#FFFFFF}
+.media{display:flex;flex-direction:column;gap:8px}
+.media-links{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.88rem}
+@media (max-width:380px){.vid{grid-template-columns:112px minmax(0,1fr)}.vid-th{width:112px;height:63px}}
+
+/* ---------- Photos des espèces ---------- */
+.sp-top{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;align-items:start}
+.sp-id{display:flex;flex-direction:column;gap:7px;min-width:0}
+.sp-badges{justify-content:flex-start}
+.sp-thumb{position:relative;width:64px;height:64px;border-radius:10px;overflow:hidden;background:var(--surface-2);display:grid;place-items:center;color:var(--ink-3)}
+.sp-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.sp-photo{margin:0;display:flex;flex-direction:column;gap:6px}
+.sp-photo .ph{position:relative;display:block;border-radius:10px;overflow:hidden;background:var(--surface-2);aspect-ratio:3/2;max-height:340px}
+.sp-photo .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.sp-photo .ph .ico{position:absolute;left:50%;top:50%;width:44px;height:44px;margin:-22px 0 0 -22px;color:var(--ink-3)}
+.sp-photo figcaption{font-size:.76rem;color:var(--ink-3);line-height:1.4}
+.sp-photo figcaption a{color:inherit}
+.knot-name{display:flex;gap:8px;align-items:flex-start;font-size:.9rem;color:var(--ink-2);background:var(--surface-2);border-radius:10px;padding:10px 12px}
+.knot-name .ico{width:18px;height:18px;color:var(--accent);margin-top:2px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -490,6 +540,13 @@ dl.glos dd{margin:0;color:var(--ink-2)}
   </div>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<div class="defn" id="defn" hidden>
+  <div class="defn-in" role="dialog" aria-labelledby="defnT" aria-describedby="defnD">
+    <div class="defn-h"><div><span class="defn-k" id="defnK">Lexique</span><span class="defn-t" id="defnT"></span></div><button type="button" class="defn-x" id="defnX" aria-label="Fermer la définition"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <p id="defnD"></p>
+    <a href="#glossaire" data-go="glossaire" id="defnL">Voir tout le lexique</a>
+  </div>
+</div>
 
 <script>
 (function(){
@@ -500,7 +557,7 @@ dl.glos dd{margin:0;color:var(--ink-2)}
    ===================================================================== */
 const $=(s,r=document)=>r.querySelector(s);
 const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
-const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const esc=s=>String(s==null?"":s).replace(/ ([:;!?»])/g," $1").replace(/« /g,"« ").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const MOIS=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
 const M1=["J","F","M","A","M","J","J","A","S","O","N","D"];
 const NOW=new Date();
@@ -547,9 +604,9 @@ const gmaps=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURICompo
    ===================================================================== */
 const NAV=[
  {id:"accueil",label:"Accueil",tab:"Accueil",icon:"compass",desc:"Le jour, la lune, ce qui mord ce mois-ci"},
- {id:"especes",label:"Espèces",tab:"Espèces",icon:"fish",desc:"19 fiches, mailles et calendrier"},
+ {id:"especes",label:"Espèces",tab:"Espèces",icon:"fish",desc:"19 fiches avec photo, maille et vidéo"},
  {id:"techniques",label:"Techniques",tab:"Pêches",icon:"rod",desc:"Traîne, poste, dérive, lancer, turlutte…"},
- {id:"noeuds",label:"Nœuds & montages",tab:"Nœuds",icon:"knot",desc:"12 nœuds pas à pas, 9 montages"},
+ {id:"noeuds",label:"Nœuds & montages",tab:"Nœuds",icon:"knot",desc:"12 nœuds et 9 montages, en vidéo"},
  {id:"zones",label:"Zones",tab:"Zones",icon:"pin",desc:"Carte de Théoule aux Lérins et au large"},
  {id:"carnet",label:"Carnet de prises",tab:"Carnet",icon:"book",desc:"Tes sorties, sauvegardées"},
  {id:"regles",label:"Règles 2026",icon:"scale",desc:"Mailles, marquage, RecFishing, interdits"},
@@ -557,7 +614,7 @@ const NAV=[
  {id:"quiz",label:"Quiz",icon:"quiz",desc:"QCM pour apprendre"},
  {id:"materiel",label:"Matériel & budget",icon:"bag",desc:"Quoi acheter en partant de zéro"},
  {id:"securite",label:"Sécurité & météo",icon:"buoy",desc:"Urgences, vent, armement, piqûres"},
- {id:"glossaire",label:"Glossaire",icon:"abc",desc:"Les mots de la pêche, expliqués simplement"}
+ {id:"glossaire",label:"Glossaire",icon:"abc",desc:"Tous les mots de la pêche, même les noms de nœuds"}
 ];
 const VIEW_IDS=NAV.map(n=>n.id);
 
@@ -759,6 +816,29 @@ const SP=[
   zones:["large"]}
 ];
 const SPI=Object.fromEntries(SP.map(s=>[s.id,s]));
+/* Photos : Wikimedia Commons (licences libres). f = nom du fichier, h = dossier de stockage, pos = cadrage,
+   a et l = auteur et licence (sinon lus en ligne sur Commons et affichés sous la photo). */
+const PHOTOS={
+ "loup":{f:"Sealife,_Bray,_Ireland._(6985874908).jpg",h:"7/70"},
+ "dorade":{f:"Sparus_aurata,_Alpes-Maritimes,_Provence-Alpes-Côte_d'Azur,_FR_imported_from_iNaturalist_photo_207799710.jpg",h:"b/bb"},
+ "bonite":{f:"Sarda_sarda.jpg",h:"b/bf"},
+ "thonine":{f:"Euall_u0.gif",h:"b/b1"},
+ "liche":{f:"Lichia_amia.jpg",h:"f/f6"},
+ "denti":{f:"Dentex_dentex_1.jpg",h:"f/f3"},
+ "seriole":{f:"Seriola_dumerili_Minorca.jpg",h:"d/d3"},
+ "pagre":{f:"Pagrus_pagrus.jpg",h:"0/06"},
+ "sar":{f:"Diplodus_sargus_01.jpg",h:"b/ba"},
+ "marbre":{f:"Mormora.jpg",h:"4/49"},
+ "dorade-grise":{f:"Chopa_(Spondyliosoma_cantharus),_Parque_natural_de_la_Arrábida,_Portugal,_2020-07-21,_DD_57.jpg",h:"a/ae"},
+ "pageot":{f:"Pagellus_erythrinus_RO.jpg",h:"9/9c"},
+ "chapon":{f:"Red_Scorpionfish_(cropped).jpg",h:"6/60"},
+ "maquereau":{f:"Scomber_scombrus.jpg",h:"c/c3"},
+ "calamar":{f:"Loligo_vulgaris.jpg",h:"d/dd"},
+ "seiche":{f:"Sepia_común_(Sepia_officinalis),_Parque_natural_de_la_Arrábida,_Portugal,_2020-07-21,_DD_62.jpg",h:"6/65"},
+ "coryphene":{f:"Common_Dolphinfish_Monterey_Bay.jpg",h:"0/07"},
+ "barracuda":{f:"Bicudas_(Sphyraena_viridensis),_Cabo_de_Palos,_España,_2022-07-15,_DD_09.jpg",h:"7/70"},
+ "thon-rouge":{f:"Bluefin-big.jpg",h:"1/18"}
+};
 const GROUPS=[["tous","Toutes"],["pred","Prédateurs"],["pela","Pélagiques"],["fond","Fonds"],["cepha","Calamars & seiches"]];
 const LVL_TXT=["Rare ce mois-ci","Possible ce mois-ci","Bon ce mois-ci","Pleine saison"];
 
@@ -916,7 +996,7 @@ const NOEUDS=[
   astuce:"Plus simple que le FG pour débuter, mais il passe un peu moins bien dans les anneaux au lancer.",lien:"https://www.animatedknots.com/uni-knot"},
  {id:"fg",nom:"FG",usage:"Le raccord tresse et fluoro le plus fin et le plus solide.",fils:"Tresse + fluoro ou nylon",niv:3,sol:"Excellent",
   etapes:["Tends la tresse : moulinet frein serré, ou tresse tenue entre les dents.","Croise le fluoro sur la tresse, puis fais-le passer alternativement dessus et dessous en le gardant tendu : la tresse s'enroule autour.","Fais 15 à 20 croisements.","Bloque avec deux demi-clés de tresse autour des deux brins.","Mouille et serre très fort en tirant sur les deux brins.","Coupe le fluoro au ras, puis termine par 4 à 6 demi-clés de tresse sur la tresse seule."],
-  astuce:"Difficile au début : regarde l'animation et entraîne-toi chez toi avant la sortie.",lien:"https://www.animatedknots.com/fg-knot"},
+  astuce:"Difficile au début : regarde la vidéo et entraîne-toi chez toi avant la sortie.",lien:"https://www.animatedknots.com/fg-knot"},
  {id:"albright",nom:"Albright",usage:"Raccorder deux fils de diamètres très différents (traîne).",fils:"Fil fin + fil épais",niv:2,sol:"Bon",
   etapes:["Avec le gros fil, fais une ganse (un U) de 5 cm.","Passe 15 cm du fil fin dans la ganse.","Enroule le fil fin 10 à 12 fois autour des deux brins de la ganse et de lui-même, en allant vers le bout de la ganse.","Ressors le fil fin par la ganse, du même côté qu'il est entré.","Mouille, tire doucement sur les quatre brins puis serre fort.","Coupe les bouts."],
   astuce:"Classique pour relier le corps de ligne à un bas de ligne épais en traîne.",lien:"https://www.animatedknots.com/albright-knot"},
@@ -936,7 +1016,7 @@ const NOEUDS=[
   etapes:["Pose un bout de fil de 15 cm le long de ta ligne.","Avec ce bout, forme une boucle le long de la ligne.","Fais 4 à 5 tours autour de la ligne en passant dans la boucle (c'est un Uni sur la ligne).","Serre assez pour qu'il tienne, mais pas au point de bloquer : il doit pouvoir coulisser.","Coupe les bouts à 1 cm : ils passeront dans les anneaux."],
   astuce:"Ajoute une perle juste en dessous pour qu'il bloque bien le flotteur.",lien:null},
  {id:"bimini",nom:"Bimini twist",usage:"Doubler le fil en bout de ligne pour la traîne au large.",fils:"Nylon, tresse",niv:3,sol:"Garde presque toute la résistance du fil",
-  etapes:["Nœud avancé : suis l'animation pas à pas.","Il crée une longue boucle en fil doublé très solide, sur laquelle on attache le bas de ligne."],
+  etapes:["Nœud avancé : suis la vidéo, ou l'animation image par image.","Il crée une longue boucle en fil doublé très solide, sur laquelle on attache le bas de ligne."],
   astuce:"Pas nécessaire pour débuter : un Albright ou un Palomar suffisent pour la bonite.",lien:"https://www.animatedknots.com/bimini-twist-knot"}
 ];
 const WHICH=[
@@ -964,6 +1044,79 @@ const MONTAGES=[
  {id:"jig",nom:"Montage jig",usage:"Pêche verticale",items:[{t:"reel",l:"Moulinet 4000–6000"},{t:"line",h:52,l:"Tresse 15–20/100"},{t:"knot",l:"Nœud FG"},{t:"line",h:60,c:"leader",l:"Fluorocarbone 40–60/100, 2 m"},{t:"ring",l:"Anneau brisé + assist"},{t:"jig",l:"Jig 40–150 g"}],note:"Les hameçons « assist » sont en haut du jig : ils s'accrochent moins au fond."},
  {id:"palangre",nom:"Palangre de fond",usage:"Sable et vase",custom:true,note:"Au maximum 2 palangres de 30 hameçons par bateau, bouées marquées avec l'immatriculation."}
 ];
+/* Le nom de chaque nœud, expliqué simplement */
+const KNOT_NAME={
+ palomar:"« Palomar », c'est juste le nom du nœud : ce n'est pas une pièce à acheter. Retiens-le comme le nœud qu'on fait avec le fil plié en deux.",
+ clinch:"« Clinch » est un mot anglais qui veut dire bloquer, serrer. « Amélioré » parce qu'on repasse le fil une fois de plus dans une boucle pour qu'il tienne mieux.",
+ uni:"« Uni » vient d'« universel » : un seul nœud qui sert presque partout. « Grinner » est son autre nom, en anglais : c'est le même nœud.",
+ "double-uni":"Deux nœuds Uni, un sur chaque fil, qui glissent l'un contre l'autre quand tu serres.",
+ fg:"« FG », c'est juste son nom, en deux lettres. Retiens surtout que la tresse s'enroule en croisillons autour du fluoro, comme une natte.",
+ albright:"Le nœud porte le nom d'un guide de pêche américain. C'est un raccord entre deux fils de grosseurs différentes.",
+ potence:"On dit potence parce que la boucle sort de la ligne en équerre, comme un support en L. En anglais, c'est la « dropper loop ».",
+ chirurgien:"Son nom vient du double tour que font les chirurgiens pour les points de suture : c'est ce double passage qui le rend solide.",
+ rapala:"Rapala est une marque finlandaise de leurres. Elle a donné son nom à ce nœud, qui laisse une petite boucle libre devant le leurre.",
+ snell:"« Snell » est le mot anglais. En français on dit nœud d'empile : l'empile, c'est le petit fil qui porte l'hameçon.",
+ arret:"C'est un « stop » sur ta ligne : le flotteur glisse jusqu'à lui et s'arrête là. En le déplaçant, tu changes la profondeur.",
+ bimini:"Le nom vient des îles Bimini, aux Bahamas, haut lieu de la pêche au gros. « Twist » veut dire torsade : le fil doublé est torsadé sur lui-même."
+};
+
+/* =====================================================================
+   Vidéos YouTube choisies (en français)
+   y = identifiant de la vidéo, t = ce qu'on y voit, n = remarque, q = recherche pour trouver d'autres vidéos
+   ===================================================================== */
+const VIDEOS={
+ "k-palomar":{y:"rnO1OkhjO4M",t:"Le nœud Palomar, expliqué aux débutants",q:"noeud palomar pêche"},
+ "k-clinch":{y:"SWRIl51Nn-Y",t:"Le nœud de cuillère (clinch), expliqué aux débutants",q:"noeud clinch amélioré pêche"},
+ "k-uni":{y:"bEhdMWi4XGA",t:"Le nœud Universel (Uni), expliqué aux débutants",q:"noeud uni grinner pêche"},
+ "k-double-uni":{y:"kwV_72hZy4w",t:"Le double Universel pour raccorder deux fils",q:"noeud double uni tresse fluoro"},
+ "k-fg":{y:"A2Xohwd4KZE",t:"Le nœud FG en version facile",q:"noeud FG tuto"},
+ "k-albright":{y:"gzaTn50fIcU",t:"Le nœud Albright, expliqué aux débutants",q:"noeud albright pêche"},
+ "k-potence":{y:"BvwxIEzjBj8",t:"Le nœud de potence en une minute",q:"noeud potence pêche"},
+ "k-chirurgien":{y:"1Rj554QYfo0",t:"La boucle du chirurgien",q:"boucle du chirurgien pêche"},
+ "k-rapala":{y:"DnIAU2cvVfU",t:"Faire un nœud Rapala, par Pecheur.com",q:"noeud rapala"},
+ "k-snell":{y:"F-znauIZPLs",t:"Le nœud snell, facile et solide",n:"Montré pour le silure, mais c'est exactement le même nœud en mer.",q:"noeud snell hameçon"},
+ "k-arret":{y:"gY_l6KqrZBI",t:"Faire un nœud d'arrêt de flotteur",q:"noeud d'arrêt flotteur coulissant"},
+ "k-bimini":{y:"cgSGmFZK8hU",t:"Le Bimini twist et l'Albright double",n:"Filmé pour le silure : les nœuds sont les mêmes pour la traîne au large.",q:"bimini twist noeud"},
+ "m-traine":{y:"fHlAYWss7OY",t:"Cannes et montages pour la traîne aux maquereaux et bonites",q:"montage traîne bonite"},
+ "m-lancer":{y:"8ieAgaBLC7g",t:"Monter un leurre souple sur une tête plombée",q:"montage leurre souple tête plombée mer"},
+ "m-palangrotte":{y:"UW6HDObXrQ0",t:"La palangrotte : technique et montage",q:"montage palangrotte"},
+ "m-surfcasting":{y:"JFedubWVTo4",t:"Réaliser un montage de surfcasting à deux hameçons",q:"montage surfcasting deux empiles"},
+ "m-flotteur":{y:"XnRTD6j_4cE",t:"Le montage flotteur coulissant pour les poissons de roche",q:"montage flotteur coulissant mer"},
+ "m-turlutte":{y:"xM4KNWBuJK4",t:"Un montage très facile pour les calamars et les seiches",q:"montage turlutte calamar"},
+ "m-vif":{y:"KVTrf0Plcjk",t:"Le montage Maréchal pour pêcher au vif",n:"Une variante du montage au vif très utilisée en Méditerranée pour le denti, la sériole et la liche.",q:"montage vif denti"},
+ "m-jig":{y:"8YllfuW6vW4",t:"Monter des hameçons assist sur un jig",q:"montage assist hook jig"},
+ "m-palangre":{y:"u2BsgS9AKLk",t:"Fabriquer et préparer une palangre",q:"palangre montage pêche loisir"},
+ "t-traine-cotiere":{y:"Ta4SpUgikVw",t:"Le loup à la traîne aux poissons nageurs",q:"traîne côtière méditerranée"},
+ "t-traine-large":{y:"mwbUyNDUVOc",t:"La bonite à la traîne et au leurre dans les chasses",q:"pêche bonite chasse traîne"},
+ "t-vif":{y:"N4ZQ_Z-onr0",t:"La traîne lente au vif, avec Méditerranée Fishing",q:"traîne lente au vif méditerranée"},
+ "t-mouillage":{y:"m9O93xmKcz8",t:"Pêcher les dorades au mouillage avec du broumé",q:"pêche dorade bateau broumé"},
+ "t-derive":{y:"mwYcNrkiQ_4",t:"La pêche du pagre en dérive : montage et technique",q:"pêche en dérive bateau méditerranée"},
+ "t-lancer":{y:"hxxbEqZc0m8",t:"Débuter la pêche au leurre souple du bord",q:"pêche leurre bord mer débutant"},
+ "t-jig":{y:"hle7djlom50",t:"Débuter le slow jigging, par Pecheur.com",q:"slow jig méditerranée tuto"},
+ "t-turlutte":{y:"FYsL7-R7g3c",t:"L'eging : calamars et seiches à la turlutte, par Pecheur.com",q:"eging calamar turlutte tuto"},
+ "t-surfcasting":{y:"tSJEHSE7gxk",t:"Le surfcasting de A à Z",q:"surfcasting débutant tuto"},
+ "t-flotteur":{y:"eltLX_hrz4w",t:"Pêcher le sar au flotteur, du bord",q:"pêche sar flotteur rochers"},
+ "t-palangre":{y:"aS9y6HZSd_M",t:"La pêche à la palangre : dorades et loups",q:"pêche palangre loisir"},
+ "sp-loup":{y:"pq5btP9N9Lg",t:"Le loup aux leurres dans une embouchure, en Méditerranée",q:"pêche loup leurre méditerranée"},
+ "sp-dorade":{y:"R-lN-a3Qw3s",t:"Pêcher la dorade royale du bord de mer",q:"pêche dorade royale"},
+ "sp-bonite":{y:"P6gJLiC60Rc",t:"La bonite sur les chasses, au jig, en Méditerranée",q:"pêche bonite méditerranée"},
+ "sp-thonine":{y:"8vgfZN_mpRk",t:"Reconnaître bonite, thonine et thon sur une chasse",q:"pêche thonine méditerranée"},
+ "sp-liche":{y:"Z2eIhF3Sm88",t:"Les montages et la pêche de la liche",q:"pêche liche amie"},
+ "sp-denti":{y:"7pifbtd1cUk",t:"Le denti au fireball, avec un calamar vivant",q:"pêche denti méditerranée"},
+ "sp-seriole":{y:"ioRMGZfysTs",t:"La sériole en traîne lente au vif",q:"pêche sériole méditerranée"},
+ "sp-pagre":{y:"Irzlj1RIB3w",t:"Le pagre et les sparidés à la palangrotte",q:"pêche pagre méditerranée"},
+ "sp-sar":{y:"g3kj5WfiHww",t:"Le montage flotteur pour les gros sars",q:"pêche sar flotteur"},
+ "sp-marbre":{y:"oFhLSi1lNjo",t:"Attraper les marbrés depuis la plage",q:"pêche marbré surfcasting"},
+ "sp-dorade-grise":{y:"F4ZRjUZehXA",t:"La dorade grise (griset) en bateau",q:"pêche dorade grise griset"},
+ "sp-pageot":{y:"PTpvCaILU4Q",t:"Le pageot au ver, en dérive",q:"pêche pageot dérive"},
+ "sp-chapon":{y:"gyLSaOGI7Tw",t:"Pêcher le chapon en dérive",q:"pêche chapon rascasse"},
+ "sp-maquereau":{y:"99jaCEbUgrw",t:"Le maquereau à la mitraillette",q:"pêche maquereau mitraillette"},
+ "sp-calamar":{y:"p74i6X_DWGQ",t:"Débuter la pêche des calamars à la turlutte",q:"pêche calamar turlutte"},
+ "sp-seiche":{y:"wWeJsHsWa-E",t:"La seiche à la turlutte, du bord",q:"pêche seiche turlutte"},
+ "sp-coryphene":{y:"d3oDvUolc3M",t:"La dorade coryphène en Méditerranée",q:"pêche dorade coryphène méditerranée"},
+ "sp-barracuda":{y:"N6UgtIRQD-M",t:"Pêcher le barracuda en Méditerranée : matériel et leurres",q:"pêche barracuda méditerranée"},
+ "sp-thon-rouge":{y:"nG061vmlngM",t:"Comprendre la réglementation du thon rouge",n:"Les dates changent chaque année : les règles 2026 sont dans l'onglet Règles.",q:"thon rouge pêche de loisir réglementation"}
+};
 
 /* =====================================================================
    Données : zones (positions approximatives)
@@ -1079,54 +1232,187 @@ const CHECK={
   ["Confort",["Sac ou glacière souple","Eau, vêtements chauds pour la nuit"]]
  ]
 };
+/* Lexique. t = mot, c = famille, k = formes repérées dans les textes (soulignées, touche pour la définition),
+   re = motif pour les chiffres (30/100, 2 à 4 nœuds…), once = souligné une seule fois par fiche, d = définition. */
 const GLOSS=[
- ["Ancre flottante","Sorte de parachute qu'on met à l'eau pour ralentir la dérive du bateau."],
- ["Appât (esche)","Ce qu'on met sur l'hameçon : ver, sardine, crevette… « Escher », c'est mettre l'appât."],
- ["Arrache-plomb","Bout de fil plus gros en tête de ligne qui encaisse le choc du lancer en surfcasting."],
- ["Avançon","Petit fil qui porte l'hameçon, attaché à la ligne principale."],
- ["Bande des 300 m","Bande de mer le long de la côte où la vitesse est limitée à 5 nœuds."],
- ["Barotraumatisme","Blessure d'un poisson remonté vite des grands fonds. Relâché, il survit mal."],
- ["Bas de ligne","Dernier morceau de fil, plus discret ou plus solide, entre la ligne et le leurre."],
- ["Bibi","Ver marin très apprécié des dorades."],
- ["Broumé","Mélange de sardine hachée et de pain qu'on jette pour attirer les poissons."],
- ["Cassure","Endroit où le fond change brusquement de profondeur."],
- ["Chasse","Prédateurs qui attaquent un banc de petits poissons en surface, souvent avec des oiseaux au-dessus."],
- ["Coralligène","Fonds rocheux couverts d'algues rouges et d'animaux fixés, très riches, souvent entre 20 et 100 m."],
- ["Dérive","Laisser le bateau avancer poussé par le vent et le courant, moteur coupé."],
- ["Émerillon","Petite pièce de métal qui tourne sur elle-même et empêche le fil de vriller."],
- ["Agrafe","Attache rapide pour changer de leurre sans refaire de nœud."],
- ["Ferrer","Donner un coup sec pour planter l'hameçon quand le poisson mord."],
- ["Fluorocarbone","Fil presque invisible dans l'eau et résistant au frottement, pour les bas de ligne."],
- ["Frein","Réglage du moulinet qui laisse sortir le fil quand le poisson tire trop fort."],
- ["Herbier de posidonie","Prairie sous-marine protégée (une plante, pas une algue), nurserie des poissons. On n'y jette pas l'ancre."],
- ["Isobathe","Ligne qui relie les points de même profondeur sur une carte marine."],
- ["Jig","Leurre en métal lourd qu'on anime de haut en bas."],
- ["Lbs (livres)","Unité de résistance des fils et des cannes de traîne : 1 lb vaut environ 0,45 kg."],
- ["Leurre souple","Imitation en caoutchouc d'un poisson ou d'un ver, montée sur une tête plombée."],
- ["Maille","Taille minimale légale pour garder un poisson."],
- ["Marquage","Couper le lobe du bas de la queue d'un poisson gardé : la preuve qu'il ne peut pas être vendu."],
- ["Mitraillette","Bas de ligne avec plusieurs petites plumes pour les maquereaux et sévereaux."],
- ["Mouillage","Pêcher le bateau ancré ; aussi l'endroit où l'on jette l'ancre."],
- ["No-kill (pêcher-relâcher)","Remettre le poisson à l'eau vivant."],
- ["Nylon (monofilament)","Fil classique, un peu élastique, pas cher."],
- ["Orin","Corde qui relie un engin posé au fond (palangre, casier) à sa bouée."],
- ["Palangre","Longue ligne de fond avec beaucoup d'hameçons, posée puis relevée."],
- ["Palangrotte","Ligne à main traditionnelle de Provence, enroulée sur un plioir."],
- ["Poisson nageur","Leurre dur en forme de poisson. Sa bavette (la palette à l'avant) le fait plonger."],
- ["Potence","Boucle faite au milieu de la ligne pour accrocher un hameçon."],
- ["Sondeur","Appareil qui montre la profondeur, le relief du fond et les poissons sous le bateau."],
- ["SOG","Vitesse fond lue sur le GPS : la vraie vitesse de traîne."],
- ["Stickbait, popper","Leurres de surface qui imitent un poisson en fuite."],
- ["Tenya","Tête plombée avec hameçon, garnie d'une crevette."],
- ["Tête de roche","Rocher isolé qui dépasse du fond, où se tiennent les prédateurs."],
- ["Tombant","Paroi où le fond plonge fortement."],
- ["Tresse","Fil tressé très fin et sans élasticité, idéal pour sentir les touches."],
- ["Turlutte","Leurre avec une couronne de pointes, pour les calamars et les seiches."],
- ["/100","Diamètre d'un fil en centièmes de millimètre : 30/100 = 0,30 mm."],
- ["Vif","Petit poisson ou calamar vivant utilisé comme appât."],
- ["Waypoint","Point GPS enregistré pour revenir à un spot."],
- ["Zone de baignade (ZRUB)","Zone balisée l'été, réservée aux baigneurs : interdite aux bateaux."]
+ /* Nœuds */
+ {t:"Palomar",c:"Nœuds",k:["palomar"],d:"C'est juste le nom d'un nœud, pas un objet à acheter. On le fait avec le fil plié en deux : le plus solide pour attacher un hameçon, un émerillon ou un leurre sur de la tresse."},
+ {t:"Clinch amélioré",c:"Nœuds",k:["clinch amélioré","clinch"],d:"Le nom d'un nœud : « clinch » est un mot anglais qui veut dire bloquer, serrer. On enroule le fil autour de lui-même, puis on le repasse dans les boucles. Parfait sur le nylon, il glisse sur la tresse."},
+ {t:"Uni (Grinner)",c:"Nœuds",k:["uni","grinner"],d:"Le nom d'un nœud : « Uni » pour universel, parce qu'il sert presque partout (hameçon, émerillon, agrafe). Grinner est son autre nom : c'est le même nœud."},
+ {t:"Double Uni",c:"Nœuds",k:["double uni","double universel"],d:"Deux nœuds Uni, un sur chaque fil, qui glissent l'un vers l'autre quand tu serres. Il sert à raccorder deux fils, par exemple la tresse et le bas de ligne."},
+ {t:"FG",c:"Nœuds",k:["fg"],d:"C'est juste le nom, en deux lettres, d'un nœud de raccord. La tresse s'enroule en croisillons autour du fluorocarbone, comme une natte : très fin, il passe bien dans les anneaux de la canne."},
+ {t:"Albright",c:"Nœuds",k:["albright"],d:"Le nom d'un nœud de raccord, qui vient d'un guide de pêche américain. Il relie deux fils de grosseurs très différentes."},
+ {t:"Rapala",c:"Nœuds",k:["boucle rapala","rapala"],d:"Rapala est une marque finlandaise de leurres qui a donné son nom à ce nœud. Il laisse une petite boucle libre devant le leurre : le poisson nageur bouge mieux."},
+ {t:"Snell (nœud d'empile)",c:"Nœuds",k:["nœud d'empile","snell"],d:"« Snell » est le mot anglais ; en français on dit nœud d'empile. Le fil s'enroule le long de la tige de l'hameçon et sort bien dans l'axe : l'hameçon pique mieux au ferrage."},
+ {t:"Bimini twist",c:"Nœuds",k:["bimini twist","bimini"],d:"Un nœud qui vient des îles Bimini, aux Bahamas, haut lieu de la pêche au gros. Il double le bout de la ligne sur une bonne longueur sans l'affaiblir."},
+ {t:"Potence (dropper loop)",c:"Nœuds",k:["dropper loop","potences","potence"],d:"Une boucle qui sort sur le côté, au milieu de la ligne, pour y accrocher un hameçon. On dit potence parce qu'elle part en équerre, comme un support en L. « Dropper loop » est son nom anglais."},
+ {t:"Boucle du chirurgien",c:"Nœuds",k:["boucle du chirurgien","chirurgien"],d:"Une boucle simple et très solide au bout du fil. Son nom vient du double tour que font les chirurgiens pour les points de suture."},
+ {t:"Nœud d'arrêt",c:"Nœuds",k:["nœuds d'arrêt","nœud d'arrêt"],d:"Un petit nœud « stop » fait avec un bout de fil sur ta ligne. Le flotteur coulissant glisse jusqu'à lui et s'arrête : c'est lui qui règle la profondeur."},
+ {t:"Demi-clé",c:"Nœuds",k:["demi-clés","demi-clé"],d:"Le nœud le plus simple : le fil fait un tour autour d'un autre et repasse dans sa boucle. On en enchaîne plusieurs pour bloquer la fin d'un nœud."},
+ {t:"Nœud simple",c:"Nœuds",k:["nœud simple"],d:"Le nœud de base, celui qu'on fait sans y penser : une boucle, on passe le bout dedans, on serre."},
+ {t:"Ganse",c:"Nœuds",k:["ganse"],d:"Un U formé en repliant le bout du fil sur lui-même."},
+ {t:"Œillet",c:"Nœuds",k:["œillets","œillet"],d:"Le petit anneau au bout de l'hameçon, du leurre ou de l'émerillon, dans lequel on passe le fil."},
+ {t:"Brin principal, brin libre",c:"Nœuds",k:["brin principal","brin libre"],d:"Le brin principal, c'est le côté du fil qui part vers la canne. Le brin libre, c'est le bout avec lequel tu fais le nœud."},
+ {t:"Spire",c:"Nœuds",k:["spires"],d:"Un tour de fil enroulé autour d'un autre."},
+ /* Fils et montages */
+ {t:"Tresse",c:"Fils & montages",k:["tresses","tresse"],once:1,d:"Un fil fait de fibres tressées : très fin, très solide et sans élasticité. Tu sens la moindre touche, mais il se voit dans l'eau et craint le frottement sur les roches."},
+ {t:"Nylon (monofilament)",c:"Fils & montages",k:["nylon","monofilament"],once:1,d:"Le fil classique, d'un seul brin, un peu élastique et pas cher. Son élasticité amortit les coups de tête du poisson (traîne, surfcasting)."},
+ {t:"Fluorocarbone",c:"Fils & montages",k:["fluorocarbone","fluoro"],once:1,d:"Un fil presque invisible dans l'eau et très résistant au frottement. On l'utilise pour le bas de ligne, devant la tresse."},
+ {t:"/100 (diamètre du fil)",c:"Fils & montages",re:"\\d+(?:[–-]\\d+)?\\/100",d:"Le diamètre d'un fil en centièmes de millimètre : 30/100 = 0,30 mm. Plus le chiffre est grand, plus le fil est gros et solide."},
+ {t:"Lbs (livres)",c:"Fils & montages",re:"\\d+(?:[\\/–-]\\d+)?\\s?lbs",k:["lbs"],d:"L'unité de force des fils et des cannes de traîne : 1 lb vaut environ 0,45 kg. Une canne 20/30 lbs est faite pour des fils qui cassent entre 9 et 14 kg environ."},
+ {t:"Bas de ligne",c:"Fils & montages",k:["bas de ligne"],once:1,d:"Le dernier morceau de fil, entre la ligne et le leurre ou l'hameçon. Plus discret (fluorocarbone) ou plus solide que le reste, il se change facilement."},
+ {t:"Corps de ligne",c:"Fils & montages",k:["corps de ligne"],d:"Le fil principal, celui qui est enroulé sur le moulinet."},
+ {t:"Arrache-plomb",c:"Fils & montages",k:["arrache-plomb","tête de ligne"],d:"Une dizaine de mètres de fil plus gros au début de la ligne, en surfcasting. Il encaisse le choc du lancer avec un plomb lourd : sans lui, le fil casse."},
+ {t:"Avançon (empile)",c:"Fils & montages",k:["avançons","avançon","empiles","empile"],d:"Le petit fil qui porte l'hameçon et qui s'attache sur la ligne principale. On dit aussi empile."},
+ {t:"Ligne mère",c:"Fils & montages",k:["ligne mère"],d:"Le fil principal d'une palangre : on y attache les avançons à intervalles réguliers."},
+ {t:"Émerillon",c:"Fils & montages",k:["émerillons","émerillon"],d:"Une petite pièce de métal à deux anneaux qui tournent séparément : elle empêche le fil de vriller, c'est-à-dire de s'entortiller."},
+ {t:"Agrafe",c:"Fils & montages",k:["agrafes","agrafe"],d:"Une petite attache en métal qui s'ouvre et se ferme comme une épingle : tu changes de leurre sans refaire de nœud."},
+ {t:"Anneau brisé",c:"Fils & montages",k:["anneaux brisés","anneau brisé"],d:"Un petit anneau en spirale, comme un porte-clés miniature, qui sert à fixer un hameçon sur un leurre."},
+ {t:"Perle",c:"Fils & montages",k:["perles","perle"],d:"Une petite boule en plastique enfilée sur la ligne : elle protège le nœud des chocs du plomb, ou bloque le flotteur contre le nœud d'arrêt."},
+ {t:"Plomb",c:"Fils & montages",k:["plombs","plomb"],once:1,d:"Le poids qui fait couler ta ligne. Il en existe de toutes les formes et de tous les poids, comptés en grammes."},
+ {t:"Plomb grappin",c:"Fils & montages",k:["plomb grappin"],d:"Un plomb muni de pattes en métal qui s'accrochent au sable : il ne roule pas avec les vagues."},
+ {t:"Plomb coulissant",c:"Fils & montages",k:["plomb coulissant"],d:"Un plomb percé qui glisse librement sur la ligne : le poisson tire sur l'appât sans sentir le poids."},
+ {t:"Olive",c:"Fils & montages",k:["olives","olive"],d:"Un petit plomb en forme d'olive, percé au milieu, qu'on enfile sur la ligne."},
+ {t:"Flotteur coulissant",c:"Fils & montages",k:["flotteurs coulissants","flotteur coulissant"],d:"Un flotteur (un bouchon) qui glisse sur la ligne jusqu'au nœud d'arrêt. Tu peux pêcher profond tout en lançant facilement."},
+ {t:"Antenne",c:"Fils & montages",k:["antenne"],d:"La partie fine et colorée du flotteur qui dépasse de l'eau : c'est elle que tu surveilles."},
+ {t:"Hameçon",c:"Fils & montages",k:["hameçons","hameçon"],once:1,d:"Le crochet au bout de la ligne. Plus son numéro est grand, plus il est petit (n°8 petit, n°1 moyen) ; ensuite on passe à 1/0, 2/0, 3/0… qui grossissent."},
+ {t:"Taille d'hameçon",c:"Fils & montages",re:"n°\\s?\\d+|\\d\\/0",d:"Plus le numéro est grand, plus l'hameçon est petit : n°8 petit, n°1 moyen. Après le n°1, on compte 1/0, 2/0, 3/0… et là, plus le chiffre est grand, plus l'hameçon est gros."},
+ {t:"Ardillon",c:"Fils & montages",k:["ardillon"],d:"La petite pointe retournée juste derrière la pointe de l'hameçon : elle empêche le poisson (et l'hameçon planté dans ton doigt) de ressortir."},
+ {t:"Assist",c:"Fils & montages",k:["assists","assist"],d:"Un hameçon monté sur un petit bout de fil souple, accroché en haut d'un jig. Il pend le long du leurre et s'accroche moins au fond."},
+ {t:"Montage",c:"Fils & montages",k:[],d:"Tout ce que tu installes au bout de ta ligne : nœuds, plomb, émerillon, bas de ligne, hameçon ou leurre."},
+ /* Leurres et appâts */
+ {t:"Leurre",c:"Leurres & appâts",k:["leurres","leurre"],once:1,d:"Une fausse proie, en plastique, en bois ou en métal, qui imite un petit poisson, une crevette ou un calamar. On l'anime pour déclencher l'attaque."},
+ {t:"Poisson nageur",c:"Leurres & appâts",k:["poissons nageurs","poisson nageur"],once:1,d:"Un leurre dur en forme de poisson, qui nage tout seul quand on le tire. Sa bavette le fait plonger."},
+ {t:"Bavette",c:"Leurres & appâts",k:["bavette"],d:"La palette transparente à l'avant d'un poisson nageur : plus elle est grande, plus le leurre plonge profond."},
+ {t:"Leurre souple",c:"Leurres & appâts",k:["leurres souples","leurre souple"],once:1,d:"Une imitation en caoutchouc d'un poisson ou d'un ver, montée sur une tête plombée. Le leurre le plus polyvalent pour débuter."},
+ {t:"Tête plombée",c:"Leurres & appâts",k:["têtes plombées","tête plombée"],d:"Un hameçon avec une boule de plomb à l'avant. On y enfile un leurre souple : le plomb le fait couler, l'hameçon pique."},
+ {t:"Stickbait, popper",c:"Leurres & appâts",k:["stickbaits","stickbait","poppers","popper"],d:"Des leurres de surface. Le stickbait zigzague comme un poisson en fuite ; le popper fait des « ploc » et des éclaboussures."},
+ {t:"Jig",c:"Leurres & appâts",k:["jigs","jig"],once:1,d:"Un leurre en métal, lourd et allongé. On le fait monter et descendre près du fond : il imite un petit poisson blessé."},
+ {t:"Casting jig",c:"Leurres & appâts",k:["casting jigs","casting jig"],d:"Un petit jig de 20 à 40 g, fait pour être lancé loin et ramené vite, par exemple sur une chasse de bonites."},
+ {t:"Jigging, slow jig",c:"Techniques",k:["slow jigging","slow jig","jigging"],d:"Le jigging, c'est pêcher au jig à la verticale sous le bateau. Le slow jig est la version lente : un jig plat qui retombe en planant."},
+ {t:"Fireball",c:"Leurres & appâts",k:["fireball"],d:"Une grosse tête plombée avec un ou deux hameçons, sur laquelle on fixe un vif (souvent un calamar) pour le présenter près du fond."},
+ {t:"Tenya",c:"Leurres & appâts",k:["tenya"],d:"Un mot japonais : une tête plombée avec hameçon, qu'on garnit d'une crevette. On la pose au fond, puis on la soulève doucement."},
+ {t:"Turlutte",c:"Leurres & appâts",k:["turluttes","turlutte"],once:1,d:"Un leurre en forme de crevette avec une couronne de petites pointes sans ardillon. Le calamar ou la seiche l'attrape avec ses tentacules et reste piqué."},
+ {t:"Eging",c:"Techniques",k:["eging"],d:"La pêche des calamars et des seiches à la turlutte. Le mot vient du japonais « egi », qui veut dire turlutte."},
+ {t:"Tataki",c:"Techniques",k:["tataki"],d:"Un mot japonais qui évoque de petits coups : on fait vibrer la turlutte par petites secousses de canne, ici depuis le bateau, avec une turlutte lestée sous la coque."},
+ {t:"Plume (jupette)",c:"Leurres & appâts",k:["plumes","plume","jupettes","jupette"],d:"Un leurre de traîne fait d'une tête et d'une jupe de plumes ou de plastique, qui frétille derrière le bateau."},
+ {t:"Cuiller",c:"Leurres & appâts",k:["cuillers","cuiller","cuillères","cuillère"],d:"Un leurre en métal brillant qui ondule ou tourne quand on le ramène, comme un petit poisson qui scintille."},
+ {t:"Mitraillette",c:"Leurres & appâts",k:["mitraillettes","mitraillette"],d:"Un bas de ligne avec plusieurs petites plumes en série : on prend les maquereaux et les sévereaux par grappes. Chaque plume compte comme un hameçon."},
+ {t:"Appât (esche)",c:"Leurres & appâts",k:["appâts","appât","esches","escher","esche"],once:1,d:"La vraie nourriture qu'on met sur l'hameçon : ver, sardine, crevette, calamar… « Escher », c'est mettre l'appât sur l'hameçon."},
+ {t:"Vif",c:"Leurres & appâts",k:["vifs","vif"],once:1,d:"Un petit poisson ou un calamar vivant, utilisé comme appât pour les gros prédateurs."},
+ {t:"Broumé",c:"Leurres & appâts",k:["broumé"],d:"Un mélange de sardines hachées et de pain mouillé qu'on jette par petites boules pour attirer les poissons. Ailleurs, on parle d'amorce ou de strouille."},
+ {t:"Bibi",c:"Leurres & appâts",k:["bibi"],d:"Un ver marin épais qui vit dans le sable. Les dorades l'adorent."},
+ {t:"Néréis",c:"Leurres & appâts",k:["néréis"],d:"Le ver marin le plus courant en magasin de pêche, bon pour presque tous les poissons de fond."},
+ {t:"Vers américain et coréen",c:"Leurres & appâts",k:["vers américains","ver américain","américain","coréens","coréen"],d:"De gros vers marins vendus vivants en magasin de pêche, nommés d'après leur pays d'origine. Très bons pour la dorade et le marbré."},
+ {t:"Couteau",c:"Leurres & appâts",k:["couteau"],d:"Un coquillage long et fin qui vit enfoui dans le sable : un excellent appât pour la dorade."},
+ /* Matériel */
+ {t:"Moulinet",c:"Matériel",k:["moulinets","moulinet"],once:1,d:"La bobine fixée sous la canne, qui enroule le fil. Son numéro (2500, 4000, 8000…) indique sa taille : plus il est grand, plus le moulinet est gros."},
+ {t:"Frein",c:"Matériel",k:["frein"],once:1,d:"Le réglage du moulinet qui laisse sortir du fil quand le poisson tire trop fort, pour que le fil ne casse pas. Règle-le à environ un tiers de la solidité du fil."},
+ {t:"Cliquet",c:"Matériel",k:["cliquet"],d:"Un petit bouton du moulinet qui fait « cric-cric » quand le fil sort : il t'avertit d'une touche quand la canne est posée."},
+ {t:"Tambour tournant",c:"Matériel",k:["tambour tournant"],d:"Un moulinet dont la bobine tourne pour enrouler le fil, comme un treuil. Très puissant : c'est le moulinet de la traîne."},
+ {t:"Spinning",c:"Matériel",k:["spinning"],d:"Un ensemble canne et moulinet légers, fait pour lancer un leurre et le ramener. Le plus polyvalent."},
+ {t:"Pique",c:"Matériel",k:["une pique","la pique"],d:"Le support qu'on plante dans le sable pour tenir la canne debout en surfcasting."},
+ {t:"Porte-canne",c:"Matériel",k:["porte-cannes","porte-canne"],d:"Un tube fixé sur le bateau, dans lequel on pose la canne pendant la traîne."},
+ {t:"Épuisette",c:"Matériel",k:["épuisette"],d:"Un grand filet monté sur un manche pour sortir le poisson de l'eau sans casser le fil."},
+ {t:"Plioir",c:"Matériel",k:["plioir"],d:"Un cadre en bois ou en plastique sur lequel on enroule une ligne à main."},
+ {t:"Dégorgeoir",c:"Matériel",k:["dégorgeoir"],d:"Un petit outil pour retirer un hameçon avalé sans abîmer le poisson."},
+ /* Techniques */
+ {t:"Ferrer",c:"Techniques",k:["ferrage","ferrer","ferre"],once:1,d:"Donner un coup de canne sec au moment de la touche, pour planter l'hameçon dans la bouche du poisson."},
+ {t:"Touche",c:"Techniques",k:["à la touche","la touche","une touche","touches"],d:"Le moment où un poisson mord : la canne tape, le fil se tend ou le flotteur s'enfonce."},
+ {t:"Pomper",c:"Techniques",k:["pompe doucement","pomper"],d:"Ramener un gros poisson en levant doucement la canne, puis en reprenant du fil pendant que tu la baisses. On recommence jusqu'au bateau."},
+ {t:"Animer",c:"Techniques",k:["animer","anime"],d:"Donner vie au leurre avec des petits mouvements de canne, des pauses et des accélérations."},
+ {t:"Palangrotte",c:"Techniques",k:["palangrotte"],d:"La ligne à main traditionnelle de Provence, enroulée sur un plioir : un fil, un plomb, quelques hameçons. Simple et redoutable."},
+ {t:"Palangre",c:"Techniques",k:["palangres","palangre"],d:"Une longue ligne posée au fond, avec beaucoup d'hameçons, qu'on laisse en place puis qu'on relève. Très encadrée en pêche de loisir."},
+ {t:"Surfcasting",c:"Techniques",k:["surfcasting"],d:"La pêche depuis la plage : on lance très loin un plomb lourd et des appâts avec une longue canne, puis on la pose sur une pique."},
+ {t:"Traîne",c:"Techniques",k:["traîne"],once:1,d:"Pêcher en tirant un leurre derrière le bateau qui avance doucement."},
+ {t:"Mouillage",c:"Techniques",k:["mouillage"],once:1,d:"Pêcher avec le bateau ancré. Le mot désigne aussi l'endroit où l'on jette l'ancre ; « mouiller », c'est jeter l'ancre ou poser un engin au fond."},
+ {t:"Dérive",c:"Techniques",k:["dérive"],once:1,d:"Laisser le bateau avancer tout seul, moteur coupé, poussé par le vent et le courant : ton appât balaie le fond."},
+ {t:"Coup du matin, coup du soir",c:"Techniques",k:["coups du matin et du soir","coup du soir","coup du matin"],d:"Les moments autour du lever et du coucher du soleil, quand la lumière baisse : c'est là que les poissons mangent le plus."},
+ {t:"Saigner un poisson",c:"Techniques",k:["saigner","saigne"],d:"Couper une ouïe juste après la capture pour vider le sang : la chair reste bien meilleure, surtout pour les bonites et les thons."},
+ /* Poissons */
+ {t:"Sévereau (chinchard)",c:"Poissons",k:["sévereaux","sévereau","chinchards","chinchard"],d:"Le chinchard : un petit poisson de banc très commun, avec une rangée de grandes écailles le long du flanc. Pris à la mitraillette, c'est un excellent vif."},
+ {t:"Bogue",c:"Poissons",k:["bogues","bogue"],d:"Un petit poisson de banc aux gros yeux et aux lignes dorées. Un bon vif."},
+ {t:"Girelle",c:"Poissons",k:["girelles","girelle"],d:"Un petit poisson très coloré des rochers. Le denti l'apprécie comme vif."},
+ {t:"Mulet",c:"Poissons",k:["mulets","mulet"],d:"Un poisson argenté très commun dans les ports et les embouchures. Vivant, c'est un super vif pour la liche et le loup."},
+ {t:"Saupe",c:"Poissons",k:["saupes","saupe"],d:"Un poisson argenté rayé de jaune qui broute les algues, en bancs le long des rochers."},
+ {t:"Oblade",c:"Poissons",k:["oblades","oblade"],d:"Un petit poisson argenté avec une tache noire devant la queue, en bancs près des rochers. Elle adore le pain."},
+ {t:"Sparidé",c:"Poissons",k:["sparidés","sparidé"],d:"La famille des dorades : dorade royale, sar, pagre, pageot, denti… Corps ovale et épines sur le dos."},
+ {t:"Pélagique",c:"Poissons",k:["pélagiques","pélagique"],d:"Un poisson qui vit en pleine eau, loin du fond, souvent en bancs et en mouvement : bonite, thonine, maquereau, coryphène."},
+ {t:"Prédateur",c:"Poissons",k:["prédateurs","prédateur"],once:1,d:"Un poisson qui chasse et mange d'autres poissons : loup, denti, liche, bonite…"},
+ {t:"Céphalopode",c:"Poissons",k:["céphalopodes","céphalopode"],d:"La famille du calamar, de la seiche et du poulpe : des tentacules, de l'encre et pas d'arêtes."},
+ {t:"Ligne latérale",c:"Poissons",k:["ligne latérale"],d:"Une ligne visible le long du flanc du poisson. C'est un organe qui sent les vibrations dans l'eau."},
+ {t:"Ouïes",c:"Poissons",k:["ouïes"],d:"Les fentes de chaque côté de la tête, par où le poisson respire. Attention : leur bord coupe souvent."},
+ {t:"Lobe de la queue",c:"Poissons",k:["lobe"],d:"La queue d'un poisson a deux pointes, les lobes. Pour le marquage, on coupe celui du bas."},
+ {t:"Banc",c:"Poissons",k:["bancs","banc"],once:1,d:"Un groupe de poissons qui nagent ensemble."},
+ {t:"Barotraumatisme",c:"Poissons",k:["barotraumatisme"],d:"La blessure d'un poisson remonté trop vite des grands fonds : son corps gonfle pendant la remontée. Relâché, il survit mal."},
+ {t:"Corb",c:"Poissons",k:["corb"],d:"Un poisson brun doré des rochers, protégé : sa pêche est interdite, on le relâche."},
+ {t:"Mérou",c:"Poissons",k:["mérous","mérou"],d:"Un gros poisson brun des roches, protégé en Méditerranée française : interdit à la pêche de loisir."},
+ {t:"Vive",c:"Poissons",k:["vive"],d:"Un petit poisson qui s'enfouit dans le sable des plages, avec des épines venimeuses sur le dos : on le manipule avec des gants."},
+ {t:"Germon",c:"Poissons",k:["germon"],d:"Le thon blanc. Sa pêche de loisir est interdite en ce moment (moratoire), même pour le relâcher."},
+ /* Mer et fonds */
+ {t:"Chasse",c:"Mer & fonds",k:["la chasse","une chasse","chasses"],d:"Des prédateurs (bonites, thonines…) qui attaquent un banc de petits poissons en surface. L'eau bouillonne et les oiseaux plongent dessus."},
+ {t:"Tombant",c:"Mer & fonds",k:["tombants","tombant"],d:"Une paroi sous l'eau où le fond plonge fortement, comme une falaise. Les prédateurs chassent le long."},
+ {t:"Tête de roche",c:"Mer & fonds",k:["têtes de roche","tête de roche"],d:"Un rocher isolé qui dépasse du fond : un abri où se tiennent les gros poissons. Ton sondeur la montre comme une bosse."},
+ {t:"Cassure",c:"Mer & fonds",k:["cassures","cassure"],d:"Un endroit où le fond change brusquement de profondeur."},
+ {t:"Herbier de posidonie",c:"Mer & fonds",k:["herbier de posidonie","herbiers","herbier","posidonie"],d:"Une prairie sous-marine de posidonie, une vraie plante à fleurs (pas une algue), protégée. C'est la nurserie des poissons : on n'y jette jamais l'ancre."},
+ {t:"Coralligène",c:"Mer & fonds",k:["coralligène"],d:"Des fonds rocheux couverts d'algues rouges et de petits animaux fixés (gorgones, éponges), très riches, souvent entre 20 et 100 m."},
+ {t:"Fond mixte",c:"Mer & fonds",k:["fonds mixtes","fond mixte"],d:"Un fond où se mélangent sable, cailloux et roches."},
+ {t:"Éboulis",c:"Mer & fonds",k:["éboulis"],d:"Un tas de rochers tombés, au pied d'une falaise ou d'un tombant."},
+ {t:"Enrochements",c:"Mer & fonds",k:["enrochements"],d:"De gros blocs de roche posés pour protéger une digue ou une plage."},
+ {t:"Vase",c:"Mer & fonds",k:["vase"],d:"Un fond de boue très fine."},
+ {t:"Porphyre",c:"Mer & fonds",k:["porphyre"],d:"La roche rouge volcanique de l'Estérel, celle qui donne sa couleur à la côte entre Théoule et Agay."},
+ {t:"Écume",c:"Mer & fonds",k:["écume"],d:"La mousse blanche des vagues au pied des rochers. Les sars et les loups viennent y chercher à manger, cachés par les remous."},
+ {t:"Mer formée",c:"Mer & fonds",k:["mer formée"],d:"Une mer avec des vagues bien marquées. Bonne pour certains poissons du bord, dangereuse sur les rochers."},
+ {t:"Mer d'huile",c:"Mer & fonds",k:["mer d'huile"],d:"Une mer parfaitement plate, sans une ride."},
+ {t:"Coup de mer",c:"Mer & fonds",k:["coups de mer","coup de mer"],d:"Quelques heures ou quelques jours de vent fort et de grosses vagues."},
+ {t:"Houle",c:"Mer & fonds",k:["houle"],d:"Les vagues longues qui arrivent du large, même quand il n'y a pas de vent sur place."},
+ {t:"Eau teintée",c:"Mer & fonds",k:["eau teintée"],d:"Une eau un peu trouble, après la pluie ou les vagues : les poissons se méfient moins et s'approchent du bord."},
+ {t:"Au vent",c:"Mer & fonds",k:["au vent"],d:"Du côté d'où vient le vent. Se placer au vent d'une zone, c'est se mettre avant elle, pour que le vent t'y pousse en dérive."},
+ {t:"Isobathe",c:"Mer & fonds",k:["isobathes","isobathe"],d:"Une ligne qui relie les points de même profondeur sur une carte marine."},
+ {t:"Embouchure",c:"Mer & fonds",k:["embouchure"],d:"L'endroit où une rivière se jette dans la mer, comme la Siagne à Mandelieu."},
+ {t:"Haut-fond",c:"Mer & fonds",k:["hauts-fonds","haut-fond"],d:"Un endroit où le fond remonte près de la surface : bon coin de pêche, mais danger pour la coque et l'hélice."},
+ {t:"Récif",c:"Mer & fonds",k:["récif"],d:"Un rocher ou un groupe de rochers qui remonte près de la surface."},
+ {t:"Sentier sous-marin",c:"Mer & fonds",k:["sentier sous-marin"],d:"Un parcours balisé pour les nageurs avec masque et tuba : la pêche y est à éviter."},
+ /* Bateau */
+ {t:"Nœud (vitesse)",c:"Bateau",re:"\\d+(?:,\\d+)?(?:\\s(?:à|ou)\\s\\d+(?:,\\d+)?|–\\d+)?\\snœuds?",d:"En mer, la vitesse se compte en nœuds : 1 nœud = 1 mille par heure, soit environ 1,85 km/h. 5 nœuds, c'est à peu près 9 km/h."},
+ {t:"Mille nautique",c:"Bateau",re:"\\d+\\smilles?",d:"L'unité de distance en mer : 1 mille = 1 852 m, un peu moins de 2 km."},
+ {t:"SOG (vitesse fond)",c:"Bateau",k:["vitesse fond","sog"],d:"La vitesse réelle du bateau par rapport au fond, lue sur le GPS. C'est elle qui compte pour la traîne, car le courant fausse la vitesse sur l'eau."},
+ {t:"Waypoint",c:"Bateau",k:["waypoints","waypoint"],once:1,d:"Un point GPS que tu enregistres pour revenir pile au même endroit."},
+ {t:"Sondeur",c:"Bateau",k:["sondeur"],once:1,d:"L'écran qui montre la profondeur, la forme du fond et les poissons sous le bateau."},
+ {t:"VHF, canal 16",c:"Bateau",k:["canal 16","vhf"],d:"La radio marine. Le canal 16 sert aux appels et aux urgences : le CROSS l'écoute en permanence."},
+ {t:"CROSS",c:"Bateau",k:["cross"],d:"Les secours en mer (centre régional opérationnel de surveillance et de sauvetage). Joignable au 196 ou sur la VHF, canal 16."},
+ {t:"Division 240",c:"Bateau",k:["division 240"],d:"Le règlement qui fixe le matériel de sécurité obligatoire à bord d'un bateau de plaisance, selon la distance à laquelle tu t'éloignes d'un abri."},
+ {t:"Armement de sécurité",c:"Bateau",k:["armement de sécurité","armement"],d:"Le matériel de sécurité obligatoire à bord : gilets, moyens de repérage, extincteur, etc. Il dépend de la distance d'un abri (Division 240)."},
+ {t:"Bande des 300 m",c:"Bateau",k:["bande des 300 m"],d:"La bande de mer le long de la côte, jusqu'à 300 m du rivage, où la vitesse est limitée à 5 nœuds."},
+ {t:"Zone de baignade (ZRUB)",c:"Bateau",k:["zones de baignade","zone de baignade","zrub"],d:"Une zone balisée l'été par des bouées jaunes, réservée aux baigneurs : interdite aux bateaux."},
+ {t:"Pavillon de plongée",c:"Bateau",k:["pavillons de plongée","pavillon de plongée"],d:"Le drapeau blanc et bleu (pavillon Alpha) qui signale des plongeurs sous l'eau : on s'en éloigne et on ralentit."},
+ {t:"Capitainerie",c:"Bateau",k:["capitainerie"],d:"Le bureau du port, où l'on se renseigne sur ses règles."},
+ {t:"Ancre flottante",c:"Bateau",k:["ancre flottante"],d:"Une sorte de parachute qu'on met à l'eau au bout d'une corde pour freiner la dérive du bateau."},
+ {t:"Embrayer, neutre",c:"Bateau",k:["embraye","embrayé","débraye","au neutre"],d:"Embrayer, c'est mettre l'hélice en prise (marche avant ou arrière). Au neutre, ou débrayé, le moteur tourne mais l'hélice ne pousse plus."},
+ {t:"Bougie",c:"Bateau",k:["bougies"],d:"La pièce du moteur qui fait l'étincelle. Encrassée, le moteur tousse et démarre mal."},
+ {t:"Carburateur",c:"Bateau",k:["carburateur"],d:"La pièce des moteurs anciens qui mélange l'essence et l'air avant l'allumage."},
+ {t:"Vivier",c:"Bateau",k:["vivier"],d:"Un bac d'eau de mer à bord, renouvelée ou aérée, pour garder les vifs vivants."},
+ {t:"Orin",c:"Bateau",k:["orin"],d:"La corde qui relie un engin posé au fond (palangre, casier) à sa bouée."},
+ {t:"Balise",c:"Bateau",k:["balise"],d:"Un repère fixe, tourelle ou perche, qui signale un danger comme un récif."},
+ {t:"Chenal",c:"Bateau",k:["chenal"],d:"Un passage navigable, souvent balisé."},
+ {t:"Croix de Saint-André",c:"Bateau",k:["croix de saint-andré"],d:"Un X jaune posé sur une bouée : il marque une zone spéciale, ici une zone marine protégée."},
+ {t:"Navette",c:"Bateau",k:["navettes","navette"],d:"Le bateau de passagers qui fait la liaison entre Cannes et les îles de Lérins."},
+ /* Règles */
+ {t:"Maille",c:"Règles",k:["maillés","maillé","maille"],once:1,d:"La taille minimale légale pour garder un poisson, mesurée du bout du museau au bout de la queue. En dessous, il retourne à l'eau tout de suite."},
+ {t:"Marquage",c:"Règles",k:["marquage"],d:"Couper le lobe du bas de la queue d'un poisson gardé : c'est la preuve qu'il vient de la pêche de loisir et qu'il ne peut pas être vendu."},
+ {t:"RecFishing",c:"Règles",k:["recfishing"],d:"L'application officielle et gratuite où tout pêcheur de loisir en Méditerranée doit s'enregistrer, et où l'on déclare certaines espèces."},
+ {t:"No-kill",c:"Règles",k:["no-kill"],d:"Pêcher puis relâcher le poisson vivant. On dit aussi pêcher-relâcher."},
+ {t:"Moratoire",c:"Règles",k:["moratoire"],d:"Une interdiction temporaire, décidée pour plusieurs années, de pêcher une espèce pour qu'elle se reconstitue."},
+ {t:"Cantonnement",c:"Règles",k:["cantonnement"],d:"Une zone où toute pêche est interdite pour laisser les poissons grandir et se reproduire."},
+ {t:"Zone marine protégée",c:"Règles",k:["zone marine protégée"],d:"Une zone balisée où la pêche est interdite (ici, la plongée et le mouillage aussi)."},
+ {t:"DIRM",c:"Règles",k:["dirm"],d:"La direction interrégionale de la mer : l'administration qui gère la pêche et la navigation en Méditerranée."},
+ {t:"FranceAgriMer",c:"Règles",k:["franceagrimer"],d:"L'organisme public auprès duquel on déclare un thon rouge débarqué."},
+ {t:"Bague",c:"Règles",k:["bague"],d:"Une étiquette numérotée qu'on fixe sur un thon rouge gardé, pour prouver qu'il a été pêché légalement."},
+ {t:"Débarquement",c:"Règles",k:["débarquement"],d:"Le moment où ta pêche arrive à terre."},
+ {t:"Arrêté municipal",c:"Règles",k:["arrêtés municipaux","arrêté municipal"],d:"Une règle décidée par la mairie, par exemple interdire la pêche sur une plage aux heures de baignade."},
+ {t:"Engins",c:"Règles",k:["engins"],d:"Tout ce qui sert à pêcher : lignes, palangres, casiers, épuisette…"}
 ];
+const GLOSS_CATS=["Nœuds","Fils & montages","Leurres & appâts","Matériel","Techniques","Poissons","Mer & fonds","Bateau","Règles"];
 const KITS=[
  {nom:"Kit lancer polyvalent",prio:"À acheter en premier",pour:"Du bord et du bateau : loup, bonite, thonine, barracuda, liche.",items:[["Ensemble canne spinning 2,40–2,70 m (10–40 g) + moulinet 3000–4000","50–100 €"],["Tresse 10–12/100, 150 m","15–30 €"],["Fluorocarbone 30–40/100 pour les bas de ligne","10–15 €"],["3 leurres souples et têtes plombées, 2 poissons nageurs, 2 casting jigs","40–70 €"]],tot:"115–215 €"},
  {nom:"Kit calamar",prio:"Pour la saison qui commence",pour:"Calamars et seiches, du bord et en bateau, de novembre à mars.",items:[["Ensemble canne eging 2,20–2,50 m + moulinet 2500","40–80 €"],["4 turluttes 2.5 à 3.5, naturelles et fluo","20–40 €"],["Fluorocarbone 20–25/100","10 €"]],tot:"70–130 €"},
@@ -1208,6 +1494,117 @@ const vh=(eyebrow,title,lede)=>'<header class="vh"><p class="eyebrow">'+eyebrow+
 const note=(kind,icon,html)=>'<div class="note '+kind+'">'+ico(icon)+"<div>"+html+"</div></div>";
 
 /* =====================================================================
+   Vidéos (YouTube) et photos (Wikimedia Commons)
+   ===================================================================== */
+const PLAY_SVG='<svg viewBox="0 0 40 40" aria-hidden="true"><circle class="vp-c" cx="20" cy="20" r="19"/><path class="vp-t" d="M16 12.5v15l12-7.5z"/></svg>';
+const ytUrl=id=>"https://www.youtube.com/watch?v="+encodeURIComponent(id);
+const ytSearch=q=>"https://www.youtube.com/results?search_query="+encodeURIComponent(q);
+function vidBlock(key,extra){
+ const v=VIDEOS[key];
+ if(!v)return extra?'<div class="media-links">'+extra+"</div>":"";
+ return '<div class="media"><a class="vid" href="'+ytUrl(v.y)+'" target="_blank" rel="noopener"><span class="vid-th"><img src="https://i.ytimg.com/vi/'+encodeURIComponent(v.y)+'/mqdefault.jpg" alt="" loading="lazy" decoding="async" data-fb="hide"><span class="vid-play">'+PLAY_SVG+'</span></span><span class="vid-tx"><span class="vid-k">Vidéo · YouTube</span><b>'+esc(v.t)+"</b>"+(v.n?'<span class="vid-s">'+esc(v.n)+"</span>":"")+"</span></a>"+
+  '<div class="media-links">'+(extra||"")+extLink(ytSearch(v.q||v.t),"Autres vidéos sur YouTube")+"</div></div>";
+}
+const WM="https://upload.wikimedia.org/wikipedia/commons/";
+const wmEnc=f=>encodeURIComponent(f).replace(/%2C/g,",").replace(/'/g,"%27");
+const wmThumb=(p,w)=>WM+"thumb/"+p.h+"/"+wmEnc(p.f)+"/"+w+"px-"+wmEnc(p.f);
+const wmFilePath=(p,w)=>"https://commons.wikimedia.org/wiki/Special:FilePath/"+wmEnc(p.f)+"?width="+w;
+const wmPage=p=>"https://commons.wikimedia.org/wiki/File:"+wmEnc(p.f);
+const PCRED=LS.get("photo-credits-v1",{});
+function credTxt(p){
+ const c=p.a?p:PCRED[p.f];
+ const src='<a href="'+wmPage(p)+'" target="_blank" rel="noopener">Wikimedia Commons</a>';
+ return c&&c.a?"Photo : "+esc(c.a)+(c.l?" · "+esc(c.l):"")+" · "+src:"Photo : "+src+" (auteur et licence sur la page de la photo)";
+}
+function spThumb(s){
+ const p=PHOTOS[s.id];
+ return '<span class="sp-thumb" aria-hidden="true">'+ico("fish")+(p?'<img src="'+wmThumb(p,250)+'" data-fb="'+wmFilePath(p,250)+'" alt="" loading="lazy" decoding="async"'+(p.pos?' style="object-position:'+esc(p.pos)+'"':"")+">":"")+"</span>";
+}
+function spPhoto(s){
+ const p=PHOTOS[s.id];if(!p)return "";
+ return '<figure class="sp-photo"><a class="ph" href="'+wmPage(p)+'" target="_blank" rel="noopener" aria-label="Voir la photo en grand">'+ico("fish")+
+  '<img src="'+wmThumb(p,500)+'" data-fb="'+wmFilePath(p,500)+'" alt="'+esc(s.nom+", "+s.latin)+'" loading="lazy" decoding="async"'+(p.pos?' style="object-position:'+esc(p.pos)+'"':"")+'></a><figcaption data-cr="'+esc(p.f)+'">'+credTxt(p)+"</figcaption></figure>";
+}
+function txtOf(html){try{return (new DOMParser().parseFromString(String(html||""),"text/html").body.textContent||"").replace(/\s+/g," ").trim()}catch(e){return ""}}
+let creditsAsked=false;
+function loadCredits(){
+ if(creditsAsked||!window.fetch)return;creditsAsked=true;
+ const fresh=Date.now()-30*864e5;
+ const need=Object.values(PHOTOS).filter(p=>!p.a&&!(PCRED[p.f]&&PCRED[p.f].t>fresh)).map(p=>p.f);
+ if(!need.length)return;
+ const url="https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=Artist%7CLicenseShortName&titles="+encodeURIComponent(need.map(f=>"File:"+f).join("|"));
+ fetch(url).then(r=>r.ok?r.json():null).then(j=>{
+  if(!j||!j.query)return;
+  const back={};(j.query.normalized||[]).forEach(n=>{back[n.to]=n.from});
+  Object.values(j.query.pages||{}).forEach(pg=>{
+   const ii=pg.imageinfo&&pg.imageinfo[0];if(!ii)return;
+   const m=ii.extmetadata||{};
+   const f=(back[pg.title]||pg.title).replace(/^File:/,"").replace(/ /g,"_");
+   const a=txtOf(m.Artist&&m.Artist.value);
+   PCRED[f]={a:a.length>70?a.slice(0,68)+"…":a,l:txtOf(m.LicenseShortName&&m.LicenseShortName.value),t:Date.now()};
+  });
+  LS.set("photo-credits-v1",PCRED);
+  $$("[data-cr]").forEach(el=>{const p=Object.values(PHOTOS).find(x=>x.f===el.dataset.cr);if(p)el.innerHTML=credTxt(p)});
+ }).catch(()=>{});
+}
+
+/* =====================================================================
+   Mots expliqués : soulignés dans les textes, définition au toucher
+   ===================================================================== */
+const reEsc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+let TERM_RE=null,TERM_IDX=[],TERMS_READY=false;
+function termRe(){
+ if(TERM_RE!==null)return TERM_RE;
+ const alts=[];
+ GLOSS.forEach((g,i)=>{
+  if(g.re)alts.push({s:g.re,i,n:1000});
+  (g.k||[]).forEach(k=>alts.push({s:reEsc(k).replace(/ /g,"\\s+").replace(/'/g,"['’]"),i,n:k.length}));
+ });
+ alts.sort((a,b)=>b.n-a.n);
+ TERM_IDX=alts.map(a=>a.i);
+ try{TERM_RE=new RegExp("(^|[^\\p{L}\\p{N}])(?:"+alts.map(a=>"("+a.s+")").join("|")+")(?=[^\\p{L}\\p{N}]|$)","giu")}catch(e){TERM_RE=false}
+ return TERM_RE;
+}
+const TERM_SKIP="a,button,input,textarea,select,label,summary,h1,h2,h3,h4,svg,code,.term,.tag,.chip,.mono,.vh,.vid,.media-links,.maille,.knot-name,.sp-photo,.lvl,.cal-wrap,.size-table,.no-terms";
+function linkTerms(root){
+ const re=termRe();if(!re||!root)return;
+ const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(n){
+  if(!n.nodeValue||n.nodeValue.length<2)return NodeFilter.FILTER_REJECT;
+  const p=n.parentElement;return !p||p.closest(TERM_SKIP)?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT}});
+ const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+ const seen=new Map();
+ const first=(scope,i)=>{let s=seen.get(scope);if(!s){s=new Set();seen.set(scope,s)}if(s.has(i))return false;s.add(i);return true};
+ for(const n of nodes){
+  const txt=n.nodeValue,p=n.parentElement;
+  const near=p.closest("details,article,.card,section")||root;
+  const card=p.closest("article,details.sp,.card")||near;
+  let m,last=0,frag=null;re.lastIndex=0;
+  while((m=re.exec(txt))){
+   let g=-1;for(let j=2;j<m.length;j++){if(m[j]!==undefined){g=j-2;break}}
+   if(g<0)continue;
+   const i=TERM_IDX[g],word=m[g+2];
+   if(!first(GLOSS[i].once?card:near,i))continue;
+   const start=m.index+m[1].length;
+   if(!frag)frag=document.createDocumentFragment();
+   if(start>last)frag.appendChild(document.createTextNode(txt.slice(last,start)));
+   const s=document.createElement("span");s.className="term";s.setAttribute("role","button");s.tabIndex=0;s.dataset.t=i;s.textContent=word;
+   frag.appendChild(s);last=start+word.length;
+  }
+  if(frag){if(last<txt.length)frag.appendChild(document.createTextNode(txt.slice(last)));p.replaceChild(frag,n)}
+ }
+}
+let DEF_EL=null;
+function openDef(i,el){
+ const g=GLOSS[i];if(!g)return;
+ if(DEF_EL)DEF_EL.classList.remove("on");
+ DEF_EL=el||null;if(DEF_EL)DEF_EL.classList.add("on");
+ $("#defnK").textContent=g.c||"Lexique";$("#defnT").textContent=g.t;$("#defnD").textContent=g.d;
+ $("#defnL").dataset.target="g-"+i;
+ $("#defn").hidden=false;
+}
+function closeDef(){const d=$("#defn");if(!d||d.hidden)return;d.hidden=true;if(DEF_EL){DEF_EL.classList.remove("on");DEF_EL=null}}
+
+/* =====================================================================
    Vue : Accueil
    ===================================================================== */
 function renderAccueil(){
@@ -1259,12 +1656,13 @@ function renderHomeCarnet(){
 let spFilter="tous",spQuery="",spTab="fiches";
 function renderEspeces(){
  const v=$("#v-especes");
- v.innerHTML=vh("19 fiches · tendances Côte d'Azur","Espèces","Reconnaître le poisson, connaître sa maille, savoir quand et comment le pêcher. Touche une fiche pour l'ouvrir.")+
+ v.innerHTML=vh("19 fiches · photos et vidéos","Espèces","Reconnaître le poisson en photo, connaître sa maille, savoir quand et comment le pêcher, avec une vidéo pour chacun. Touche une fiche pour l'ouvrir.")+
  '<div class="segs" role="group" aria-label="Affichage"><button type="button" data-sptab="fiches" aria-pressed="true">Fiches</button><button type="button" data-sptab="calendrier" aria-pressed="false" id="calendrier">Calendrier</button></div>'+
  '<div id="spFiches" class="block">'+
   '<div class="toolbar"><label class="search">'+ico("search")+'<span class="sr">Chercher une espèce</span><input id="spSearch" type="search" placeholder="Chercher : loup, calamar, dorade…" autocomplete="off"></label>'+
   '<div class="chips" role="group" aria-label="Filtrer">'+GROUPS.map(g=>'<button type="button" class="chip sm" data-spf="'+g[0]+'" aria-pressed="'+(g[0]==="tous")+'">'+g[1]+"</button>").join("")+"</div></div>"+
   '<div class="sp-list" id="spList"></div>'+
+  note("","info","<p><strong>Photos et vidéos</strong> Les photos viennent de Wikimedia Commons, sous licences libres : l'auteur et la licence sont indiqués sous chaque photo. Les vidéos sont sur YouTube, en français : elles s'ouvrent dans l'appli YouTube et demandent du réseau.</p>")+
   '<section class="block"><h2>Interdits à la pêche de loisir</h2><div class="ban-list">'+PROTEGES.map(p=>'<div class="ban"><b>'+esc(p.nom)+"</b><span>"+esc(p.txt)+"</span></div>").join("")+"</div></section>"+
  "</div>"+
  '<div id="spCal" class="block" hidden>'+
@@ -1280,15 +1678,17 @@ function renderSpList(){
  const q=spQuery.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
  const list=SP.filter(s=>(spFilter==="tous"||s.g===spFilter)&&(!q||(s.nom+" "+s.alias+" "+s.latin).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").includes(q)));
  $("#spList").innerHTML=list.length?list.map(spCard).join(""):'<p class="muted">Aucune espèce ne correspond. Essaie un autre mot.</p>';
+ if(TERMS_READY)linkTerms($("#spList"));
 }
 function spCard(s){
  const lvl=s.cal[MON];
  return '<details class="sp" id="sp-'+s.id+'"><summary>'+
-  '<div class="sp-top"><div><div class="sp-name">'+esc(s.nom)+'</div><div class="sp-sub">'+(s.alias?esc(s.alias)+" · ":"")+"<i>"+esc(s.latin)+'</i></div></div>'+
-  '<div class="sp-badges">'+mailleBadge(s)+(s.marque?'<span class="tag mark">Marquage</span>':"")+(s.declare?'<span class="tag decl">À déclarer</span>':"")+(s.regl?'<span class="tag no">Autorisation</span>':"")+"</div></div>"+
+  '<div class="sp-top">'+spThumb(s)+'<div class="sp-id"><div><div class="sp-name">'+esc(s.nom)+'</div><div class="sp-sub">'+(s.alias?esc(s.alias)+" · ":"")+"<i>"+esc(s.latin)+'</i></div></div>'+
+  '<div class="sp-badges">'+mailleBadge(s)+(s.marque?'<span class="tag mark">Marquage</span>':"")+(s.declare?'<span class="tag decl">À déclarer</span>':"")+(s.regl?'<span class="tag no">Autorisation</span>':"")+"</div></div></div>"+
   '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="sp-now l'+lvl+'">'+(s.regl?"Pêche très encadrée":LVL_TXT[lvl])+"</span>"+ico("chev","chev")+"</div>"+
   strip(s.cal,true)+
  "</summary><div class=\"sp-body\">"+
+  spPhoto(s)+
   '<div class="sp-grid">'+
    "<div><h4>Le reconnaître</h4><p>"+esc(s.rec)+"</p></div>"+
    "<div><h4>Où</h4><p>"+esc(s.ou)+' <span class="mono small muted">'+esc(s.prof)+"</span></p></div>"+
@@ -1296,6 +1696,7 @@ function spCard(s){
    "<div><h4>Appâts et leurres</h4><p>"+esc(s.app)+"</p></div>"+
   "</div>"+
   (s.mailleNote?'<p class="small muted">Maille : '+esc(s.mailleNote)+".</p>":"")+
+  vidBlock("sp-"+s.id)+
   "<div><h4>Techniques</h4><div class=\"chips\">"+s.tech.map(techLink).join("")+"</div></div>"+
   "<div><h4>Zones</h4><div class=\"chips\">"+s.zones.map(zoneLink).join("")+"</div></div>"+
   (s.astuce?note("ok","ok","<p><strong>Astuce</strong> "+esc(s.astuce)+"</p>"):"")+
@@ -1318,6 +1719,7 @@ function techCard(t){
  return '<article class="tech card" id="t-'+t.id+'" data-type="'+t.type+'">'+
   '<div class="tech-head"><div class="chips"><span class="tag'+(t.type==="bord"?" bord":"")+'">'+TYPE_TXT[t.type]+'</span><span class="tag">'+esc(t.saison)+"</span></div><h3>"+esc(t.nom)+"</h3><p>"+esc(t.resume)+"</p></div>"+
   '<dl class="facts"><dt>Cibles</dt><dd><div class="chips">'+t.cibles.map(spLink).join("")+"</div></dd><dt>Vitesse</dt><dd>"+esc(t.vitesse)+"</dd><dt>Où</dt><dd>"+esc(t.ou)+"</dd><dt>Zones</dt><dd><div class=\"chips\">"+t.zones.map(zoneLink).join("")+"</div></dd></dl>"+
+  vidBlock("t-"+t.id)+
   '<details open><summary>Pas à pas'+ico("chev","chev")+'</summary><div><ol class="steps">'+t.etapes.map(e=>"<li><span>"+esc(e)+"</span></li>").join("")+"</ol></div></details>"+
   "<details><summary>Matériel et appâts"+ico("chev","chev")+"</summary><div><p>"+esc(t.mat)+"</p><p>"+esc(t.leurres)+"</p></div></details>"+
   (mt?"<details><summary>Le montage"+ico("chev","chev")+'</summary><div>'+(mt.custom?palangreSVG():rigSVG(mt.items))+'<p class="small muted">'+esc(mt.note)+"</p></div></details>":"")+
@@ -1401,7 +1803,7 @@ function anatomySVG(){
 }
 function renderNoeuds(){
  const v=$("#v-noeuds");
- v.innerHTML=vh("12 nœuds · 9 montages","Nœuds & montages","Les nœuds qui servent vraiment en mer, expliqués étape par étape, avec un lien vers une animation pour chacun. Entraîne-toi à la maison avec un vieux fil.")+
+ v.innerHTML=vh("12 nœuds · 9 montages · en vidéo","Nœuds & montages","Les nœuds qui servent vraiment en mer, expliqués étape par étape, avec une vidéo pour chacun. Entraîne-toi à la maison avec un vieux fil.")+
  '<div class="segs" role="group" aria-label="Affichage"><button type="button" data-ktab="noeuds" aria-pressed="true">Nœuds</button><button type="button" data-ktab="montages" aria-pressed="false" id="montages">Montages</button></div>'+
  '<div id="kNoeuds" class="block">'+
   '<div class="card pad" style="display:flex;flex-direction:column;gap:10px"><h3>Les mots utilisés dans les étapes</h3>'+anatomySVG()+'<p class="small muted">Mouille toujours le nœud avec de la salive ou de l\'eau avant de serrer : le fil chauffe moins et garde sa solidité.</p></div>'+
@@ -1409,16 +1811,17 @@ function renderNoeuds(){
   NOEUDS.map(knotCard).join("")+
  "</div>"+
  '<div id="kMontages" class="block" hidden><p>Chaque montage se lit de haut en bas, du moulinet vers l\'hameçon. Le trait rouge, c\'est le bas de ligne.</p><div class="rig-grid">'+
-  MONTAGES.map(m=>'<article class="rig card" id="m-'+m.id+'"><h3>'+esc(m.nom)+'</h3><p class="small muted">'+esc(m.usage)+"</p>"+(m.custom?palangreSVG():rigSVG(m.items))+'<p class="small">'+esc(m.note)+"</p></article>").join("")+
+  MONTAGES.map(m=>'<article class="rig card" id="m-'+m.id+'"><h3>'+esc(m.nom)+'</h3><p class="small muted">'+esc(m.usage)+"</p>"+(m.custom?palangreSVG():rigSVG(m.items))+'<p class="small">'+esc(m.note)+"</p>"+vidBlock("m-"+m.id)+"</article>").join("")+
  "</div></div>";
 }
 function knotCard(k){
  const lv=[1,2,3].map(i=>'<i class="'+(i<=k.niv?"on":"")+'"></i>').join("");
  return '<article class="knot card" id="k-'+k.id+'"><div class="knot-head"><div><h3>'+esc(k.nom)+'</h3><p class="small muted" style="margin-top:4px">'+esc(k.usage)+'</p></div><span class="lvl" title="Difficulté">'+lv+" "+["","facile","moyen","difficile"][k.niv]+"</span></div>"+
+ (KNOT_NAME[k.id]?'<p class="knot-name">'+ico("info")+"<span>"+esc(KNOT_NAME[k.id])+"</span></p>":"")+
  '<dl class="facts"><dt>Fils</dt><dd>'+esc(k.fils)+"</dd><dt>Solidité</dt><dd>"+esc(k.sol)+"</dd></dl>"+
+ vidBlock("k-"+k.id,k.lien?extLink(k.lien,"Animation image par image (site en anglais)"):"")+
  '<ol class="steps">'+k.etapes.map(e=>"<li><span>"+esc(e)+"</span></li>").join("")+"</ol>"+
  note("ok","ok","<p><strong>Astuce</strong> "+esc(k.astuce)+"</p>")+
- (k.lien?extLink(k.lien,"Voir l'animation pas à pas"):"")+
  "</article>";
 }
 
@@ -1685,17 +2088,21 @@ function renderSecurite(){
   "<li><strong>Murène, congre, barracuda, denti</strong> : morsures et dents coupantes. Pince obligatoire.</li>"+
  "</ul>"+note("restrict","warn","<p><strong>Piqûre</strong> Mets la zone dans l'eau la plus chaude que tu supportes, sans te brûler, et demande un avis médical (15 ou 112).</p><p><strong>Hameçon planté</strong> au-delà de l'ardillon : ne tire pas, coupe le fil et va consulter.</p>")+"</section>";
 }
+let glCat="tous",glQuery="";
 function renderGlossaire(){
- $("#v-glossaire").innerHTML=vh(GLOSS.length+" mots","Glossaire","Les mots de la pêche en mer, expliqués simplement.")+
- '<label class="search">'+ico("search")+'<span class="sr">Chercher un mot</span><input id="glSearch" type="search" placeholder="Chercher : tresse, tombant, broumé…" autocomplete="off"></label>'+
+ $("#v-glossaire").innerHTML=vh(GLOSS.length+" mots","Glossaire","Les mots de la pêche en mer, expliqués simplement, même quand ce n'est qu'un nom de nœud. Partout dans le site, les mots soulignés en pointillés s'expliquent d'un simple toucher.")+
+ '<div class="gl-tools"><label class="search">'+ico("search")+'<span class="sr">Chercher un mot</span><input id="glSearch" type="search" placeholder="Chercher : palomar, tresse, tombant…" autocomplete="off"></label>'+
+ '<div class="chips" role="group" aria-label="Familles de mots"><button type="button" class="chip sm" data-glc="tous" aria-pressed="true">Tous</button>'+GLOSS_CATS.map(c=>'<button type="button" class="chip sm" data-glc="'+esc(c)+'" aria-pressed="false">'+esc(c)+"</button>").join("")+"</div></div>"+
  '<dl class="glos" id="glList"></dl>';
- renderGlList("");
+ renderGlList();
 }
-function renderGlList(q){
- const n=s=>s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");const qq=n(q.trim());
- const list=GLOSS.slice().sort((a,b)=>a[0].localeCompare(b[0],"fr")).filter(g=>!qq||n(g[0]+" "+g[1]).includes(qq));
- $("#glList").innerHTML=list.length?list.map(g=>"<div><dt>"+esc(g[0])+"</dt><dd>"+esc(g[1])+"</dd></div>").join(""):'<p class="muted">Aucun mot trouvé.</p>';
+function renderGlList(){
+ const n=s=>s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");const qq=n(glQuery.trim());
+ const key=g=>g.t.replace(/^[^\p{L}\p{N}]+/u,"");
+ const list=GLOSS.map((g,i)=>[g,i]).filter(([g])=>(glCat==="tous"||g.c===glCat)&&(!qq||n(g.t+" "+g.d+" "+(g.k||[]).join(" ")).includes(qq))).sort((a,b)=>key(a[0]).localeCompare(key(b[0]),"fr"));
+ $("#glList").innerHTML=list.length?list.map(([g,i])=>'<div id="g-'+i+'"><dt>'+esc(g.t)+'<span class="gl-c">'+esc(g.c)+"</span></dt><dd>"+esc(g.d)+"</dd></div>").join(""):'<p class="muted">Aucun mot trouvé.</p>';
 }
+function glReset(){glCat="tous";glQuery="";const s=$("#glSearch");if(s)s.value="";$$("[data-glc]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.glc==="tous"));renderGlList()}
 
 /* =====================================================================
    Vue : Carnet de prises (stockage db, réservé au propriétaire)
@@ -1907,7 +2314,9 @@ function go(id,target){
  if(!VIEW_IDS.includes(id))id="accueil";
  $$(".view").forEach(v=>{v.hidden=v.dataset.view!==id});
  $$("[data-nav]").forEach(a=>a.setAttribute("aria-current",a.dataset.nav===id?"page":"false"));
- closeSheet();
+ closeSheet();closeDef();
+ if(id==="especes")loadCredits();
+ if(id==="glossaire"&&target&&target.indexOf("g-")===0)glReset();
  if(id==="especes"&&target){const wantCal=target==="calendrier";setSpTab(wantCal?"calendrier":"fiches")}
  if(id==="noeuds"&&target){setKTab(target.indexOf("m-")===0||target==="montages"?"montages":"noeuds")}
  if(target){
@@ -1926,6 +2335,11 @@ function closeSheet(){const s=$("#sheet");if(s.hidden)return;s.hidden=true;$("#m
 
 document.addEventListener("click",e=>{
  const t=e.target;
+ const term=t.closest(".term");
+ if(term){e.preventDefault();openDef(+term.dataset.t,term);return}
+ if(t.closest("#defnX")){closeDef();return}
+ if(!t.closest("#defn"))closeDef();
+ const glc=t.closest("[data-glc]");if(glc){glCat=glc.dataset.glc;$$("[data-glc]").forEach(b=>b.setAttribute("aria-pressed",b===glc));renderGlList();return}
  const goEl=t.closest("[data-go]");
  if(goEl){e.preventDefault();const id=goEl.dataset.go;PENDING=goEl.dataset.target||null;PENDING_ACTION=goEl.dataset.action||null;if(location.hash.slice(1)===id){go(id,PENDING);PENDING=null}else location.hash=id;return}
  if(t.closest("#menuBtn")){openSheet();return}
@@ -1953,7 +2367,8 @@ document.addEventListener("click",e=>{
  const dn=t.closest("[data-del-no]");if(dn){const c=document.querySelector('[data-confirm="'+CSS.escape(dn.dataset.delNo)+'"]');if(c)c.hidden=true;return}
 });
 document.addEventListener("keydown",e=>{
- if(e.key==="Escape")closeSheet();
+ if(e.key==="Escape"){closeSheet();closeDef()}
+ if(e.target&&e.target.classList&&e.target.classList.contains("term")&&(e.key==="Enter"||e.key===" ")){e.preventDefault();openDef(+e.target.dataset.t,e.target);return}
  if(e.target&&e.target.id==="cRestoreLbl"&&(e.key==="Enter"||e.key===" ")){e.preventDefault();const inp=$("#cRestore");if(inp)inp.click();return}
  const mk=e.target.closest&&e.target.closest("[data-mk]");
  if(mk&&(e.key==="Enter"||e.key===" ")){e.preventDefault();selectZone(mk.dataset.mk,true)}
@@ -1961,7 +2376,7 @@ document.addEventListener("keydown",e=>{
 document.addEventListener("input",e=>{
  const t=e.target;
  if(t.id==="spSearch"){spQuery=t.value;renderSpList()}
- else if(t.id==="glSearch")renderGlList(t.value);
+ else if(t.id==="glSearch"){glQuery=t.value;renderGlList()}
  else if(t.closest&&t.closest("#cForm"))updFormHints();
 });
 document.addEventListener("change",e=>{
@@ -1972,6 +2387,13 @@ document.addEventListener("change",e=>{
 });
 document.addEventListener("submit",e=>{if(e.target.id==="cForm"){e.preventDefault();saveEntry()}});
 window.addEventListener("hashchange",()=>{const id=location.hash.slice(1);go(id,PENDING);PENDING=null});
+/* Image qui ne charge pas : on essaie l'adresse de secours, sinon on garde l'icône */
+document.addEventListener("error",e=>{
+ const img=e.target;if(!img||img.tagName!=="IMG")return;
+ const fb=img.getAttribute("data-fb");
+ if(fb&&fb!=="hide"){img.setAttribute("data-fb","hide");img.src=fb;return}
+ img.remove();
+},true);
 
 /* =====================================================================
    Démarrage
@@ -1989,6 +2411,8 @@ renderQuizShell();
 renderMateriel();
 renderSecurite();
 renderGlossaire();
+["accueil","especes","techniques","noeuds","zones","regles","materiel","securite"].forEach(id=>linkTerms($("#v-"+id)));
+TERMS_READY=true;
 go(location.hash.slice(1)||"accueil");
 carnetInit();
 })();
