@@ -491,6 +491,7 @@ dl.glos div{scroll-margin-top:84px}
 .sp-badges{justify-content:flex-start}
 .sp-thumb{position:relative;width:64px;height:64px;border-radius:10px;overflow:hidden;background:var(--surface-2);display:grid;place-items:center;color:var(--ink-3)}
 .sp-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.sp-thumb.fit img{object-fit:contain;background:var(--surface-2)}
 .sp-photo{margin:0;display:flex;flex-direction:column;gap:6px}
 .sp-photo .ph{position:relative;display:block;border-radius:10px;overflow:hidden;background:var(--surface-2);aspect-ratio:3/2;max-height:340px}
 .sp-photo .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
@@ -816,28 +817,29 @@ const SP=[
   zones:["large"]}
 ];
 const SPI=Object.fromEntries(SP.map(s=>[s.id,s]));
-/* Photos : Wikimedia Commons (licences libres). f = nom du fichier, h = dossier de stockage, pos = cadrage,
-   a et l = auteur et licence (sinon lus en ligne sur Commons et affichés sous la photo). */
+/* Photos : Wikimedia Commons (licences libres), choisies une à une.
+   f = nom du fichier, d = dossier de stockage, w et h = taille d'origine, a = auteur, l = licence,
+   fit = photo très allongée, affichée entière dans la vignette. */
 const PHOTOS={
- "loup":{f:"Sealife,_Bray,_Ireland._(6985874908).jpg",h:"7/70"},
- "dorade":{f:"Sparus_aurata,_Alpes-Maritimes,_Provence-Alpes-Côte_d'Azur,_FR_imported_from_iNaturalist_photo_207799710.jpg",h:"b/bb"},
- "bonite":{f:"Sarda_sarda.jpg",h:"b/bf"},
- "thonine":{f:"Euall_u0.gif",h:"b/b1"},
- "liche":{f:"Lichia_amia.jpg",h:"f/f6"},
- "denti":{f:"Dentex_dentex_1.jpg",h:"f/f3"},
- "seriole":{f:"Seriola_dumerili_Minorca.jpg",h:"d/d3"},
- "pagre":{f:"Pagrus_pagrus.jpg",h:"0/06"},
- "sar":{f:"Diplodus_sargus_01.jpg",h:"b/ba"},
- "marbre":{f:"Mormora.jpg",h:"4/49"},
- "dorade-grise":{f:"Chopa_(Spondyliosoma_cantharus),_Parque_natural_de_la_Arrábida,_Portugal,_2020-07-21,_DD_57.jpg",h:"a/ae"},
- "pageot":{f:"Pagellus_erythrinus_RO.jpg",h:"9/9c"},
- "chapon":{f:"Red_Scorpionfish_(cropped).jpg",h:"6/60"},
- "maquereau":{f:"Scomber_scombrus.jpg",h:"c/c3"},
- "calamar":{f:"Loligo_vulgaris.jpg",h:"d/dd"},
- "seiche":{f:"Sepia_común_(Sepia_officinalis),_Parque_natural_de_la_Arrábida,_Portugal,_2020-07-21,_DD_62.jpg",h:"6/65"},
- "coryphene":{f:"Common_Dolphinfish_Monterey_Bay.jpg",h:"0/07"},
- "barracuda":{f:"Bicudas_(Sphyraena_viridensis),_Cabo_de_Palos,_España,_2022-07-15,_DD_09.jpg",h:"7/70"},
- "thon-rouge":{f:"Bluefin-big.jpg",h:"1/18"}
+ "loup":{f:"Dicentrarchus_labrax01.jpg",d:"6/68",w:1400,h:764,a:"Citron",l:"CC BY-SA 3.0",fit:1},
+ "dorade":{f:"Aquarium_de_Paris_12-26_(32025251302).jpg",d:"1/12",w:5760,h:3840,a:"KimonBerlin",l:"CC BY-SA 2.0"},
+ "bonite":{f:"Sarda_sarda_NJ.jpg",d:"6/6b",w:2048,h:1312,a:"ricofish",l:"CC0"},
+ "thonine":{f:"Euthynnus_alletteratus_-_pone.0010676.g185.png",d:"5/57",w:1980,h:719,a:"J. T. Williams et al.",l:"CC BY 2.5",fit:1},
+ "liche":{f:"Lichia_amia.jpg",d:"f/f6",w:640,h:480,a:"F. H. Van der Bank, université de Johannesburg",l:"utilisation libre"},
+ "denti":{f:"Dentex_dentex_1.jpg",d:"f/f3",w:640,h:408,a:"Etrusko25",l:"CC BY-SA 4.0"},
+ "seriole":{f:"Fish4447_-_Flickr_-_NOAA_Photo_Library.jpg",d:"7/78",w:2896,h:1944,a:"NOAA, B. Noble",l:"domaine public"},
+ "pagre":{f:"Pagrus_pagrus.jpg",d:"0/06",w:2230,h:1064,a:"NOAA, B. Noble",l:"domaine public",fit:1},
+ "sar":{f:"Sargo_común_(Diplodus_sargus),_Madeira,_Portugal,_2019-05-31,_DD_29.jpg",d:"2/2c",w:3264,h:1975,a:"Diego Delso",l:"CC BY-SA 4.0"},
+ "marbre":{f:"Mormora.jpg",d:"4/49",w:2362,h:1575,a:"Marrabbio2",l:"CC BY 3.0"},
+ "dorade-grise":{f:"Chopa_(Spondyliosoma_cantharus),_Parque_natural_de_la_Arrábida,_Portugal,_2023-07-26,_DD_80.jpg",d:"c/cf",w:5050,h:3367,a:"Diego Delso",l:"CC BY-SA 4.0"},
+ "pageot":{f:"Pagellus_erythrinus1.jpg",d:"1/16",w:1000,h:570,a:"Citron",l:"CC BY-SA 3.0"},
+ "chapon":{f:"Red_Scorpionfish_(cropped).jpg",d:"6/60",w:4606,h:2616,a:"Vicmicallef",l:"CC BY-SA 4.0"},
+ "maquereau":{f:"Scomber_scombrus.jpg",d:"c/c3",w:2955,h:2216,a:"Hans Hillewaert",l:"CC BY-SA 4.0"},
+ "calamar":{f:"Loligo_vulgaris.jpg",d:"d/dd",w:2400,h:1800,a:"Hans Hillewaert",l:"CC BY-SA 4.0"},
+ "seiche":{f:"Sepia_común_(Sepia_officinalis),_Parque_natural_de_la_Arrábida,_Portugal,_2020-07-21,_DD_62.jpg",d:"6/65",w:3776,h:2517,a:"Diego Delso",l:"CC BY-SA 4.0"},
+ "coryphene":{f:"Dolphinfish_(Coryphaena_hippurus).jpg",d:"b/b3",w:1017,h:511,a:"NOAA, B. Noble",l:"domaine public",fit:1},
+ "barracuda":{f:"Bicuda_(Sphyraena_viridensis),_Cabo_de_Palos,_España,_2022-07-17,_DD_25.jpg",d:"9/99",w:4682,h:3121,a:"Diego Delso",l:"CC BY-SA 4.0"},
+ "thon-rouge":{f:"Tuna_1.jpg",d:"7/78",w:1422,h:1067,a:"Takashi Hososhima",l:"CC BY-SA 2.0"}
 };
 const GROUPS=[["tous","Toutes"],["pred","Prédateurs"],["pela","Pélagiques"],["fond","Fonds"],["cepha","Calamars & seiches"]];
 const LVL_TXT=["Rare ce mois-ci","Possible ce mois-ci","Bon ce mois-ci","Pleine saison"];
@@ -1061,61 +1063,62 @@ const KNOT_NAME={
 };
 
 /* =====================================================================
-   Vidéos YouTube choisies (en français)
-   y = identifiant de la vidéo, t = ce qu'on y voit, n = remarque, q = recherche pour trouver d'autres vidéos
+   Vidéos YouTube choisies (en français), vérifiées en octobre 2026
+   y = identifiant de la vidéo, t = ce qu'on y voit, c = chaîne, m = durée en minutes (s = en secondes),
+   n = remarque, q = recherche pour trouver d'autres vidéos
    ===================================================================== */
 const VIDEOS={
- "k-palomar":{y:"rnO1OkhjO4M",t:"Le nœud Palomar, expliqué aux débutants",q:"noeud palomar pêche"},
- "k-clinch":{y:"SWRIl51Nn-Y",t:"Le nœud de cuillère (clinch), expliqué aux débutants",q:"noeud clinch amélioré pêche"},
- "k-uni":{y:"bEhdMWi4XGA",t:"Le nœud Universel (Uni), expliqué aux débutants",q:"noeud uni grinner pêche"},
- "k-double-uni":{y:"kwV_72hZy4w",t:"Le double Universel pour raccorder deux fils",q:"noeud double uni tresse fluoro"},
- "k-fg":{y:"A2Xohwd4KZE",t:"Le nœud FG en version facile",q:"noeud FG tuto"},
- "k-albright":{y:"gzaTn50fIcU",t:"Le nœud Albright, expliqué aux débutants",q:"noeud albright pêche"},
- "k-potence":{y:"BvwxIEzjBj8",t:"Le nœud de potence en une minute",q:"noeud potence pêche"},
- "k-chirurgien":{y:"1Rj554QYfo0",t:"La boucle du chirurgien",q:"boucle du chirurgien pêche"},
- "k-rapala":{y:"DnIAU2cvVfU",t:"Faire un nœud Rapala, par Pecheur.com",q:"noeud rapala"},
- "k-snell":{y:"F-znauIZPLs",t:"Le nœud snell, facile et solide",n:"Montré pour le silure, mais c'est exactement le même nœud en mer.",q:"noeud snell hameçon"},
- "k-arret":{y:"gY_l6KqrZBI",t:"Faire un nœud d'arrêt de flotteur",q:"noeud d'arrêt flotteur coulissant"},
- "k-bimini":{y:"cgSGmFZK8hU",t:"Le Bimini twist et l'Albright double",n:"Filmé pour le silure : les nœuds sont les mêmes pour la traîne au large.",q:"bimini twist noeud"},
- "m-traine":{y:"fHlAYWss7OY",t:"Cannes et montages pour la traîne aux maquereaux et bonites",q:"montage traîne bonite"},
- "m-lancer":{y:"8ieAgaBLC7g",t:"Monter un leurre souple sur une tête plombée",q:"montage leurre souple tête plombée mer"},
- "m-palangrotte":{y:"UW6HDObXrQ0",t:"La palangrotte : technique et montage",q:"montage palangrotte"},
- "m-surfcasting":{y:"JFedubWVTo4",t:"Réaliser un montage de surfcasting à deux hameçons",q:"montage surfcasting deux empiles"},
- "m-flotteur":{y:"XnRTD6j_4cE",t:"Le montage flotteur coulissant pour les poissons de roche",q:"montage flotteur coulissant mer"},
- "m-turlutte":{y:"xM4KNWBuJK4",t:"Un montage très facile pour les calamars et les seiches",q:"montage turlutte calamar"},
- "m-vif":{y:"KVTrf0Plcjk",t:"Le montage Maréchal pour pêcher au vif",n:"Une variante du montage au vif très utilisée en Méditerranée pour le denti, la sériole et la liche.",q:"montage vif denti"},
- "m-jig":{y:"8YllfuW6vW4",t:"Monter des hameçons assist sur un jig",q:"montage assist hook jig"},
- "m-palangre":{y:"u2BsgS9AKLk",t:"Fabriquer et préparer une palangre",q:"palangre montage pêche loisir"},
- "t-traine-cotiere":{y:"Ta4SpUgikVw",t:"Le loup à la traîne aux poissons nageurs",q:"traîne côtière méditerranée"},
- "t-traine-large":{y:"mwbUyNDUVOc",t:"La bonite à la traîne et au leurre dans les chasses",q:"pêche bonite chasse traîne"},
- "t-vif":{y:"N4ZQ_Z-onr0",t:"La traîne lente au vif, avec Méditerranée Fishing",q:"traîne lente au vif méditerranée"},
- "t-mouillage":{y:"m9O93xmKcz8",t:"Pêcher les dorades au mouillage avec du broumé",q:"pêche dorade bateau broumé"},
- "t-derive":{y:"mwYcNrkiQ_4",t:"La pêche du pagre en dérive : montage et technique",q:"pêche en dérive bateau méditerranée"},
- "t-lancer":{y:"hxxbEqZc0m8",t:"Débuter la pêche au leurre souple du bord",q:"pêche leurre bord mer débutant"},
- "t-jig":{y:"hle7djlom50",t:"Débuter le slow jigging, par Pecheur.com",q:"slow jig méditerranée tuto"},
- "t-turlutte":{y:"FYsL7-R7g3c",t:"L'eging : calamars et seiches à la turlutte, par Pecheur.com",q:"eging calamar turlutte tuto"},
- "t-surfcasting":{y:"tSJEHSE7gxk",t:"Le surfcasting de A à Z",q:"surfcasting débutant tuto"},
- "t-flotteur":{y:"eltLX_hrz4w",t:"Pêcher le sar au flotteur, du bord",q:"pêche sar flotteur rochers"},
- "t-palangre":{y:"aS9y6HZSd_M",t:"La pêche à la palangre : dorades et loups",q:"pêche palangre loisir"},
- "sp-loup":{y:"pq5btP9N9Lg",t:"Le loup aux leurres dans une embouchure, en Méditerranée",q:"pêche loup leurre méditerranée"},
- "sp-dorade":{y:"R-lN-a3Qw3s",t:"Pêcher la dorade royale du bord de mer",q:"pêche dorade royale"},
- "sp-bonite":{y:"P6gJLiC60Rc",t:"La bonite sur les chasses, au jig, en Méditerranée",q:"pêche bonite méditerranée"},
- "sp-thonine":{y:"8vgfZN_mpRk",t:"Reconnaître bonite, thonine et thon sur une chasse",q:"pêche thonine méditerranée"},
- "sp-liche":{y:"Z2eIhF3Sm88",t:"Les montages et la pêche de la liche",q:"pêche liche amie"},
- "sp-denti":{y:"7pifbtd1cUk",t:"Le denti au fireball, avec un calamar vivant",q:"pêche denti méditerranée"},
- "sp-seriole":{y:"ioRMGZfysTs",t:"La sériole en traîne lente au vif",q:"pêche sériole méditerranée"},
- "sp-pagre":{y:"Irzlj1RIB3w",t:"Le pagre et les sparidés à la palangrotte",q:"pêche pagre méditerranée"},
- "sp-sar":{y:"g3kj5WfiHww",t:"Le montage flotteur pour les gros sars",q:"pêche sar flotteur"},
- "sp-marbre":{y:"oFhLSi1lNjo",t:"Attraper les marbrés depuis la plage",q:"pêche marbré surfcasting"},
- "sp-dorade-grise":{y:"F4ZRjUZehXA",t:"La dorade grise (griset) en bateau",q:"pêche dorade grise griset"},
- "sp-pageot":{y:"PTpvCaILU4Q",t:"Le pageot au ver, en dérive",q:"pêche pageot dérive"},
- "sp-chapon":{y:"gyLSaOGI7Tw",t:"Pêcher le chapon en dérive",q:"pêche chapon rascasse"},
- "sp-maquereau":{y:"99jaCEbUgrw",t:"Le maquereau à la mitraillette",q:"pêche maquereau mitraillette"},
- "sp-calamar":{y:"p74i6X_DWGQ",t:"Débuter la pêche des calamars à la turlutte",q:"pêche calamar turlutte"},
- "sp-seiche":{y:"wWeJsHsWa-E",t:"La seiche à la turlutte, du bord",q:"pêche seiche turlutte"},
- "sp-coryphene":{y:"d3oDvUolc3M",t:"La dorade coryphène en Méditerranée",q:"pêche dorade coryphène méditerranée"},
- "sp-barracuda":{y:"N6UgtIRQD-M",t:"Pêcher le barracuda en Méditerranée : matériel et leurres",q:"pêche barracuda méditerranée"},
- "sp-thon-rouge":{y:"nG061vmlngM",t:"Comprendre la réglementation du thon rouge",n:"Les dates changent chaque année : les règles 2026 sont dans l'onglet Règles.",q:"thon rouge pêche de loisir réglementation"}
+ "k-palomar":{y:"rnO1OkhjO4M",t:"Le nœud Palomar, expliqué aux débutants",c:"The Fisher Channel",m:3,q:"noeud palomar pêche"},
+ "k-clinch":{y:"SWRIl51Nn-Y",t:"Le nœud de cuillère (clinch), expliqué aux débutants",c:"The Fisher Channel",m:3,q:"noeud clinch amélioré pêche"},
+ "k-uni":{y:"bEhdMWi4XGA",t:"Le nœud Universel (Uni), expliqué aux débutants",c:"The Fisher Channel",m:2,q:"noeud uni grinner pêche"},
+ "k-double-uni":{y:"kwV_72hZy4w",t:"Le double Universel pour raccorder deux fils",c:"The Fisher Channel",m:3,q:"noeud double uni tresse fluoro"},
+ "k-fg":{y:"A2Xohwd4KZE",t:"Le nœud FG en version facile",c:"Delalande Pêche",m:7,q:"noeud FG tuto"},
+ "k-albright":{y:"gzaTn50fIcU",t:"Le nœud Albright, expliqué aux débutants",c:"The Fisher Channel",m:2,q:"noeud albright pêche"},
+ "k-potence":{y:"BvwxIEzjBj8",t:"Le nœud de potence",c:"La Minute Carna",m:5,q:"noeud potence pêche"},
+ "k-chirurgien":{y:"mlOhAY2R6jY",t:"La boucle du chirurgien (surgeon's loop)",c:"Fishthatwontquit",m:3,n:"Vidéo en anglais, mais les gestes se suivent très bien sans le son.",q:"boucle du chirurgien pêche"},
+ "k-rapala":{y:"DnIAU2cvVfU",t:"Faire un nœud Rapala",c:"Pecheur.com",m:3,q:"noeud rapala"},
+ "k-snell":{y:"F-znauIZPLs",t:"Le nœud snell, facile et solide",c:"86 Fishing TV",m:3,n:"Montré pour le silure, mais c'est exactement le même nœud en mer.",q:"noeud snell hameçon"},
+ "k-arret":{y:"gY_l6KqrZBI",t:"Faire un nœud d'arrêt de flotteur",c:"Climax France",s:30,q:"noeud d'arrêt flotteur coulissant"},
+ "k-bimini":{y:"cgSGmFZK8hU",t:"Le Bimini twist et l'Albright double",c:"SpeedheFishing",m:8,n:"Filmé pour le silure : les nœuds sont les mêmes pour la traîne au large.",q:"bimini twist noeud"},
+ "m-traine":{y:"WD4tedsvg3I",t:"Monter une ligne de traîne légère pour la mer",c:"Mobby Dick",m:12,q:"montage traîne bonite"},
+ "m-lancer":{y:"8ieAgaBLC7g",t:"Monter un leurre souple sur une tête plombée",c:"LabarakaBars",m:4,q:"montage leurre souple tête plombée mer"},
+ "m-palangrotte":{y:"UW6HDObXrQ0",t:"La palangrotte : technique et montage",c:"100% pêche",m:20,q:"montage palangrotte"},
+ "m-surfcasting":{y:"JFedubWVTo4",t:"Réaliser un montage de surfcasting à deux hameçons",c:"Decathlon Fishing",m:16,q:"montage surfcasting deux empiles"},
+ "m-flotteur":{y:"XnRTD6j_4cE",t:"Le montage flotteur coulissant pour les poissons de roche",c:"Pêche et techno",m:13,q:"montage flotteur coulissant mer"},
+ "m-turlutte":{y:"xM4KNWBuJK4",t:"Un montage très facile pour les calamars et les seiches",c:"Trek'n Fish",m:7,q:"montage turlutte calamar"},
+ "m-vif":{y:"KVTrf0Plcjk",t:"Le montage Maréchal pour pêcher au vif",c:"Philippe Maréchal Fishing",m:26,n:"Une variante du montage au vif très utilisée en Méditerranée pour le denti, la sériole et la liche.",q:"montage vif denti"},
+ "m-jig":{y:"8YllfuW6vW4",t:"Monter des hameçons assist sur un jig",c:"Tahiti Pêche Exotique",m:12,q:"montage assist hook jig"},
+ "m-palangre":{y:"u2BsgS9AKLk",t:"Fabriquer et préparer une palangre",c:"Thibouchka Fishing",m:9,q:"palangre montage pêche loisir"},
+ "t-traine-cotiere":{y:"Ta4SpUgikVw",t:"Le loup à la traîne aux poissons nageurs",c:"Méditerranée Fishing",m:20,q:"traîne côtière méditerranée"},
+ "t-traine-large":{y:"mwbUyNDUVOc",t:"La bonite à la traîne et au leurre dans les chasses",c:"Loupechou",m:4,q:"pêche bonite chasse traîne"},
+ "t-vif":{y:"N4ZQ_Z-onr0",t:"La traîne lente au vif",c:"Méditerranée Fishing",m:9,q:"traîne lente au vif méditerranée"},
+ "t-mouillage":{y:"m9O93xmKcz8",t:"Pêcher les dorades au mouillage avec du broumé",c:"Mobby Dick",m:14,q:"pêche dorade bateau broumé"},
+ "t-derive":{y:"mwYcNrkiQ_4",t:"La pêche du pagre en dérive : montage et technique",c:"Philippe Maréchal Fishing",m:12,q:"pêche en dérive bateau méditerranée"},
+ "t-lancer":{y:"hxxbEqZc0m8",t:"Débuter la pêche au leurre souple du bord",c:"Pêche facile",m:6,q:"pêche leurre bord mer débutant"},
+ "t-jig":{y:"hle7djlom50",t:"Débuter le slow jigging",c:"Pecheur.com",m:7,q:"slow jig méditerranée tuto"},
+ "t-turlutte":{y:"FYsL7-R7g3c",t:"L'eging : calamars et seiches à la turlutte",c:"Pecheur.com",m:15,q:"eging calamar turlutte tuto"},
+ "t-surfcasting":{y:"tSJEHSE7gxk",t:"Le surfcasting de A à Z",c:"Chasse et pêche",m:20,q:"surfcasting débutant tuto"},
+ "t-flotteur":{y:"eltLX_hrz4w",t:"Pêcher le sar au flotteur, du bord",c:"Tibopeche",m:21,q:"pêche sar flotteur rochers"},
+ "t-palangre":{y:"aS9y6HZSd_M",t:"La pêche à la palangre : dorades et loups",c:"Thibouchka Fishing",m:14,q:"pêche palangre loisir"},
+ "sp-loup":{y:"pq5btP9N9Lg",t:"Le loup aux leurres dans une embouchure, en Méditerranée",c:"Yakutsu Fishing",m:9,q:"pêche loup leurre méditerranée"},
+ "sp-dorade":{y:"2ug1Rv2PDdg",t:"Pêcher la dorade en bateau : le bon montage",c:"Mobby Dick",m:11,q:"pêche dorade royale"},
+ "sp-bonite":{y:"P6gJLiC60Rc",t:"La bonite sur les chasses, au jig, en Méditerranée",c:"Captain Axel",m:11,q:"pêche bonite méditerranée"},
+ "sp-thonine":{y:"8vgfZN_mpRk",t:"Reconnaître bonite, thonine et thon sur une chasse",c:"Tuto pêche",m:11,q:"pêche thonine méditerranée"},
+ "sp-liche":{y:"Z2eIhF3Sm88",t:"Les montages et la pêche de la liche au vif",c:"Méditerranée Fishing",m:15,q:"pêche liche amie"},
+ "sp-denti":{y:"8zZ90kzV27E",t:"Le denti au calamar vivant : montage et pêche",c:"AlexFishOn83",m:6,q:"pêche denti méditerranée"},
+ "sp-seriole":{y:"ioRMGZfysTs",t:"La sériole en traîne lente au vif",c:"Hooked on the road",m:10,q:"pêche sériole méditerranée"},
+ "sp-pagre":{y:"Irzlj1RIB3w",t:"Le pagre et les sparidés à la palangrotte",c:"Tuto pêche",m:5,q:"pêche pagre méditerranée"},
+ "sp-sar":{y:"g3kj5WfiHww",t:"Le montage flotteur pour les gros sars",c:"Tibopeche",m:22,q:"pêche sar flotteur"},
+ "sp-marbre":{y:"oFhLSi1lNjo",t:"Attraper les marbrés depuis la plage",c:"Gobie",m:21,q:"pêche marbré surfcasting"},
+ "sp-dorade-grise":{y:"XjxCERXem_4",t:"La dorade grise en bateau",c:"La chaîne naturaliste",m:13,q:"pêche dorade grise griset"},
+ "sp-pageot":{y:"PTpvCaILU4Q",t:"Le pageot au ver, en dérive",c:"Pêche Frontignan",m:22,q:"pêche pageot dérive"},
+ "sp-chapon":{y:"gyLSaOGI7Tw",t:"Pêcher le chapon en dérive",c:"Philippe Maréchal Fishing",m:13,q:"pêche chapon rascasse"},
+ "sp-maquereau":{y:"99jaCEbUgrw",t:"Le maquereau à la mitraillette",c:"Vidéos chasse pêche",m:9,q:"pêche maquereau mitraillette"},
+ "sp-calamar":{y:"p74i6X_DWGQ",t:"Débuter la pêche des calamars à la turlutte",c:"Paradis du pêcheur",m:3,q:"pêche calamar turlutte"},
+ "sp-seiche":{y:"wWeJsHsWa-E",t:"La seiche à la turlutte, du bord",c:"Pêche facile",m:6,q:"pêche seiche turlutte"},
+ "sp-coryphene":{y:"d3oDvUolc3M",t:"La dorade coryphène en Méditerranée",c:"Passion nature en pays catalan",m:4,q:"pêche dorade coryphène méditerranée"},
+ "sp-barracuda":{y:"N6UgtIRQD-M",t:"Pêcher le barracuda en Méditerranée : matériel et leurres",c:"FishWon",m:10,q:"pêche barracuda méditerranée"},
+ "sp-thon-rouge":{y:"IxeXeCbChng",t:"Pêcher le thon rouge en Méditerranée",c:"Les frères toc",m:14,n:"Pêche très encadrée : sans autorisation pour ton bateau, regarde mais ne la pratique pas. Les règles 2026 sont dans l'onglet Règles.",q:"thon rouge pêche de loisir réglementation"}
 };
 
 /* =====================================================================
@@ -1502,50 +1505,24 @@ const ytSearch=q=>"https://www.youtube.com/results?search_query="+encodeURICompo
 function vidBlock(key,extra){
  const v=VIDEOS[key];
  if(!v)return extra?'<div class="media-links">'+extra+"</div>":"";
- return '<div class="media"><a class="vid" href="'+ytUrl(v.y)+'" target="_blank" rel="noopener"><span class="vid-th"><img src="https://i.ytimg.com/vi/'+encodeURIComponent(v.y)+'/mqdefault.jpg" alt="" loading="lazy" decoding="async" data-fb="hide"><span class="vid-play">'+PLAY_SVG+'</span></span><span class="vid-tx"><span class="vid-k">Vidéo · YouTube</span><b>'+esc(v.t)+"</b>"+(v.n?'<span class="vid-s">'+esc(v.n)+"</span>":"")+"</span></a>"+
+ return '<div class="media"><a class="vid" href="'+ytUrl(v.y)+'" target="_blank" rel="noopener"><span class="vid-th"><img src="https://i.ytimg.com/vi/'+encodeURIComponent(v.y)+'/mqdefault.jpg" alt="" loading="lazy" decoding="async" data-fb="hide"><span class="vid-play">'+PLAY_SVG+'</span></span><span class="vid-tx"><span class="vid-k">Vidéo · '+(v.m?v.m+" min":v.s?v.s+" s":"YouTube")+'</span><b>'+esc(v.t)+"</b>"+(v.c?'<span class="vid-s">'+esc(v.c)+" · YouTube</span>":"")+(v.n?'<span class="vid-s">'+esc(v.n)+"</span>":"")+"</span></a>"+
   '<div class="media-links">'+(extra||"")+extLink(ytSearch(v.q||v.t),"Autres vidéos sur YouTube")+"</div></div>";
 }
 const WM="https://upload.wikimedia.org/wikipedia/commons/";
 const wmEnc=f=>encodeURIComponent(f).replace(/%2C/g,",").replace(/'/g,"%27");
-const wmThumb=(p,w)=>WM+"thumb/"+p.h+"/"+wmEnc(p.f)+"/"+w+"px-"+wmEnc(p.f);
+const wmThumb=(p,w)=>WM+"thumb/"+p.d+"/"+wmEnc(p.f)+"/"+w+"px-"+wmEnc(p.f);
 const wmFilePath=(p,w)=>"https://commons.wikimedia.org/wiki/Special:FilePath/"+wmEnc(p.f)+"?width="+w;
 const wmPage=p=>"https://commons.wikimedia.org/wiki/File:"+wmEnc(p.f);
-const PCRED=LS.get("photo-credits-v1",{});
-function credTxt(p){
- const c=p.a?p:PCRED[p.f];
- const src='<a href="'+wmPage(p)+'" target="_blank" rel="noopener">Wikimedia Commons</a>';
- return c&&c.a?"Photo : "+esc(c.a)+(c.l?" · "+esc(c.l):"")+" · "+src:"Photo : "+src+" (auteur et licence sur la page de la photo)";
-}
+const credTxt=p=>"Photo : "+esc(p.a)+" · "+esc(p.l)+' · <a href="'+wmPage(p)+'" target="_blank" rel="noopener">Wikimedia Commons</a>';
 function spThumb(s){
  const p=PHOTOS[s.id];
- return '<span class="sp-thumb" aria-hidden="true">'+ico("fish")+(p?'<img src="'+wmThumb(p,250)+'" data-fb="'+wmFilePath(p,250)+'" alt="" loading="lazy" decoding="async"'+(p.pos?' style="object-position:'+esc(p.pos)+'"':"")+">":"")+"</span>";
+ return '<span class="sp-thumb'+(p&&p.fit?" fit":"")+'" aria-hidden="true">'+ico("fish")+(p?'<img src="'+wmThumb(p,250)+'" data-fb="'+wmFilePath(p,250)+'" alt="" loading="lazy" decoding="async">':"")+"</span>";
 }
 function spPhoto(s){
  const p=PHOTOS[s.id];if(!p)return "";
- return '<figure class="sp-photo"><a class="ph" href="'+wmPage(p)+'" target="_blank" rel="noopener" aria-label="Voir la photo en grand">'+ico("fish")+
-  '<img src="'+wmThumb(p,500)+'" data-fb="'+wmFilePath(p,500)+'" alt="'+esc(s.nom+", "+s.latin)+'" loading="lazy" decoding="async"'+(p.pos?' style="object-position:'+esc(p.pos)+'"':"")+'></a><figcaption data-cr="'+esc(p.f)+'">'+credTxt(p)+"</figcaption></figure>";
-}
-function txtOf(html){try{return (new DOMParser().parseFromString(String(html||""),"text/html").body.textContent||"").replace(/\s+/g," ").trim()}catch(e){return ""}}
-let creditsAsked=false;
-function loadCredits(){
- if(creditsAsked||!window.fetch)return;creditsAsked=true;
- const fresh=Date.now()-30*864e5;
- const need=Object.values(PHOTOS).filter(p=>!p.a&&!(PCRED[p.f]&&PCRED[p.f].t>fresh)).map(p=>p.f);
- if(!need.length)return;
- const url="https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=Artist%7CLicenseShortName&titles="+encodeURIComponent(need.map(f=>"File:"+f).join("|"));
- fetch(url).then(r=>r.ok?r.json():null).then(j=>{
-  if(!j||!j.query)return;
-  const back={};(j.query.normalized||[]).forEach(n=>{back[n.to]=n.from});
-  Object.values(j.query.pages||{}).forEach(pg=>{
-   const ii=pg.imageinfo&&pg.imageinfo[0];if(!ii)return;
-   const m=ii.extmetadata||{};
-   const f=(back[pg.title]||pg.title).replace(/^File:/,"").replace(/ /g,"_");
-   const a=txtOf(m.Artist&&m.Artist.value);
-   PCRED[f]={a:a.length>70?a.slice(0,68)+"…":a,l:txtOf(m.LicenseShortName&&m.LicenseShortName.value),t:Date.now()};
-  });
-  LS.set("photo-credits-v1",PCRED);
-  $$("[data-cr]").forEach(el=>{const p=Object.values(PHOTOS).find(x=>x.f===el.dataset.cr);if(p)el.innerHTML=credTxt(p)});
- }).catch(()=>{});
+ const set=p.w>=960?' srcset="'+wmThumb(p,500)+" 500w, "+wmThumb(p,960)+' 960w" sizes="(min-width:960px) 780px, 100vw"':"";
+ return '<figure class="sp-photo"><a class="ph" href="'+wmPage(p)+'" target="_blank" rel="noopener" aria-label="Voir la photo en grand" style="aspect-ratio:'+p.w+"/"+p.h+'">'+ico("fish")+
+  '<img src="'+wmThumb(p,500)+'"'+set+' data-fb="'+wmFilePath(p,500)+'" alt="'+esc(s.nom+", "+s.latin)+'" width="'+p.w+'" height="'+p.h+'" loading="lazy" decoding="async"></a><figcaption>'+credTxt(p)+"</figcaption></figure>";
 }
 
 /* =====================================================================
@@ -2315,7 +2292,6 @@ function go(id,target){
  $$(".view").forEach(v=>{v.hidden=v.dataset.view!==id});
  $$("[data-nav]").forEach(a=>a.setAttribute("aria-current",a.dataset.nav===id?"page":"false"));
  closeSheet();closeDef();
- if(id==="especes")loadCredits();
  if(id==="glossaire"&&target&&target.indexOf("g-")===0)glReset();
  if(id==="especes"&&target){const wantCal=target==="calendrier";setSpTab(wantCal?"calendrier":"fiches")}
  if(id==="noeuds"&&target){setKTab(target.indexOf("m-")===0||target==="montages"?"montages":"noeuds")}
@@ -2391,7 +2367,7 @@ window.addEventListener("hashchange",()=>{const id=location.hash.slice(1);go(id,
 document.addEventListener("error",e=>{
  const img=e.target;if(!img||img.tagName!=="IMG")return;
  const fb=img.getAttribute("data-fb");
- if(fb&&fb!=="hide"){img.setAttribute("data-fb","hide");img.src=fb;return}
+ if(fb&&fb!=="hide"){img.setAttribute("data-fb","hide");img.removeAttribute("srcset");img.removeAttribute("sizes");img.src=fb;return}
  img.remove();
 },true);
 
